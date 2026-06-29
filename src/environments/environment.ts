@@ -1,13 +1,13 @@
 export const environment = {
     production: false,
     hostname: 'localhost',
-    port: 8082,
-    context: 'demo',
+    port: 3000,
+    context: '',
     get baseUrl(): string {
-        return `${this.hostname}:${this.port}/${this.context}`;
+        return `${this.hostname}:${this.port}`;
     },
-    accessControlUrl: 'http://localhost:8082/demo/auth',
+    accessControlUrl: 'http://localhost:3000/auth',
     appName: 'Demo App',
     cookieName: 'beyonda_session',
-    webApiPath: '/web-api'
+    webApiPath: ''
 };

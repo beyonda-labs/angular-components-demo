@@ -1,0 +1,22 @@
+{
+    "angular-components-demo": {
+        "page": {
+            "title": "Demo App",
+            "productName": "Demo App",
+            "actions": {
+                "page": {
+                    "label": "Dashboard",
+                    "tooltip": "Go to dashboard"
+                },
+                "logout": {
+                    "label": "Log out",
+                    "tooltip": "Sign out"
+                }
+            },
+            "content": {
+                "title": "Welcome back",
+                "paragraph": "You have successfully logged in. This is a sample protected page."
+            }
+        }
+    }
+}

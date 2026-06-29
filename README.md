@@ -1,59 +1,54 @@
-# BeyondaAngularDemo
+# angular-components-demo
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.19.
+Demo application for the `@beyonda-labs/angular-components` library. It acts as a live style guide, showcasing all available components and their configuration options.
 
-## Development server
+## Requirements
 
-To start a local development server, run:
+- Node.js 20+
+- The `angular-components` library built locally at `../angular-components/dist`
 
-```bash
-ng serve
-```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Setup
 
 ```bash
-ng generate component component-name
+npm install
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Development
+
+Start the dev server with live library reloading:
 
 ```bash
-ng generate --help
+npm start
 ```
 
-## Building
+This runs the Angular app and watches the local library for changes. Open `http://localhost:4200` in your browser.
 
-To build the project run:
+To reload only the library without watching:
 
 ```bash
-ng build
+npm run lib:refresh
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+## Testing
 
 ```bash
-ng test
+npm test
 ```
 
-## Running end-to-end tests
+## Translations
 
-For end-to-end (e2e) testing, run:
+Translation files for the demo app live in `src/assets/i18n/`. The library translations are merged in automatically via:
 
 ```bash
-ng e2e
+npm run merge-translations
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+This is also run automatically before every build.
 
-## Additional Resources
+## Build
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+```bash
+npm run build
+```
+
+The production build is output to `dist/`. Translation files are merged and updated as part of the build.

@@ -47,6 +47,11 @@
                             },
                             {
                                 "glob": "**/*",
+                                "input": "node_modules/@beyonda-labs/angular-components/assets/images",
+                                "output": "assets/angular-components/images"
+                            },
+                            {
+                                "glob": "**/*",
                                 "input": "node_modules/monaco-editor/min",
                                 "output": "assets/monaco"
                             }

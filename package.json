@@ -10,7 +10,7 @@
         "postinstall": "npm list",
         "prebuild": "npm run merge-translations",
         "start": "node ./scripts/serve-watch-libs.js",
-        "test": "ng test --browsers ChromeHeadless --watch=false",
+        "test": "jest",
         "update-translations": "npm run merge-translations && node scripts/update-translations.js",
         "watch": "ng build --watch --configuration development"
     },

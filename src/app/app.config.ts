@@ -1,10 +1,10 @@
 import { ApplicationConfig, importProvidersFrom, provideZoneChangeDetection } from '@angular/core';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient, provideHttpClient, withInterceptors } from '@angular/common/http';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { provideRouter } from '@angular/router';
-import { provideBeyEnvironment, provideBeyModal, provideBeyToast } from '@beyonda-labs/angular-components';
+import { beySessionInterceptor, provideBeyEnvironment, provideBeyModal, provideBeySession, provideBeyToast } from '@beyonda-labs/angular-components';
 import { routes } from './app.routes';
 import { environment } from '../environments/environment';
 
@@ -13,8 +13,10 @@ export const appConfig: ApplicationConfig = {
         provideZoneChangeDetection({ eventCoalescing: true }),
         provideRouter(routes),
         provideAnimationsAsync(),
+        provideHttpClient(withInterceptors([beySessionInterceptor])),
         provideBeyModal(),
         provideBeyToast(),
+        provideBeySession({ loginRoute: '/demo' }),
         provideBeyEnvironment({
             accessControlUrl: environment.accessControlUrl,
             appName: environment.appName,
@@ -31,8 +33,6 @@ export const appConfig: ApplicationConfig = {
                 }
             })
         ),
-        HttpClient,
-        importProvidersFrom(HttpClientModule)
     ]
 };
 
