@@ -1,6 +1,6 @@
 {
     "name": "angular-components-demo",
-    "version": "0.0.0",
+    "version": "1.0.0",
     "scripts": {
         "build": "ng build",
         "lib:refresh": "npm i --no-save ../angular-components/dist",
