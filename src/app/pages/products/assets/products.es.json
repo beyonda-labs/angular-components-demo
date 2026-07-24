@@ -1,0 +1,79 @@
+{
+    "angular-components-demo": {
+        "products": {
+            "title": "Productos",
+            "actions": {
+                "create": {
+                    "label": "Nuevo producto",
+                    "tooltip": "Crear un nuevo producto"
+                },
+                "edit": {
+                    "label": "Editar",
+                    "tooltip": "Editar el producto seleccionado"
+                },
+                "delete": {
+                    "label": "Eliminar",
+                    "tooltip": "Eliminar los productos seleccionados"
+                }
+            },
+            "modal": {
+                "delete": {
+                    "message": "Esta acción eliminará {{count}} producto(s) y no se puede deshacer. ¿Deseas continuar?",
+                    "title": "Eliminar productos"
+                }
+            },
+            "toast": {
+                "create-success": "Producto creado correctamente",
+                "edit-success": "Producto actualizado correctamente",
+                "delete-success": "Producto(s) eliminado(s) correctamente"
+            },
+            "form": {
+                "create": {
+                    "title": "Nuevo producto"
+                },
+                "edit": {
+                    "title": "Editar producto"
+                },
+                "product": {
+                    "label": "Datos del producto",
+                    "name": {
+                        "label": "Nombre",
+                        "placeholder": "Nombre del producto"
+                    },
+                    "category": {
+                        "label": "Categoría",
+                        "placeholder": "Categoría del producto"
+                    },
+                    "price": {
+                        "label": "Precio (€)",
+                        "placeholder": "0.00"
+                    },
+                    "available": {
+                        "label": "Disponible"
+                    }
+                }
+            },
+            "search": {
+                "fields": {
+                    "available": "Disponible",
+                    "category": "Categoría",
+                    "name": "Nombre",
+                    "price": "Precio"
+                }
+            },
+            "table": {
+                "columns": {
+                    "name": "Nombre",
+                    "category": "Categoría",
+                    "price": "Precio"
+                },
+                "empty": "No se han encontrado productos",
+                "tooltips": {
+                    "name": "Nombre del producto",
+                    "category": "Categoría del producto",
+                    "price": "Precio por unidad"
+                }
+            }
+        }
+    }
+}

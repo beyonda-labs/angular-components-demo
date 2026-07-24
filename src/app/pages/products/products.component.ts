@@ -1,14 +1,8 @@
-import { Component, inject } from '@angular/core';
-import { Router } from '@angular/router';
-import { faArrowRightFromBracket, faHouse, faPlus } from '@fortawesome/free-solid-svg-icons';
+import { Component } from '@angular/core';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { TranslateModule } from '@ngx-translate/core';
 
 import {
-    BeyAppLayoutBottomAction,
-    BeyAppLayoutComponent,
-    BeyAppLayoutConfig,
-    BeyAppLayoutService,
-    BeyAppLayoutTopAction,
     BeyFormCheckboxField,
     BeyFormField,
     BeyFormNumberField,
@@ -16,8 +10,6 @@ import {
     BeyFormSection,
     BeyFormTextField,
     BeyHeaderActionType,
-    BeyLeftMenuTitle,
-    BeyLeftMenuUserInfo,
     BeyPageAction,
     BeyPageActionScope,
     BeyPageActionZone,
@@ -32,53 +24,28 @@ import {
     BeySearchField,
     BeySearchFieldType,
     BeySearchSortDirection,
-    BeySessionService,
     BeyTableColumn,
     BeyTextTableCell
 } from '@beyonda-labs/angular-components';
 
-const ICON_SRC = 'assets/angular-components/icons/demo-icon.svg';
-const PREFIX = 'angular-components-demo.page';
+const PREFIX = 'angular-components-demo.products';
 
 @Component({
-    selector: 'app-page',
-    imports: [BeyAppLayoutComponent, BeyPageComponent, TranslateModule],
-    templateUrl: './page.component.html',
+    selector: 'app-products',
+    imports: [BeyPageComponent, TranslateModule],
+    templateUrl: './products.component.html',
     standalone: true
 })
-export class PageComponent {
-    private readonly appLayoutService = inject(BeyAppLayoutService);
-    private readonly router = inject(Router);
-    private readonly sessionService = inject(BeySessionService);
-
-    readonly config = this.buildConfig();
+export class ProductsComponent {
     readonly productsPageConfig = this.buildProductsPageConfig();
-
-    private buildConfig(): BeyAppLayoutConfig {
-        const user = this.sessionService.user();
-
-        return new BeyAppLayoutConfig({
-            iconSrc: ICON_SRC,
-            productName: `${PREFIX}.productName`,
-            prefix: PREFIX,
-            title: new BeyLeftMenuTitle({ icon: ICON_SRC, title: `${PREFIX}.title` }),
-            topActions: [new BeyAppLayoutTopAction({ icon: faHouse, key: 'page', route: '/page' })],
-            bottomActions: [new BeyAppLayoutBottomAction({ icon: faArrowRightFromBracket, key: 'logout' })],
-            userInfo: user
-                ? new BeyLeftMenuUserInfo({ name: user.name ?? '', surname: user.surname ?? '', email: user.email })
-                : undefined,
-            onMenuActionClick: key => this.onMenuAction(key),
-            onRouteActivated: () => this.appLayoutService.clearBreadcrumb()
-        });
-    }
 
     private buildProductsPageConfig(): BeyPageConfig {
         return new BeyPageConfig({
             page: 'products',
-            prefix: `${PREFIX}.products`,
+            prefix: PREFIX,
             baseUrl: '/products',
             headerConfig: new BeyPageHeaderConfig({
-                title: `${PREFIX}.products.title`,
+                title: `${PREFIX}.title`,
                 actions: [
                     new BeyPageAction({
                         key: BeyPageStandardAction.Create,
@@ -124,7 +91,7 @@ export class PageComponent {
 
     private buildProductsFormConfig(): BeyPageFormConfig {
         return new BeyPageFormConfig<unknown>({
-            prefix: `${PREFIX}.products.form`,
+            prefix: `${PREFIX}.form`,
             buildSections: item => {
                 const secondaryFields: BeyFormField[] = [
                     new BeyFormNumberField({ key: 'price', columns: 6, isRequired: true, min: 0 })
@@ -205,12 +172,5 @@ export class PageComponent {
             new BeyTextTableCell({ content: item.category ?? '', tooltip: item.category ?? '' }),
             new BeyTextTableCell({ content: typeof price === 'number' ? `${price.toFixed(2)} €` : '' })
         ];
-    }
-
-    private onMenuAction(key: string): void {
-        if (key === 'logout') {
-            this.sessionService.clear();
-            this.router.navigate(['/demo']);
-        }
     }
 }

@@ -1,7 +1,9 @@
 import { Routes } from '@angular/router';
 import { beyAuthGuard, beyLoginGuard, BeyLoginOAuthCallbackComponent } from '@beyonda-labs/angular-components';
+import { CategoriesComponent } from './pages/categories/categories.component';
 import { DemoComponent } from './pages/demo/demo.component';
-import { PageComponent } from './pages/page/page.component';
+import { ProductsComponent } from './pages/products/products.component';
+import { AppShellComponent } from './shell/app-shell.component';
 
 export const routes: Routes = [
     {
@@ -15,9 +17,20 @@ export const routes: Routes = [
         canActivate: [beyLoginGuard]
     },
     {
-        path: 'page',
-        component: PageComponent,
-        canActivate: [beyAuthGuard]
+        path: '',
+        component: AppShellComponent,
+        children: [
+            {
+                path: 'products',
+                component: ProductsComponent,
+                canActivate: [beyAuthGuard]
+            },
+            {
+                path: 'categories',
+                component: CategoriesComponent,
+                canActivate: [beyAuthGuard]
+            }
+        ]
     },
     {
         path: 'oauth/callback',

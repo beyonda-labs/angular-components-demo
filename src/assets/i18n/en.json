@@ -1,90 +1,232 @@
 {
     "angular-components-demo": {
-        "page": {
+        "categories": {
+            "title": "Product categories",
+            "actions": {
+                "createGroup": {
+                    "label": "Add",
+                    "tooltip": "Create a new product or category"
+                },
+                "create": {
+                    "label": "New product",
+                    "tooltip": "Create a new product in this category"
+                },
+                "create-category": {
+                    "label": "New category",
+                    "tooltip": "Create a new subcategory here"
+                },
+                "edit": {
+                    "label": "Edit",
+                    "tooltip": "Edit the selected product"
+                },
+                "edit-category": {
+                    "label": "Edit category",
+                    "tooltip": "Edit the selected category"
+                },
+                "move": {
+                    "label": "Move",
+                    "tooltip": "Move the selected items to another category"
+                },
+                "delete": {
+                    "label": "Delete",
+                    "tooltip": "Delete the selected products"
+                },
+                "delete-category": {
+                    "label": "Delete category",
+                    "tooltip": "Delete the selected categories"
+                },
+                "restore-trash-item": {
+                    "label": "Restore",
+                    "tooltip": "Restore the selected items"
+                },
+                "delete-trash-item": {
+                    "label": "Delete forever",
+                    "tooltip": "Permanently delete the selected items"
+                }
+            },
+            "modal": {
+                "delete": {
+                    "message": "This action will move {{count}} product(s) to the trash. You can restore them from there later. Do you want to continue?",
+                    "title": "Delete products"
+                },
+                "delete-category": {
+                    "message": "This action will move {{count}} categor(y/ies) to the trash. You can restore them from there later. Do you want to continue?",
+                    "title": "Delete categories"
+                },
+                "delete-trash-item": {
+                    "message": "This action will permanently delete {{count}} item(s) and cannot be undone. Do you want to continue?",
+                    "title": "Delete forever"
+                }
+            },
+            "toast": {
+                "create-success": "Product created successfully",
+                "edit-success": "Product updated successfully",
+                "delete-success": "Product(s) deleted successfully",
+                "create-category-success": "Category created successfully",
+                "edit-category-success": "Category updated successfully",
+                "delete-category-success": "Categor(y/ies) deleted successfully",
+                "delete-trash-item-success": "Item(s) permanently deleted",
+                "restore-trash-item-success": "Item(s) restored successfully",
+                "move-success": "Item(s) moved successfully"
+            },
+            "move": {
+                "title": "Move to..."
+            },
+            "form": {
+                "create": {
+                    "title": "New product"
+                },
+                "edit": {
+                    "title": "Edit product"
+                },
+                "item": {
+                    "label": "Product details",
+                    "name": {
+                        "label": "Name",
+                        "placeholder": "Product name"
+                    },
+                    "price": {
+                        "label": "Price (€)",
+                        "placeholder": "0.00"
+                    }
+                }
+            },
+            "categoryForm": {
+                "form": {
+                    "create": {
+                        "title": "New category"
+                    },
+                    "edit": {
+                        "title": "Edit category"
+                    }
+                },
+                "category": {
+                    "label": "Category details",
+                    "name": {
+                        "label": "Name",
+                        "placeholder": "Category name"
+                    }
+                }
+            },
+            "categories": {
+                "root": "All categories"
+            },
+            "search": {
+                "fields": {
+                    "name": "Name",
+                    "price": "Price"
+                }
+            },
+            "tabs": {
+                "table": {
+                    "label": "Catalog"
+                },
+                "trash": {
+                    "label": "Trash"
+                }
+            },
+            "table": {
+                "columns": {
+                    "name": "Name",
+                    "price": "Price"
+                },
+                "empty": "No categories or products found",
+                "tooltips": {
+                    "name": "Category or product name",
+                    "price": "Price per unit"
+                }
+            }
+        },
+        "products": {
+            "title": "Products",
+            "actions": {
+                "create": {
+                    "label": "New product",
+                    "tooltip": "Create a new product"
+                },
+                "edit": {
+                    "label": "Edit",
+                    "tooltip": "Edit the selected product"
+                },
+                "delete": {
+                    "label": "Delete",
+                    "tooltip": "Delete the selected products"
+                }
+            },
+            "modal": {
+                "delete": {
+                    "message": "This action will delete {{count}} product(s) and cannot be undone. Do you want to continue?",
+                    "title": "Delete products"
+                }
+            },
+            "toast": {
+                "create-success": "Product created successfully",
+                "edit-success": "Product updated successfully",
+                "delete-success": "Product(s) deleted successfully"
+            },
+            "form": {
+                "create": {
+                    "title": "New product"
+                },
+                "edit": {
+                    "title": "Edit product"
+                },
+                "product": {
+                    "label": "Product details",
+                    "name": {
+                        "label": "Name",
+                        "placeholder": "Product name"
+                    },
+                    "category": {
+                        "label": "Category",
+                        "placeholder": "Product category"
+                    },
+                    "price": {
+                        "label": "Price (€)",
+                        "placeholder": "0.00"
+                    },
+                    "available": {
+                        "label": "Available"
+                    }
+                }
+            },
+            "search": {
+                "fields": {
+                    "available": "Available",
+                    "category": "Category",
+                    "name": "Name",
+                    "price": "Price"
+                }
+            },
+            "table": {
+                "columns": {
+                    "name": "Name",
+                    "category": "Category",
+                    "price": "Price"
+                },
+                "empty": "No products found",
+                "tooltips": {
+                    "name": "Product name",
+                    "category": "Product category",
+                    "price": "Price per unit"
+                }
+            }
+        },
+        "shell": {
             "title": "Demo App",
             "productName": "Demo App",
             "actions": {
-                "page": {
+                "products": {
                     "label": "Products",
                     "tooltip": "Go to products"
+                },
+                "categories": {
+                    "label": "Categories",
+                    "tooltip": "Go to product categories"
                 },
                 "logout": {
                     "label": "Log out",
                     "tooltip": "Sign out"
-                }
-            },
-            "content": {
-                "title": "Welcome back",
-                "paragraph": "You have successfully logged in. This is a sample protected page."
-            },
-            "products": {
-                "title": "Products",
-                "actions": {
-                    "create": {
-                        "label": "New product",
-                        "tooltip": "Create a new product"
-                    },
-                    "edit": {
-                        "label": "Edit",
-                        "tooltip": "Edit the selected product"
-                    },
-                    "delete": {
-                        "label": "Delete",
-                        "tooltip": "Delete the selected products"
-                    }
-                },
-                "form": {
-                    "create": {
-                        "title": "New product"
-                    },
-                    "edit": {
-                        "title": "Edit product"
-                    },
-                    "product": {
-                        "label": "Product details",
-                        "name": {
-                            "label": "Name",
-                            "placeholder": "Product name"
-                        },
-                        "category": {
-                            "label": "Category",
-                            "placeholder": "Product category"
-                        },
-                        "price": {
-                            "label": "Price (€)",
-                            "placeholder": "0.00"
-                        },
-                        "available": {
-                            "label": "Available"
-                        }
-                    }
-                },
-                "save": {
-                    "success": "Product saved successfully"
-                },
-                "search": {
-                    "fields": {
-                        "available": "Available",
-                        "category": "Category",
-                        "name": "Name",
-                        "price": "Price"
-                    }
-                },
-                "delete": {
-                    "success": "Product(s) deleted successfully"
-                },
-                "table": {
-                    "columns": {
-                        "name": "Name",
-                        "category": "Category",
-                        "price": "Price"
-                    },
-                    "empty": "No products found",
-                    "tooltips": {
-                        "name": "Product name",
-                        "category": "Product category",
-                        "price": "Price per unit"
-                    }
                 }
             }
         }
@@ -105,6 +247,9 @@
         "form": {
             "cancel": {
                 "without-changes": "No changes have been made to the form."
+            },
+            "chips": {
+                "remove": "Remove"
             },
             "modal": {
                 "close-confirmation": {
@@ -517,6 +662,21 @@
                 "label": "Checkbox Fields",
                 "tooltip": "Checkbox variants with basic, required, disabled and switch states"
             },
+            "sectionChips": {
+                "chips1": {
+                    "label": "Basic Chips",
+                    "placeholder": "Type and press Enter"
+                },
+                "chips2": {
+                    "label": "Required Chips (max. 5)",
+                    "placeholder": "Add up to 5 tags"
+                },
+                "chips3": {
+                    "label": "Disabled Chips"
+                },
+                "label": "Chips Fields",
+                "tooltip": "Chips variants with basic, required with maxItems, and disabled states"
+            },
             "sectionDate": {
                 "date1": {
                     "label": "Date With Range"
@@ -680,12 +840,20 @@
                     "label": "Export",
                     "tooltip": "Export goal"
                 },
+                "individualGoal": {
+                    "label": "Individual goal",
+                    "tooltip": "Create a new individual goal"
+                },
                 "newGoal": {
                     "label": "New goal",
                     "tooltip": "Create a new goal"
+                },
+                "teamGoal": {
+                    "label": "Team goal",
+                    "tooltip": "Create a new team goal"
                 }
             },
-            "example": "Header with actions on both sides and a kebab menu (⋮) for secondary actions.",
+            "example": "Header with actions on both sides and a kebab menu (...) for secondary actions.",
             "title": "Goals"
         },
         "headers": "Headers",
@@ -843,6 +1011,7 @@
                 "action": "Action",
                 "name": "Name",
                 "role": "Role",
+                "skills": "Skills",
                 "status": "Status"
             },
             "empty": "No rows available for this example.",
@@ -859,6 +1028,7 @@
             },
             "tooltips": {
                 "name": "Primary identity column",
+                "skills": "Badge cells accept a list, rendering more than one badge per row",
                 "status": "Status cells can be translated and tooltip-enabled"
             }
         },

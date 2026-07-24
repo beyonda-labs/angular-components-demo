@@ -89,6 +89,11 @@
                 },
                 "serve": {
                     "builder": "@angular-devkit/build-angular:dev-server",
+                    "options": {
+                        "prebundle": {
+                            "exclude": ["@beyonda-labs/angular-components"]
+                        }
+                    },
                     "configurations": {
                         "production": {
                             "buildTarget": "angular-components-demo:build:production"

@@ -1,0 +1,141 @@
+{
+    "angular-components-demo": {
+        "categories": {
+            "title": "Categorías de productos",
+            "actions": {
+                "createGroup": {
+                    "label": "Añadir",
+                    "tooltip": "Crear un nuevo producto o categoría"
+                },
+                "create": {
+                    "label": "Nuevo producto",
+                    "tooltip": "Crear un nuevo producto en esta categoría"
+                },
+                "create-category": {
+                    "label": "Nueva categoría",
+                    "tooltip": "Crear una nueva subcategoría aquí"
+                },
+                "edit": {
+                    "label": "Editar",
+                    "tooltip": "Editar el producto seleccionado"
+                },
+                "edit-category": {
+                    "label": "Editar categoría",
+                    "tooltip": "Editar la categoría seleccionada"
+                },
+                "move": {
+                    "label": "Mover",
+                    "tooltip": "Mover los elementos seleccionados a otra categoría"
+                },
+                "delete": {
+                    "label": "Eliminar",
+                    "tooltip": "Eliminar los productos seleccionados"
+                },
+                "delete-category": {
+                    "label": "Eliminar categoría",
+                    "tooltip": "Eliminar las categorías seleccionadas"
+                },
+                "restore-trash-item": {
+                    "label": "Restaurar",
+                    "tooltip": "Restaurar los elementos seleccionados"
+                },
+                "delete-trash-item": {
+                    "label": "Eliminar definitivamente",
+                    "tooltip": "Eliminar definitivamente los elementos seleccionados"
+                }
+            },
+            "modal": {
+                "delete": {
+                    "message": "Esta acción moverá {{count}} producto(s) a la papelera. Podrás restaurarlos desde allí más tarde. ¿Deseas continuar?",
+                    "title": "Eliminar productos"
+                },
+                "delete-category": {
+                    "message": "Esta acción moverá {{count}} categoría(s) a la papelera. Podrás restaurarlas desde allí más tarde. ¿Deseas continuar?",
+                    "title": "Eliminar categorías"
+                },
+                "delete-trash-item": {
+                    "message": "Esta acción eliminará definitivamente {{count}} elemento(s) y no se puede deshacer. ¿Deseas continuar?",
+                    "title": "Eliminar definitivamente"
+                }
+            },
+            "toast": {
+                "create-success": "Producto creado correctamente",
+                "edit-success": "Producto actualizado correctamente",
+                "delete-success": "Producto(s) eliminado(s) correctamente",
+                "create-category-success": "Categoría creada correctamente",
+                "edit-category-success": "Categoría actualizada correctamente",
+                "delete-category-success": "Categoría(s) eliminada(s) correctamente",
+                "delete-trash-item-success": "Elemento(s) eliminado(s) definitivamente",
+                "restore-trash-item-success": "Elemento(s) restaurado(s) correctamente",
+                "move-success": "Elemento(s) movido(s) correctamente"
+            },
+            "move": {
+                "title": "Mover a..."
+            },
+            "form": {
+                "create": {
+                    "title": "Nuevo producto"
+                },
+                "edit": {
+                    "title": "Editar producto"
+                },
+                "item": {
+                    "label": "Datos del producto",
+                    "name": {
+                        "label": "Nombre",
+                        "placeholder": "Nombre del producto"
+                    },
+                    "price": {
+                        "label": "Precio (€)",
+                        "placeholder": "0.00"
+                    }
+                }
+            },
+            "categoryForm": {
+                "form": {
+                    "create": {
+                        "title": "Nueva categoría"
+                    },
+                    "edit": {
+                        "title": "Editar categoría"
+                    }
+                },
+                "category": {
+                    "label": "Datos de la categoría",
+                    "name": {
+                        "label": "Nombre",
+                        "placeholder": "Nombre de la categoría"
+                    }
+                }
+            },
+            "categories": {
+                "root": "Todas las categorías"
+            },
+            "search": {
+                "fields": {
+                    "name": "Nombre",
+                    "price": "Precio"
+                }
+            },
+            "tabs": {
+                "table": {
+                    "label": "Catálogo"
+                },
+                "trash": {
+                    "label": "Papelera"
+                }
+            },
+            "table": {
+                "columns": {
+                    "name": "Nombre",
+                    "price": "Precio"
+                },
+                "empty": "No se han encontrado categorías ni productos",
+                "tooltips": {
+                    "name": "Nombre de la categoría o producto",
+                    "price": "Precio por unidad"
+                }
+            }
+        }
+    }
+}

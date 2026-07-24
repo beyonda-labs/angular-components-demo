@@ -1,0 +1,79 @@
+{
+    "angular-components-demo": {
+        "products": {
+            "title": "Products",
+            "actions": {
+                "create": {
+                    "label": "New product",
+                    "tooltip": "Create a new product"
+                },
+                "edit": {
+                    "label": "Edit",
+                    "tooltip": "Edit the selected product"
+                },
+                "delete": {
+                    "label": "Delete",
+                    "tooltip": "Delete the selected products"
+                }
+            },
+            "modal": {
+                "delete": {
+                    "message": "This action will delete {{count}} product(s) and cannot be undone. Do you want to continue?",
+                    "title": "Delete products"
+                }
+            },
+            "toast": {
+                "create-success": "Product created successfully",
+                "edit-success": "Product updated successfully",
+                "delete-success": "Product(s) deleted successfully"
+            },
+            "form": {
+                "create": {
+                    "title": "New product"
+                },
+                "edit": {
+                    "title": "Edit product"
+                },
+                "product": {
+                    "label": "Product details",
+                    "name": {
+                        "label": "Name",
+                        "placeholder": "Product name"
+                    },
+                    "category": {
+                        "label": "Category",
+                        "placeholder": "Product category"
+                    },
+                    "price": {
+                        "label": "Price (€)",
+                        "placeholder": "0.00"
+                    },
+                    "available": {
+                        "label": "Available"
+                    }
+                }
+            },
+            "search": {
+                "fields": {
+                    "available": "Available",
+                    "category": "Category",
+                    "name": "Name",
+                    "price": "Price"
+                }
+            },
+            "table": {
+                "columns": {
+                    "name": "Name",
+                    "category": "Category",
+                    "price": "Price"
+                },
+                "empty": "No products found",
+                "tooltips": {
+                    "name": "Product name",
+                    "category": "Product category",
+                    "price": "Price per unit"
+                }
+            }
+        }
+    }
+}
