@@ -260,7 +260,8 @@
             },
             "required": "This field is required",
             "submit": {
-                "invalid": "There are errors in the form, please correct or complete the required fields before submitting."
+                "invalid": "There are errors in the form, please correct or complete the required fields before submitting.",
+                "without-changes": "No changes have been made to the form."
             }
         },
         "header": {
@@ -424,10 +425,6 @@
             }
         },
         "page": {
-            "delete": {
-                "message": "This action will delete {{count}} item(s) and cannot be undone. Do you want to continue?",
-                "title": "Delete items"
-            },
             "form": {
                 "cancel": "Cancel",
                 "submit": "Save"
@@ -442,6 +439,31 @@
             "page-size": "Page size",
             "previous-page": "Go to previous page",
             "results-range": "Showing {{ start }}-{{ end }} of {{ total }} results"
+        },
+        "properties-menu": {
+            "close": "Close",
+            "list": {
+                "empty": "No items"
+            },
+            "remove": "Remove",
+            "spacing": {
+                "bottom": "Bottom",
+                "left": "Left",
+                "right": "Right",
+                "top": "Top"
+            },
+            "tabs": {
+                "label": "Property tabs"
+            },
+            "textField": {
+                "insertVariable": "Insert variable"
+            },
+            "variablePicker": {
+                "close": "Close",
+                "empty": "No variables found",
+                "label": "Variables",
+                "search": "Search variables"
+            }
         },
         "search": {
             "add": "Add filter",
@@ -481,7 +503,8 @@
             "select-row": "Select row"
         },
         "tabs": {
-            "label": "Navigation tabs"
+            "label": "Navigation tabs",
+            "more": "More tabs"
         },
         "toast": {
             "types": {
@@ -599,7 +622,11 @@
         "components": "Components",
         "compound": "Compound",
         "floating-preferences": {
-            "example": "Self-contained pill with language and theme selectors. Reads and writes state directly via TranslateService and BeyThemeService — no inputs or configuration required."
+            "example": "Self-contained language and theme selectors. Reads and writes state directly via TranslateService and BeyThemeService — no callbacks required.",
+            "examples": {
+                "noPill": "Without the pill (usePill = false), for embedding in another container",
+                "pill": "Default (floating pill)"
+            }
         },
         "floating-preferences-section": "Floating Preferences",
         "footer": {
@@ -824,6 +851,10 @@
                     "label": "Archive",
                     "tooltip": "Archive goal"
                 },
+                "back": {
+                    "label": "Back",
+                    "tooltip": "Back to goals"
+                },
                 "delete": {
                     "label": "Delete",
                     "tooltip": "Delete goal"
@@ -853,7 +884,13 @@
                     "tooltip": "Create a new team goal"
                 }
             },
+            "badge": "Active",
             "example": "Header with actions on both sides and a kebab menu (...) for secondary actions.",
+            "examples": {
+                "back": "Header with back button and status badge",
+                "default": "Default header, no back button",
+                "subPage": "Sub-page variant, smaller title"
+            },
             "title": "Goals"
         },
         "headers": "Headers",
@@ -900,6 +937,8 @@
                     "tooltip": "Get support"
                 }
             },
+            "documentsClicked": "\"Documents\" action was triggered by clicking its label.",
+            "documentsHint": "\"Documents\" has both its own action and sub-actions: click its label to run the action, click the chevron to toggle the submenu.",
             "example": "Left menu with grouped actions, nested navigation and collapsed behavior.",
             "examples": {
                 "collapsed": "Collapsed example",
@@ -1001,6 +1040,15 @@
             }
         },
         "pagination-section": "Pagination",
+        "pdfViewer": {
+            "example": "PDF preview built on ngx-extended-pdf-viewer with its native toolbar hidden and a fully custom toolbar driven through the viewer's imperative API and events."
+        },
+        "pdfViewers": "PDF Viewer",
+        "propertiesMenu": {
+            "example": "Property inspector for a selected editor block, with tabs, collapsible groups and variable insertion.",
+            "provideVariables": "Provide variables"
+        },
+        "propertiesMenus": "Properties Menu",
         "simple": "Simple",
         "table": {
             "actions": {
@@ -1052,7 +1100,8 @@
             "example": "Model-driven horizontal tab bar with keyboard navigation, optional icons and disabled state. The consumer renders content based on the active tab key.",
             "examples": {
                 "basic": "Basic",
-                "icons": "With icons & disabled"
+                "icons": "With icons & disabled",
+                "overflow": "Overflow (narrow container)"
             },
             "icons": {
                 "tabs": {
@@ -1064,6 +1113,31 @@
                     },
                     "documents": {
                         "label": "Documents"
+                    },
+                    "settings": {
+                        "label": "Settings"
+                    }
+                }
+            },
+            "overflow": {
+                "tabs": {
+                    "activity": {
+                        "label": "Activity"
+                    },
+                    "comments": {
+                        "label": "Comments"
+                    },
+                    "details": {
+                        "label": "Details"
+                    },
+                    "history": {
+                        "label": "History"
+                    },
+                    "overview": {
+                        "label": "Overview"
+                    },
+                    "permissions": {
+                        "label": "Permissions"
                     },
                     "settings": {
                         "label": "Settings"
