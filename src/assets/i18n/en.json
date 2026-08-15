@@ -272,6 +272,7 @@
                 "bad-gateway": "The server received an invalid response. Please try again later.",
                 "bad-request": "The request could not be processed. Please check the submitted data.",
                 "conflict": "A conflict occurred with the current state of the resource.",
+                "duplicate-field": "An item with field \"{{fieldName}}\" and value \"{{value}}\" already exists.",
                 "forbidden": "You do not have permission to perform this action.",
                 "internal-server-error": "An internal server error occurred. Please try again later.",
                 "invalid-child": "The field \"{{childField}}\" is not valid for parent \"{{parentField}}\".",
@@ -311,6 +312,7 @@
                     "password2": "Confirm password",
                     "surname": "Surname"
                 },
+                "name": "Name",
                 "pattern": {
                     "email": "user@domain.com"
                 }
@@ -320,6 +322,7 @@
                 "bad-request": "Invalid request",
                 "conflict": "Conflict",
                 "default": "Error",
+                "duplicate-field": "Duplicate value",
                 "forbidden": "Access denied",
                 "internal-server-error": "Server error",
                 "invalid-child": "Invalid field",
@@ -558,6 +561,14 @@
             "title": "Demo App"
         },
         "appLayouts": "App Layouts",
+        "badge": {
+            "example": "Available bey-badge-* CSS classes: emphasis (grayscale) variants and semantic color variants. Each badge shows the class name it's rendered with.",
+            "examples": {
+                "color": "Color variants",
+                "emphasis": "Emphasis variants"
+            }
+        },
+        "badges": "Badges",
         "breadcrumb": {
             "basic": {
                 "detail": {
@@ -716,6 +727,16 @@
                 },
                 "label": "Date Fields",
                 "tooltip": "Date fields with range, required and disabled states"
+            },
+            "sectionInfo": {
+                "info1": {
+                    "label": "Version"
+                },
+                "info2": {
+                    "label": "Created On"
+                },
+                "label": "Info Fields",
+                "tooltip": "Read-only icon/label pairs — no input styling, no FormControl"
             },
             "sectionNumber": {
                 "label": "Number Fields",
