@@ -16,6 +16,7 @@ import {
     BeyPageComponent,
     BeyPageConfig,
     BeyPageFormConfig,
+    BeyPageHandle,
     BeyPageHeaderConfig,
     BeyPageItem,
     BeyPageItemType,
@@ -43,12 +44,14 @@ export class CategoriesComponent {
         useTrash: true
     });
 
+    private page?: BeyPageHandle;
+
     readonly categoriesPageConfig = this.buildCategoriesPageConfig();
 
     private buildCategoriesPageConfig(): BeyPageConfig {
         return new BeyPageConfig({
-            page: 'productCategories',
             prefix: PREFIX,
+            onReady: handle => (this.page = handle),
             baseUrl: '/product-categories',
             headerConfig: new BeyPageHeaderConfig({
                 title: `${PREFIX}.title`,
@@ -203,7 +206,7 @@ export class CategoriesComponent {
             return [
                 new BeyLinkTableCell({
                     content: record.name ?? '',
-                    action: () => this.categoriesConfig.openCategory(pageItem)
+                    action: () => this.page?.openCategory(pageItem)
                 }),
                 new BeyTextTableCell({ content: '' })
             ];

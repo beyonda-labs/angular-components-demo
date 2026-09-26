@@ -41,7 +41,6 @@ export class ProductsComponent {
 
     private buildProductsPageConfig(): BeyPageConfig {
         return new BeyPageConfig({
-            page: 'products',
             prefix: PREFIX,
             baseUrl: '/products',
             headerConfig: new BeyPageHeaderConfig({

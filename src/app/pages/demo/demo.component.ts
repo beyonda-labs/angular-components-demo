@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { BeyStyleGuideComponent } from '@beyonda-labs/angular-components';
+import { BeyStyleGuideComponent } from '@beyonda-labs/angular-components/style-guide';
 
 @Component({
     selector: 'app-demo',

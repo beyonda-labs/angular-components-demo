@@ -3,7 +3,8 @@ const path = require('path');
 
 const sourceDirs = [
     path.resolve(__dirname, '../src/app'),
-    path.resolve(__dirname, '../node_modules/@beyonda-labs/angular-components/assets/i18n')
+    path.resolve(__dirname, '../node_modules/@beyonda-labs/angular-components/assets/i18n'),
+    path.resolve(__dirname, '../node_modules/@beyonda-labs/angular-components/assets/i18n-style-guide')
 ];
 
 const targetDir = path.resolve(__dirname, '../src/assets/i18n');

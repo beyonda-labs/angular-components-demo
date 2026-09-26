@@ -232,12 +232,17 @@
         }
     },
     "angular-components": {
+        "app-layout": {
+            "main-content": "Contenido principal"
+        },
         "breadcrumb": {
             "label": "Migas de pan"
         },
         "floating-preferences": {
             "dark": "Oscuro",
-            "light": "Claro"
+            "language": "Idioma",
+            "light": "Claro",
+            "theme": "Tema"
         },
         "footer": {
             "legal": "Legal",
@@ -245,11 +250,24 @@
             "terms": "Términos y condiciones"
         },
         "form": {
+            "autocomplete-field": {
+                "clear": "Vaciar",
+                "empty": "No se han encontrado opciones",
+                "toggle": "Mostrar opciones"
+            },
             "cancel": {
                 "without-changes": "No se han realizado cambios en el formulario."
             },
             "chips": {
                 "remove": "Eliminar"
+            },
+            "file-field": {
+                "choose": "Elegir archivo",
+                "clear": "Quitar archivo",
+                "empty": "Ningún archivo seleccionado",
+                "max-size": "Tamaño máximo: {{maxSize}}",
+                "too-large": "El archivo supera el tamaño máximo de {{maxSize}}",
+                "unsupported-type": "Tipo de archivo no admitido. Permitidos: {{accept}}"
             },
             "modal": {
                 "close-confirmation": {
@@ -258,10 +276,25 @@
                 },
                 "type": "Formulario"
             },
+            "number-field": {
+                "decrement": "Disminuir",
+                "increment": "Aumentar"
+            },
+            "password-field": {
+                "hide": "Ocultar contraseña",
+                "show": "Mostrar contraseña"
+            },
             "required": "Este campo es requerido",
+            "steps": {
+                "back": "Atrás",
+                "next": "Siguiente"
+            },
             "submit": {
                 "invalid": "Hay errores en el formulario, por favor corrija o complete los campos requeridos antes de enviar.",
                 "without-changes": "No se han realizado cambios en el formulario."
+            },
+            "text-variable-field": {
+                "insert-variable": "Insertar variable"
             }
         },
         "header": {
@@ -272,6 +305,21 @@
                 "bad-gateway": "El servidor recibió una respuesta no válida. Por favor, inténtelo de nuevo más tarde.",
                 "bad-request": "La solicitud no pudo ser procesada. Por favor, revise los datos enviados.",
                 "conflict": "Se produjo un conflicto con el estado actual del recurso.",
+                "document-generation": {
+                    "cyclical-block-reference": "Se ha detectado una referencia cíclica entre bloques reutilizables.",
+                    "insufficient-width-image": "No hay ancho suficiente para colocar una imagen en el documento.",
+                    "insufficient-width-list": "No hay ancho suficiente para colocar una lista en el documento.",
+                    "insufficient-width-list-item": "No hay ancho suficiente para un elemento de la lista.",
+                    "insufficient-width-paragraph": "No hay ancho suficiente para colocar un párrafo en el documento.",
+                    "invalid-image": "No se ha podido generar una imagen del documento. Comprueba que la variable o el archivo de imagen referenciado tenga un valor válido.",
+                    "invalid-image-width": "Una imagen del documento tiene un ancho no válido.",
+                    "invalid-request": "La solicitud no tiene el formato esperado.",
+                    "pagination-stuck": "No se ha podido paginar el documento correctamente. Revisa el contenido: puede haber un elemento demasiado grande o mal configurado.",
+                    "pdf-page-range": "El rango de páginas solicitado para un PDF insertado supera el número de páginas del archivo de origen.",
+                    "unresolved-block": "No se ha podido resolver el contenido de un bloque reutilizable referenciado.",
+                    "unresolved-header-footer": "No se ha podido resolver el contenido de la cabecera o el pie de página.",
+                    "validation-failed": "El documento tiene errores de validación pendientes. Corrígelos antes de generarlo."
+                },
                 "duplicate-field": "Ya existe un elemento con el campo \"{{fieldName}}\" con el valor \"{{value}}\".",
                 "forbidden": "No tiene permisos para realizar esta acción.",
                 "internal-server-error": "Se produjo un error interno en el servidor. Por favor, inténtelo de nuevo más tarde.",
@@ -288,6 +336,7 @@
                 "login": {
                     "existing-user": "Ya existe una cuenta con este correo electrónico.",
                     "invalid-credentials": "Email o contraseña incorrectos.",
+                    "invalid-refresh-token": "Tu sesión ha caducado. Inicia sesión de nuevo.",
                     "oauth-invalid-callback": "El callback de autenticación no es válido. Por favor, inténtelo de nuevo.",
                     "oauth-missing-access-token": "No se recibió token de acceso de {{provider}}. Por favor, inténtelo de nuevo.",
                     "oauth-missing-email": "{{provider}} no devolvió ninguna dirección de correo. Por favor, inténtelo de nuevo.",
@@ -296,6 +345,7 @@
                     "passwords-not-match": "Las contraseñas no coinciden.",
                     "provider-not-found": "El proveedor {{provider}} no está disponible."
                 },
+                "move-target-unchanged": "El elemento ya se encuentra en esta categoría.",
                 "not-found": "El recurso solicitado no fue encontrado.",
                 "required-field": "El campo \"{{fieldName}}\" es obligatorio.",
                 "service-unavailable": "El servicio no está disponible temporalmente. Por favor, inténtelo de nuevo más tarde.",
@@ -322,6 +372,21 @@
                 "bad-request": "Solicitud inválida",
                 "conflict": "Conflicto",
                 "default": "Error",
+                "document-generation": {
+                    "cyclical-block-reference": "Referencia cíclica",
+                    "insufficient-width-image": "Espacio insuficiente",
+                    "insufficient-width-list": "Espacio insuficiente",
+                    "insufficient-width-list-item": "Espacio insuficiente",
+                    "insufficient-width-paragraph": "Espacio insuficiente",
+                    "invalid-image": "Error al generar la imagen",
+                    "invalid-image-width": "Error al generar la imagen",
+                    "invalid-request": "Solicitud inválida",
+                    "pagination-stuck": "Error de paginación",
+                    "pdf-page-range": "Rango de páginas inválido",
+                    "unresolved-block": "Bloque no resuelto",
+                    "unresolved-header-footer": "Cabecera o pie no resuelto",
+                    "validation-failed": "Documento no válido"
+                },
                 "duplicate-field": "Valor duplicado",
                 "forbidden": "Acceso denegado",
                 "internal-server-error": "Error del servidor",
@@ -334,6 +399,7 @@
                 "login": {
                     "existing-user": "Cuenta ya existente",
                     "invalid-credentials": "Autenticación fallida",
+                    "invalid-refresh-token": "Sesión caducada",
                     "oauth-invalid-callback": "Error de autenticación",
                     "oauth-missing-access-token": "Error de autenticación",
                     "oauth-missing-email": "Error de autenticación",
@@ -342,6 +408,7 @@
                     "passwords-not-match": "Error de contraseña",
                     "provider-not-found": "Proveedor no disponible"
                 },
+                "move-target-unchanged": "Sin cambios",
                 "not-found": "No encontrado",
                 "required-field": "Campo obligatorio",
                 "service-unavailable": "Servicio no disponible",
@@ -374,7 +441,7 @@
                     "label": "Contraseña",
                     "placeholder": "Escribe tu contraseña"
                 },
-                "signinWith": "Continuar con"
+                "signin-with": "Continuar con"
             },
             "provider": {
                 "facebook": "Facebook",
@@ -383,8 +450,6 @@
             },
             "register": {
                 "button": {
-                    "back": "Atrás",
-                    "next": "Siguiente",
                     "register": "Crear cuenta"
                 },
                 "email": {
@@ -427,6 +492,12 @@
                 "warning": "Advertencia"
             }
         },
+        "option-picker": {
+            "close": "Cerrar",
+            "empty": "No se han encontrado opciones",
+            "label": "Opciones",
+            "search": "Buscar"
+        },
         "page": {
             "form": {
                 "cancel": "Cancelar",
@@ -444,12 +515,43 @@
             "results-range": "Mostrando {{ start }}-{{ end }} de {{ total }} resultados"
         },
         "properties-menu": {
+            "attachment-field": {
+                "clear": "Vaciar",
+                "empty": "No se han encontrado adjuntos",
+                "search": "Buscar adjuntos",
+                "too-large": "Este archivo supera el límite de {{maxSizeMB}} MB.",
+                "upload": "Subir un archivo nuevo",
+                "use-variable": "Usar una variable",
+                "wrong-type": "Este tipo de archivo no se acepta ({{accept}})."
+            },
             "close": "Cerrar",
+            "color-field": {
+                "clear": "Vaciar"
+            },
+            "file-field": {
+                "choose": "Elegir archivo",
+                "clear": "Vaciar",
+                "file-selected": "Archivo seleccionado",
+                "no-file-selected": "Ningún archivo seleccionado",
+                "too-large": "Este archivo supera el límite de {{maxSizeMB}} MB."
+            },
             "list": {
-                "empty": "No hay elementos"
+                "collapse": "Plegar",
+                "copied": "Copiado",
+                "copy": "Copiar la referencia",
+                "empty": "No hay elementos",
+                "expand": "Desplegar"
+            },
+            "number-array-field": {
+                "add": "Añadir"
             },
             "remove": "Eliminar",
-            "spacing": {
+            "select-field": {
+                "no-matches": "Sin coincidencias",
+                "search": "Buscar…",
+                "use-variable": "Usar una variable"
+            },
+            "spacing-field": {
                 "bottom": "Abajo",
                 "left": "Izquierda",
                 "right": "Derecha",
@@ -458,14 +560,8 @@
             "tabs": {
                 "label": "Pestañas de propiedades"
             },
-            "textField": {
-                "insertVariable": "Insertar variable"
-            },
-            "variablePicker": {
-                "close": "Cerrar",
-                "empty": "No se encontraron variables",
-                "label": "Variables",
-                "search": "Buscar variables"
+            "text-field": {
+                "insert-variable": "Insertar variable"
             }
         },
         "search": {
@@ -482,18 +578,19 @@
             "operators": {
                 "between": "Entre",
                 "contains": "Contiene",
-                "endsWith": "Termina por",
+                "ends-with": "Termina por",
                 "equals": "Igual a",
-                "greaterThan": "Mayor que",
-                "greaterThanOrEquals": "Mayor o igual",
-                "lessThan": "Menor que",
-                "lessThanOrEquals": "Menor o igual",
-                "notContains": "No contiene",
-                "notEquals": "Distinto de",
-                "startsWith": "Empieza por"
+                "greater-than": "Mayor que",
+                "greater-than-or-equals": "Mayor o igual",
+                "less-than": "Menor que",
+                "less-than-or-equals": "Menor o igual",
+                "not-contains": "No contiene",
+                "not-equals": "Distinto de",
+                "starts-with": "Empieza por"
             },
             "placeholder": "Buscar",
             "remove": "Eliminar filtro",
+            "row": "Filtro",
             "to-placeholder": "Hasta",
             "value-placeholder": "Introduce un valor",
             "values": {
@@ -523,7 +620,7 @@
         }
     },
     "angular-components-style-guide": {
-        "appLayout": {
+        "app-layout": {
             "actions": {
                 "dashboard": {
                     "label": "Panel",
@@ -560,15 +657,11 @@
             "example": "Diseño completo de aplicación con menú lateral colapsable, breadcrumb dinámico y área de contenido. Usa los botones o el menú para simular la navegación entre páginas.",
             "title": "App Demo"
         },
-        "appLayouts": "Diseños de aplicación",
+        "app-layout-section": "Diseños de aplicación",
         "badge": {
-            "example": "Clases CSS bey-badge-* disponibles: variantes de énfasis (escala de grises) y variantes de color semántico. Cada badge muestra el nombre de la clase con la que se renderiza.",
-            "examples": {
-                "color": "Variantes de color",
-                "emphasis": "Variantes de énfasis"
-            }
+            "example": "Todas las variantes de la etiqueta: primero los énfasis en gris y después los tonos semánticos."
         },
-        "badges": "Badges",
+        "badge-section": "Etiquetas",
         "breadcrumb": {
             "basic": {
                 "detail": {
@@ -635,7 +728,7 @@
         "floating-preferences": {
             "example": "Selectores de idioma y tema autogestionados. Lee y escribe el estado directamente a través de TranslateService y BeyThemeService — no requiere callbacks.",
             "examples": {
-                "noPill": "Sin la píldora (usePill = false), para embeberlo en otro contenedor",
+                "no-pill": "Sin la píldora (usePill = false), para embeberlo en otro contenedor",
                 "pill": "Por defecto (píldora flotante)"
             }
         },
@@ -644,14 +737,14 @@
             "example": "Barra de pie de página orientada a modelos con identidad de marca (icono, organización y nombre de producto) y enlaces de navegación legal opcionales (Términos y condiciones, Política de privacidad) mediante Angular Router.",
             "examples": {
                 "minimal": "Mínimo",
-                "withLinks": "Con enlaces legales"
+                "with-links": "Con enlaces legales"
             },
             "minimal": {
-                "productName": "Mi Aplicación"
+                "product-name": "Mi Aplicación"
             },
-            "withLinks": {
-                "orgName": "Beyonda Labs",
-                "productName": "Mi Aplicación"
+            "with-links": {
+                "org-name": "Beyonda Labs",
+                "product-name": "Mi Aplicación"
             }
         },
         "footers": "Pies de página",
@@ -684,7 +777,41 @@
                 "submitted": "El formulario modal ha sido enviado: ",
                 "title": "Nuevo contacto"
             },
-            "sectionCheckbox": {
+            "section-autocomplete": {
+                "autocomplete1": {
+                    "label": "Typeahead básico",
+                    "options": {
+                        "option1": "Opción 1",
+                        "option2": "Opción 2",
+                        "option3": "Opción 3",
+                        "option4": "Opción 4"
+                    },
+                    "placeholder": "Busque una opción"
+                },
+                "autocomplete2": {
+                    "label": "Typeahead obligatorio",
+                    "options": {
+                        "option1": "Opción obligatoria 1",
+                        "option2": "Opción obligatoria 2",
+                        "option3": "Opción obligatoria 3",
+                        "option4": "Opción obligatoria 4"
+                    },
+                    "placeholder": "Busque una opción obligatoria"
+                },
+                "autocomplete3": {
+                    "label": "Typeahead deshabilitado",
+                    "options": {
+                        "option1": "Opción deshabilitada 1",
+                        "option2": "Opción deshabilitada 2",
+                        "option3": "Opción deshabilitada 3",
+                        "option4": "Opción deshabilitada 4"
+                    },
+                    "placeholder": "Typeahead deshabilitado"
+                },
+                "label": "Campos con búsqueda",
+                "tooltip": "Variantes de typeahead con comportamiento básico, obligatorio y deshabilitado"
+            },
+            "section-checkbox": {
                 "checkbox1": {
                     "label": "Aceptar términos"
                 },
@@ -700,7 +827,7 @@
                 "label": "Campos de checkbox",
                 "tooltip": "Variantes de checkbox con estado básico, obligatorio, deshabilitado e interruptor"
             },
-            "sectionChips": {
+            "section-chips": {
                 "chips1": {
                     "label": "Chips básico",
                     "placeholder": "Escriba y pulse Enter"
@@ -715,7 +842,7 @@
                 "label": "Campos de chips",
                 "tooltip": "Variantes de chips con estado básico, obligatorio con maxItems, y deshabilitado"
             },
-            "sectionDate": {
+            "section-date": {
                 "date1": {
                     "label": "Fecha con rango"
                 },
@@ -728,7 +855,7 @@
                 "label": "Campos de fecha",
                 "tooltip": "Campos de fecha con rango, obligatorio y deshabilitado"
             },
-            "sectionInfo": {
+            "section-info": {
                 "info1": {
                     "label": "Versión"
                 },
@@ -738,7 +865,7 @@
                 "label": "Campos de información",
                 "tooltip": "Pares de icono/etiqueta de solo lectura — sin estilo de input, sin FormControl"
             },
-            "sectionNumber": {
+            "section-number": {
                 "label": "Campos numéricos",
                 "number1": {
                     "label": "Número con rango",
@@ -754,7 +881,7 @@
                 },
                 "tooltip": "Campos numéricos con rango, obligatorio y deshabilitado"
             },
-            "sectionPassword": {
+            "section-password": {
                 "label": "Campos de contraseña",
                 "password1": {
                     "label": "Contraseña",
@@ -774,7 +901,7 @@
                 },
                 "tooltip": "Campos de contraseña con toggle, obligatorio y deshabilitado"
             },
-            "sectionRadio": {
+            "section-radio": {
                 "label": "Campos de radio",
                 "radio1": {
                     "label": "Radio básico",
@@ -793,7 +920,7 @@
                 },
                 "tooltip": "Variantes de radio con configuración básica y obligatoria"
             },
-            "sectionSelect": {
+            "section-select": {
                 "label": "Campos de selección",
                 "select1": {
                     "label": "Select básico",
@@ -821,7 +948,7 @@
                 },
                 "tooltip": "Variantes de select con comportamiento básico, obligatorio y deshabilitado"
             },
-            "sectionText": {
+            "section-text": {
                 "label": "Campos de texto",
                 "text1": {
                     "label": "Texto obligatorio",
@@ -847,7 +974,7 @@
                 },
                 "tooltip": "Diferentes configuraciones de campos de texto"
             },
-            "sectionTextarea": {
+            "section-textarea": {
                 "label": "Campos de texto largo",
                 "textarea1": {
                     "label": "Textarea con altura máxima",
@@ -892,15 +1019,15 @@
                     "label": "Exportar",
                     "tooltip": "Exportar objetivos"
                 },
-                "individualGoal": {
+                "individual-goal": {
                     "label": "Objetivo individual",
                     "tooltip": "Crear un nuevo objetivo individual"
                 },
-                "newGoal": {
+                "new-goal": {
                     "label": "Nuevo objetivo",
                     "tooltip": "Crear un nuevo objetivo"
                 },
-                "teamGoal": {
+                "team-goal": {
                     "label": "Objetivo de equipo",
                     "tooltip": "Crear un nuevo objetivo de equipo"
                 }
@@ -910,12 +1037,12 @@
             "examples": {
                 "back": "Cabecera con botón de volver y badge de estado",
                 "default": "Cabecera normal, sin botón de volver",
-                "subPage": "Variante de subpágina, título más pequeño"
+                "sub-page": "Variante de subpágina, título más pequeño"
             },
             "title": "Objetivos"
         },
         "headers": "Cabeceras",
-        "leftMenu": {
+        "left-menu": {
             "actions": {
                 "calendar": {
                     "label": "Calendario",
@@ -958,8 +1085,8 @@
                     "tooltip": "Obtener soporte"
                 }
             },
-            "documentsClicked": "La acción \"Documentos\" se ha ejecutado al pulsar su etiqueta.",
-            "documentsHint": "\"Documentos\" tiene acción propia y subacciones: pulsa su etiqueta para ejecutar la acción, pulsa el chevron para desplegar el submenú.",
+            "documents-clicked": "La acción \"Documentos\" se ha ejecutado al pulsar su etiqueta.",
+            "documents-hint": "\"Documentos\" tiene acción propia y subacciones: pulsa su etiqueta para ejecutar la acción, pulsa el chevron para desplegar el submenú.",
             "example": "Menú lateral con acciones agrupadas, navegación anidada y comportamiento colapsado.",
             "examples": {
                 "collapsed": "Ejemplo colapsado",
@@ -971,7 +1098,7 @@
             },
             "title": "Beyonda Labs"
         },
-        "leftMenus": "Menús laterales",
+        "left-menu-section": "Menús laterales",
         "list": {
             "empty": "No se han encontrado empleados",
             "empty-example": "Estado vacío (sin elementos):",
@@ -1005,8 +1132,8 @@
         "loadings": "Cargando",
         "login": {
             "demo": {
-                "productDescription": "Genera, firma y comparte PDFs en segundos. Plantillas, marca y firma electrónica — todo desde tu navegador.",
-                "productName": "PDF Generator"
+                "product-description": "Genera, firma y comparte PDFs en segundos. Plantillas, marca y firma electrónica — todo desde tu navegador.",
+                "product-name": "PDF Generator"
             },
             "example": "Componente de autenticación a pantalla completa con soporte de tema claro/oscuro y proveedores OAuth opcionales obtenidos del backend.",
             "examples": {
@@ -1052,6 +1179,79 @@
             }
         },
         "modals": "Modales",
+        "page": {
+            "actions": {
+                "create": {
+                    "label": "Nuevo producto",
+                    "tooltip": "Crear un producto"
+                },
+                "delete": {
+                    "label": "Eliminar",
+                    "tooltip": "Eliminar los productos seleccionados"
+                },
+                "edit": {
+                    "label": "Editar",
+                    "tooltip": "Editar el producto seleccionado"
+                }
+            },
+            "example": "Una página autogestionada: acciones de cabecera, búsqueda, tabla y paginación conectadas al backend de demostración, con alta y edición en un formulario modal.",
+            "form": {
+                "create": {
+                    "title": "Nuevo producto"
+                },
+                "edit": {
+                    "title": "Editar producto"
+                },
+                "product": {
+                    "category": {
+                        "label": "Categoría",
+                        "placeholder": "Categoría del producto"
+                    },
+                    "label": "Producto",
+                    "name": {
+                        "label": "Nombre",
+                        "placeholder": "Nombre del producto"
+                    },
+                    "price": {
+                        "label": "Precio (€)",
+                        "placeholder": "0,00"
+                    }
+                }
+            },
+            "modal": {
+                "delete": {
+                    "message": "Se eliminarán {{count}} producto(s). ¿Quieres continuar?",
+                    "title": "Eliminar productos"
+                }
+            },
+            "search": {
+                "fields": {
+                    "category": "Categoría",
+                    "name": "Nombre",
+                    "price": "Precio"
+                }
+            },
+            "table": {
+                "columns": {
+                    "category": "Categoría",
+                    "name": "Nombre",
+                    "price": "Precio"
+                },
+                "empty": "Todavía no hay productos",
+                "tooltips": {
+                    "category": "Dónde está clasificado el producto",
+                    "name": "Cómo se llama el producto",
+                    "price": "Precio unitario"
+                }
+            },
+            "title": "Productos",
+            "toast": {
+                "create-success": "Producto creado",
+                "delete-success": "Producto(s) eliminado(s)",
+                "edit-success": "Producto actualizado"
+            }
+        },
+        "page-section": "Página",
         "pagination": {
             "changed": "Paginación cambiada:",
             "example": "Paginador minimalista con página editable, tooltip de rango y selector de tamaño de página.",
@@ -1061,15 +1261,30 @@
             }
         },
         "pagination-section": "Paginación",
-        "pdfViewer": {
+        "pdf-viewer": {
             "example": "Previsualizador de PDF construido sobre ngx-extended-pdf-viewer con su toolbar nativa oculta y una toolbar propia controlada mediante la API imperativa y los eventos del visor."
         },
-        "pdfViewers": "Visor de PDF",
-        "propertiesMenu": {
+        "pdf-viewer-section": "Visor de PDF",
+        "properties-menu": {
             "example": "Inspector de propiedades de un bloque seleccionado, con pestañas, grupos plegables e inserción de variables.",
-            "provideVariables": "Aportar variables"
+            "provide-variables": "Aportar variables"
         },
-        "propertiesMenus": "Menú de propiedades",
+        "properties-menu-section": "Menú de propiedades",
+        "search": {
+            "applied": "Filtros aplicados",
+            "example": "Caja de búsqueda rápida más un panel de filtros tipados. Cada cambio se informa por onFiltersChange; la consulta la ejecuta el consumidor.",
+            "fields": {
+                "active": "Activo",
+                "age": "Edad",
+                "name": "Nombre",
+                "role": "Rol"
+            },
+            "roles": {
+                "admin": "Administrador",
+                "editor": "Editor"
+            }
+        },
+        "search-section": "Búsqueda",
         "simple": "Simples",
         "table": {
             "actions": {
@@ -1117,7 +1332,6 @@
                     }
                 }
             },
-            "changed": "Pestaña cambiada:",
             "example": "Barra de pestañas horizontal orientada a modelos con navegación por teclado, iconos opcionales y estado deshabilitado. El consumidor renderiza contenido según la pestaña activa.",
             "examples": {
                 "basic": "Básico",
