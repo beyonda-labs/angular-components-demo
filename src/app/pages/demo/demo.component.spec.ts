@@ -1,24 +1,18 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { TestBed } from '@angular/core/testing';
 
 import { DemoComponent } from './demo.component';
 
 describe('DemoComponent', () => {
-    let component: DemoComponent;
-    let fixture: ComponentFixture<DemoComponent>;
+    it('renders the library style guide', () => {
+        TestBed.configureTestingModule({ imports: [DemoComponent] }).overrideComponent(DemoComponent, {
+            set: { imports: [], schemas: [CUSTOM_ELEMENTS_SCHEMA] }
+        });
 
-    beforeEach(async () => {
-        await TestBed.configureTestingModule({
-            imports: [DemoComponent]
-        })
-            .overrideComponent(DemoComponent, { set: { template: '' } })
-            .compileComponents();
+        const fixture = TestBed.createComponent(DemoComponent);
 
-        fixture = TestBed.createComponent(DemoComponent);
-        component = fixture.componentInstance;
         fixture.detectChanges();
-    });
 
-    it('should create', () => {
-        expect(component).toBeTruthy();
+        expect(fixture.nativeElement.querySelector('bey-style-guide')).not.toBeNull();
     });
 });
