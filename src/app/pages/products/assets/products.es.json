@@ -1,0 +1,79 @@
+{
+    "angular-components-demo": {
+        "products": {
+            "actions": {
+                "create": {
+                    "label": "Nuevo producto",
+                    "tooltip": "Crear un nuevo producto"
+                },
+                "delete": {
+                    "label": "Eliminar",
+                    "tooltip": "Eliminar los productos seleccionados"
+                },
+                "edit": {
+                    "label": "Editar",
+                    "tooltip": "Editar el producto seleccionado"
+                }
+            },
+            "form": {
+                "create": {
+                    "title": "Nuevo producto"
+                },
+                "edit": {
+                    "title": "Editar producto"
+                },
+                "product": {
+                    "available": {
+                        "label": "Disponible"
+                    },
+                    "category": {
+                        "label": "Categoría",
+                        "placeholder": "Categoría del producto"
+                    },
+                    "label": "Datos del producto",
+                    "name": {
+                        "label": "Nombre",
+                        "placeholder": "Nombre del producto"
+                    },
+                    "price": {
+                        "label": "Precio (€)",
+                        "placeholder": "0.00"
+                    }
+                }
+            },
+            "modal": {
+                "delete": {
+                    "message": "Esta acción eliminará {{count}} producto(s) y no se puede deshacer. ¿Deseas continuar?",
+                    "title": "Eliminar productos"
+                }
+            },
+            "search": {
+                "fields": {
+                    "available": "Disponible",
+                    "category": "Categoría",
+                    "name": "Nombre",
+                    "price": "Precio"
+                }
+            },
+            "table": {
+                "columns": {
+                    "category": "Categoría",
+                    "name": "Nombre",
+                    "price": "Precio"
+                },
+                "empty": "No se han encontrado productos",
+                "tooltips": {
+                    "category": "Categoría del producto",
+                    "name": "Nombre del producto",
+                    "price": "Precio por unidad"
+                }
+            },
+            "title": "Productos",
+            "toast": {
+                "create-success": "Producto creado correctamente",
+                "delete-success": "Producto(s) eliminado(s) correctamente",
+                "edit-success": "Producto actualizado correctamente"
+            }
+        }
+    }
+}

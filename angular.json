@@ -54,6 +54,11 @@
                                 "glob": "**/*",
                                 "input": "node_modules/monaco-editor/min",
                                 "output": "assets/monaco"
+                            },
+                            {
+                                "glob": "**/*",
+                                "input": "node_modules/ngx-extended-pdf-viewer/assets",
+                                "output": "/assets"
                             }
                         ],
                         "styles": [
@@ -89,6 +94,11 @@
                 },
                 "serve": {
                     "builder": "@angular-devkit/build-angular:dev-server",
+                    "options": {
+                        "prebundle": {
+                            "exclude": ["@beyonda-labs/angular-components"]
+                        }
+                    },
                     "configurations": {
                         "production": {
                             "buildTarget": "angular-components-demo:build:production"
@@ -120,6 +130,12 @@
                             }
                         ],
                         "main": "test.ts"
+                    }
+                },
+                "lint": {
+                    "builder": "@angular-eslint/builder:lint",
+                    "options": {
+                        "lintFilePatterns": ["src/**/*.ts", "src/**/*.html"]
                     }
                 }
             }

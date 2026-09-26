@@ -1,10 +1,10 @@
-import { Component } from '@angular/core';
-import { BeyStyleGuideComponent } from '@beyonda-labs/angular-components';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { BeyStyleGuideComponent } from '@beyonda-labs/angular-components/style-guide';
 
 @Component({
-    selector: 'app-demo',
+    changeDetection: ChangeDetectionStrategy.OnPush,
     imports: [BeyStyleGuideComponent],
-    templateUrl: './demo.component.html',
-    standalone: true
+    selector: 'app-demo',
+    templateUrl: './demo.component.html'
 })
 export class DemoComponent {}

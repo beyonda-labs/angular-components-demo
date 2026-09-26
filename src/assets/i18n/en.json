@@ -1,101 +1,16 @@
 {
-    "angular-components-demo": {
-        "page": {
-            "title": "Demo App",
-            "productName": "Demo App",
-            "actions": {
-                "page": {
-                    "label": "Products",
-                    "tooltip": "Go to products"
-                },
-                "logout": {
-                    "label": "Log out",
-                    "tooltip": "Sign out"
-                }
-            },
-            "content": {
-                "title": "Welcome back",
-                "paragraph": "You have successfully logged in. This is a sample protected page."
-            },
-            "products": {
-                "title": "Products",
-                "actions": {
-                    "create": {
-                        "label": "New product",
-                        "tooltip": "Create a new product"
-                    },
-                    "edit": {
-                        "label": "Edit",
-                        "tooltip": "Edit the selected product"
-                    },
-                    "delete": {
-                        "label": "Delete",
-                        "tooltip": "Delete the selected products"
-                    }
-                },
-                "form": {
-                    "create": {
-                        "title": "New product"
-                    },
-                    "edit": {
-                        "title": "Edit product"
-                    },
-                    "product": {
-                        "label": "Product details",
-                        "name": {
-                            "label": "Name",
-                            "placeholder": "Product name"
-                        },
-                        "category": {
-                            "label": "Category",
-                            "placeholder": "Product category"
-                        },
-                        "price": {
-                            "label": "Price (€)",
-                            "placeholder": "0.00"
-                        },
-                        "available": {
-                            "label": "Available"
-                        }
-                    }
-                },
-                "save": {
-                    "success": "Product saved successfully"
-                },
-                "search": {
-                    "fields": {
-                        "available": "Available",
-                        "category": "Category",
-                        "name": "Name",
-                        "price": "Price"
-                    }
-                },
-                "delete": {
-                    "success": "Product(s) deleted successfully"
-                },
-                "table": {
-                    "columns": {
-                        "name": "Name",
-                        "category": "Category",
-                        "price": "Price"
-                    },
-                    "empty": "No products found",
-                    "tooltips": {
-                        "name": "Product name",
-                        "category": "Product category",
-                        "price": "Price per unit"
-                    }
-                }
-            }
-        }
-    },
     "angular-components": {
+        "app-layout": {
+            "main-content": "Main content"
+        },
         "breadcrumb": {
             "label": "Breadcrumb"
         },
         "floating-preferences": {
             "dark": "Dark",
-            "light": "Light"
+            "language": "Language",
+            "light": "Light",
+            "theme": "Theme"
         },
         "footer": {
             "legal": "Legal",
@@ -103,8 +18,24 @@
             "terms": "Terms & Conditions"
         },
         "form": {
+            "autocomplete-field": {
+                "clear": "Clear",
+                "empty": "No options found",
+                "toggle": "Show options"
+            },
             "cancel": {
                 "without-changes": "No changes have been made to the form."
+            },
+            "chips": {
+                "remove": "Remove"
+            },
+            "file-field": {
+                "choose": "Choose file",
+                "clear": "Remove file",
+                "empty": "No file selected",
+                "max-size": "Maximum size: {{maxSize}}",
+                "too-large": "The file exceeds the maximum size of {{maxSize}}",
+                "unsupported-type": "Unsupported file type. Allowed: {{accept}}"
             },
             "modal": {
                 "close-confirmation": {
@@ -113,9 +44,25 @@
                 },
                 "type": "Form"
             },
+            "number-field": {
+                "decrement": "Decrease",
+                "increment": "Increase"
+            },
+            "password-field": {
+                "hide": "Hide password",
+                "show": "Show password"
+            },
             "required": "This field is required",
+            "steps": {
+                "back": "Back",
+                "next": "Next"
+            },
             "submit": {
-                "invalid": "There are errors in the form, please correct or complete the required fields before submitting."
+                "invalid": "There are errors in the form, please correct or complete the required fields before submitting.",
+                "without-changes": "No changes have been made to the form."
+            },
+            "text-variable-field": {
+                "insert-variable": "Insert variable"
             }
         },
         "header": {
@@ -126,6 +73,22 @@
                 "bad-gateway": "The server received an invalid response. Please try again later.",
                 "bad-request": "The request could not be processed. Please check the submitted data.",
                 "conflict": "A conflict occurred with the current state of the resource.",
+                "document-generation": {
+                    "cyclical-block-reference": "A cyclical reference between reusable blocks was detected.",
+                    "insufficient-width-image": "Not enough width available to place an image in the document.",
+                    "insufficient-width-list": "Not enough width available to place a list in the document.",
+                    "insufficient-width-list-item": "Not enough width available for a list item.",
+                    "insufficient-width-paragraph": "Not enough width available to place a paragraph in the document.",
+                    "invalid-image": "Could not generate an image in the document. Check that the referenced variable or image file has a valid value.",
+                    "invalid-image-width": "An image in the document has an invalid width.",
+                    "invalid-request": "The request is not in the expected format.",
+                    "pagination-stuck": "The document could not be paginated correctly. Check the content: an item may be too large or misconfigured.",
+                    "pdf-page-range": "The requested page range for an inserted PDF exceeds the number of pages in the source file.",
+                    "unresolved-block": "Could not resolve the content of a referenced reusable block.",
+                    "unresolved-header-footer": "Could not resolve the header or footer content.",
+                    "validation-failed": "The document has pending validation errors. Fix them before generating it."
+                },
+                "duplicate-field": "An item with field \"{{fieldName}}\" and value \"{{value}}\" already exists.",
                 "forbidden": "You do not have permission to perform this action.",
                 "internal-server-error": "An internal server error occurred. Please try again later.",
                 "invalid-child": "The field \"{{childField}}\" is not valid for parent \"{{parentField}}\".",
@@ -141,6 +104,7 @@
                 "login": {
                     "existing-user": "An account with this email already exists.",
                     "invalid-credentials": "Invalid email or password.",
+                    "invalid-refresh-token": "Your session has expired. Please log in again.",
                     "oauth-invalid-callback": "The authentication callback is invalid. Please try again.",
                     "oauth-missing-access-token": "No access token was received from {{provider}}. Please try again.",
                     "oauth-missing-email": "No email address was returned by {{provider}}. Please try again.",
@@ -149,6 +113,7 @@
                     "passwords-not-match": "Passwords do not match.",
                     "provider-not-found": "The provider {{provider}} is not available."
                 },
+                "move-target-unchanged": "The item is already located in this category.",
                 "not-found": "The requested resource was not found.",
                 "required-field": "The field \"{{fieldName}}\" is required.",
                 "service-unavailable": "The service is temporarily unavailable. Please try again later.",
@@ -165,6 +130,7 @@
                     "password2": "Confirm password",
                     "surname": "Surname"
                 },
+                "name": "Name",
                 "pattern": {
                     "email": "user@domain.com"
                 }
@@ -174,6 +140,22 @@
                 "bad-request": "Invalid request",
                 "conflict": "Conflict",
                 "default": "Error",
+                "document-generation": {
+                    "cyclical-block-reference": "Cyclical reference",
+                    "insufficient-width-image": "Insufficient space",
+                    "insufficient-width-list": "Insufficient space",
+                    "insufficient-width-list-item": "Insufficient space",
+                    "insufficient-width-paragraph": "Insufficient space",
+                    "invalid-image": "Image generation failed",
+                    "invalid-image-width": "Image generation failed",
+                    "invalid-request": "Invalid request",
+                    "pagination-stuck": "Pagination error",
+                    "pdf-page-range": "Invalid page range",
+                    "unresolved-block": "Unresolved block",
+                    "unresolved-header-footer": "Unresolved header/footer",
+                    "validation-failed": "Invalid document"
+                },
+                "duplicate-field": "Duplicate value",
                 "forbidden": "Access denied",
                 "internal-server-error": "Server error",
                 "invalid-child": "Invalid field",
@@ -185,6 +167,7 @@
                 "login": {
                     "existing-user": "Account already exists",
                     "invalid-credentials": "Authentication failed",
+                    "invalid-refresh-token": "Session expired",
                     "oauth-invalid-callback": "Authentication error",
                     "oauth-missing-access-token": "Authentication error",
                     "oauth-missing-email": "Authentication error",
@@ -193,6 +176,7 @@
                     "passwords-not-match": "Password error",
                     "provider-not-found": "Provider unavailable"
                 },
+                "move-target-unchanged": "No change",
                 "not-found": "Not found",
                 "required-field": "Required field",
                 "service-unavailable": "Service unavailable",
@@ -225,7 +209,7 @@
                     "label": "Password",
                     "placeholder": "Type your password"
                 },
-                "signinWith": "Continue with"
+                "signin-with": "Continue with"
             },
             "provider": {
                 "facebook": "Facebook",
@@ -234,8 +218,6 @@
             },
             "register": {
                 "button": {
-                    "back": "Back",
-                    "next": "Next",
                     "register": "Create account"
                 },
                 "email": {
@@ -278,11 +260,13 @@
                 "warning": "Warning"
             }
         },
+        "option-picker": {
+            "close": "Close",
+            "empty": "No options found",
+            "label": "Options",
+            "search": "Search"
+        },
         "page": {
-            "delete": {
-                "message": "This action will delete {{count}} item(s) and cannot be undone. Do you want to continue?",
-                "title": "Delete items"
-            },
             "form": {
                 "cancel": "Cancel",
                 "submit": "Save"
@@ -298,6 +282,56 @@
             "previous-page": "Go to previous page",
             "results-range": "Showing {{ start }}-{{ end }} of {{ total }} results"
         },
+        "properties-menu": {
+            "attachment-field": {
+                "clear": "Clear",
+                "empty": "No attachments found",
+                "search": "Search attachments",
+                "too-large": "This file exceeds the {{maxSizeMB}} MB limit.",
+                "upload": "Upload a new file",
+                "use-variable": "Use a variable",
+                "wrong-type": "This file type is not accepted ({{accept}})."
+            },
+            "close": "Close",
+            "color-field": {
+                "clear": "Clear"
+            },
+            "file-field": {
+                "choose": "Choose file",
+                "clear": "Clear",
+                "file-selected": "File selected",
+                "no-file-selected": "No file selected",
+                "too-large": "This file exceeds the {{maxSizeMB}} MB limit."
+            },
+            "list": {
+                "collapse": "Collapse",
+                "copied": "Copied",
+                "copy": "Copy the reference",
+                "empty": "No items",
+                "expand": "Expand"
+            },
+            "number-array-field": {
+                "add": "Add"
+            },
+            "remove": "Remove",
+            "select-field": {
+                "no-matches": "No matches",
+                "search": "Search…",
+                "use-variable": "Use a variable"
+            },
+            "spacing-field": {
+                "bottom": "Bottom",
+                "left": "Left",
+                "right": "Right",
+                "top": "Top"
+            },
+            "tabs": {
+                "label": "Property tabs"
+            },
+            "text-field": {
+                "insert-variable": "Insert variable"
+            }
+        },
         "search": {
             "add": "Add filter",
             "apply": "Apply filter",
@@ -312,18 +346,19 @@
             "operators": {
                 "between": "Between",
                 "contains": "Contains",
-                "endsWith": "Ends with",
+                "ends-with": "Ends with",
                 "equals": "Equals",
-                "greaterThan": "Greater than",
-                "greaterThanOrEquals": "Greater or equal",
-                "lessThan": "Less than",
-                "lessThanOrEquals": "Less or equal",
-                "notContains": "Does not contain",
-                "notEquals": "Not equals",
-                "startsWith": "Starts with"
+                "greater-than": "Greater than",
+                "greater-than-or-equals": "Greater or equal",
+                "less-than": "Less than",
+                "less-than-or-equals": "Less or equal",
+                "not-contains": "Does not contain",
+                "not-equals": "Not equals",
+                "starts-with": "Starts with"
             },
             "placeholder": "Search",
             "remove": "Remove filter",
+            "row": "Filter",
             "to-placeholder": "To",
             "value-placeholder": "Enter a value",
             "values": {
@@ -336,7 +371,8 @@
             "select-row": "Select row"
         },
         "tabs": {
-            "label": "Navigation tabs"
+            "label": "Navigation tabs",
+            "more": "More tabs"
         },
         "toast": {
             "types": {
@@ -351,8 +387,240 @@
             "expand": "Expand"
         }
     },
+    "angular-components-demo": {
+        "categories": {
+            "actions": {
+                "create": {
+                    "label": "New product",
+                    "tooltip": "Create a new product in this category"
+                },
+                "create-category": {
+                    "label": "New category",
+                    "tooltip": "Create a new subcategory here"
+                },
+                "create-group": {
+                    "label": "Add",
+                    "tooltip": "Create a new product or category"
+                },
+                "delete": {
+                    "label": "Delete",
+                    "tooltip": "Delete the selected products"
+                },
+                "delete-category": {
+                    "label": "Delete category",
+                    "tooltip": "Delete the selected categories"
+                },
+                "delete-trash-item": {
+                    "label": "Delete forever",
+                    "tooltip": "Permanently delete the selected items"
+                },
+                "edit": {
+                    "label": "Edit",
+                    "tooltip": "Edit the selected product"
+                },
+                "edit-category": {
+                    "label": "Edit category",
+                    "tooltip": "Edit the selected category"
+                },
+                "move": {
+                    "label": "Move",
+                    "tooltip": "Move the selected items to another category"
+                },
+                "restore-trash-item": {
+                    "label": "Restore",
+                    "tooltip": "Restore the selected items"
+                }
+            },
+            "categories": {
+                "root": "All categories"
+            },
+            "category-form": {
+                "category": {
+                    "label": "Category details",
+                    "name": {
+                        "label": "Name",
+                        "placeholder": "Category name"
+                    }
+                },
+                "form": {
+                    "create": {
+                        "title": "New category"
+                    },
+                    "edit": {
+                        "title": "Edit category"
+                    }
+                }
+            },
+            "form": {
+                "create": {
+                    "title": "New product"
+                },
+                "edit": {
+                    "title": "Edit product"
+                },
+                "item": {
+                    "label": "Product details",
+                    "name": {
+                        "label": "Name",
+                        "placeholder": "Product name"
+                    },
+                    "price": {
+                        "label": "Price (€)",
+                        "placeholder": "0.00"
+                    }
+                }
+            },
+            "modal": {
+                "delete": {
+                    "message": "This action will move {{count}} product(s) to the trash. You can restore them from there later. Do you want to continue?",
+                    "title": "Delete products"
+                },
+                "delete-category": {
+                    "message": "This action will move {{count}} categor(y/ies) to the trash. You can restore them from there later. Do you want to continue?",
+                    "title": "Delete categories"
+                },
+                "delete-trash-item": {
+                    "message": "This action will permanently delete {{count}} item(s) and cannot be undone. Do you want to continue?",
+                    "title": "Delete forever"
+                }
+            },
+            "move": {
+                "title": "Move to..."
+            },
+            "search": {
+                "fields": {
+                    "name": "Name",
+                    "price": "Price"
+                }
+            },
+            "table": {
+                "columns": {
+                    "name": "Name",
+                    "price": "Price"
+                },
+                "empty": "No categories or products found",
+                "tooltips": {
+                    "name": "Category or product name",
+                    "price": "Price per unit"
+                }
+            },
+            "tabs": {
+                "table": {
+                    "label": "Catalog"
+                },
+                "trash": {
+                    "label": "Trash"
+                }
+            },
+            "title": "Product categories",
+            "toast": {
+                "create-category-success": "Category created successfully",
+                "create-success": "Product created successfully",
+                "delete-category-success": "Categor(y/ies) deleted successfully",
+                "delete-success": "Product(s) deleted successfully",
+                "delete-trash-item-success": "Item(s) permanently deleted",
+                "edit-category-success": "Category updated successfully",
+                "edit-success": "Product updated successfully",
+                "move-success": "Item(s) moved successfully",
+                "restore-trash-item-success": "Item(s) restored successfully"
+            }
+        },
+        "products": {
+            "actions": {
+                "create": {
+                    "label": "New product",
+                    "tooltip": "Create a new product"
+                },
+                "delete": {
+                    "label": "Delete",
+                    "tooltip": "Delete the selected products"
+                },
+                "edit": {
+                    "label": "Edit",
+                    "tooltip": "Edit the selected product"
+                }
+            },
+            "form": {
+                "create": {
+                    "title": "New product"
+                },
+                "edit": {
+                    "title": "Edit product"
+                },
+                "product": {
+                    "available": {
+                        "label": "Available"
+                    },
+                    "category": {
+                        "label": "Category",
+                        "placeholder": "Product category"
+                    },
+                    "label": "Product details",
+                    "name": {
+                        "label": "Name",
+                        "placeholder": "Product name"
+                    },
+                    "price": {
+                        "label": "Price (€)",
+                        "placeholder": "0.00"
+                    }
+                }
+            },
+            "modal": {
+                "delete": {
+                    "message": "This action will delete {{count}} product(s) and cannot be undone. Do you want to continue?",
+                    "title": "Delete products"
+                }
+            },
+            "search": {
+                "fields": {
+                    "available": "Available",
+                    "category": "Category",
+                    "name": "Name",
+                    "price": "Price"
+                }
+            },
+            "table": {
+                "columns": {
+                    "category": "Category",
+                    "name": "Name",
+                    "price": "Price"
+                },
+                "empty": "No products found",
+                "tooltips": {
+                    "category": "Product category",
+                    "name": "Product name",
+                    "price": "Price per unit"
+                }
+            },
+            "title": "Products",
+            "toast": {
+                "create-success": "Product created successfully",
+                "delete-success": "Product(s) deleted successfully",
+                "edit-success": "Product updated successfully"
+            }
+        },
+        "shell": {
+            "actions": {
+                "categories": {
+                    "label": "Categories",
+                    "tooltip": "Go to product categories"
+                },
+                "logout": {
+                    "label": "Log out",
+                    "tooltip": "Sign out"
+                },
+                "products": {
+                    "label": "Products",
+                    "tooltip": "Go to products"
+                }
+            },
+            "product-name": "Demo App",
+            "title": "Demo App"
+        }
+    },
     "angular-components-style-guide": {
-        "appLayout": {
+        "app-layout": {
             "actions": {
                 "dashboard": {
                     "label": "Dashboard",
@@ -389,7 +657,11 @@
             "example": "Full application layout with collapsible side menu, dynamic breadcrumb and content area. Use the buttons or the menu to simulate page navigation.",
             "title": "Demo App"
         },
-        "appLayouts": "App Layouts",
+        "app-layout-section": "App Layouts",
+        "badge": {
+            "example": "Every variant of the badge, greyscale emphasis first and the semantic hues after."
+        },
+        "badge-section": "Badges",
         "breadcrumb": {
             "basic": {
                 "detail": {
@@ -454,21 +726,25 @@
         "components": "Components",
         "compound": "Compound",
         "floating-preferences": {
-            "example": "Self-contained pill with language and theme selectors. Reads and writes state directly via TranslateService and BeyThemeService — no inputs or configuration required."
+            "example": "Self-contained language and theme selectors. Reads and writes state directly via TranslateService and BeyThemeService — no callbacks required.",
+            "examples": {
+                "no-pill": "Without the pill (usePill = false), for embedding in another container",
+                "pill": "Default (floating pill)"
+            }
         },
         "floating-preferences-section": "Floating Preferences",
         "footer": {
             "example": "Model-driven footer bar with brand identity (icon, organization and product name) and optional legal navigation links (Terms & Conditions, Privacy Policy) via Angular Router.",
             "examples": {
                 "minimal": "Minimal",
-                "withLinks": "With legal links"
+                "with-links": "With legal links"
             },
             "minimal": {
-                "productName": "My Application"
+                "product-name": "My Application"
             },
-            "withLinks": {
-                "orgName": "Beyonda Labs",
-                "productName": "My Application"
+            "with-links": {
+                "org-name": "Beyonda Labs",
+                "product-name": "My Application"
             }
         },
         "footers": "Footers",
@@ -501,7 +777,41 @@
                 "submitted": "The modal form has been submitted: ",
                 "title": "New Contact"
             },
-            "sectionCheckbox": {
+            "section-autocomplete": {
+                "autocomplete1": {
+                    "label": "Basic typeahead",
+                    "options": {
+                        "option1": "Option 1",
+                        "option2": "Option 2",
+                        "option3": "Option 3",
+                        "option4": "Option 4"
+                    },
+                    "placeholder": "Search an option"
+                },
+                "autocomplete2": {
+                    "label": "Required typeahead",
+                    "options": {
+                        "option1": "Required option 1",
+                        "option2": "Required option 2",
+                        "option3": "Required option 3",
+                        "option4": "Required option 4"
+                    },
+                    "placeholder": "Search a required option"
+                },
+                "autocomplete3": {
+                    "label": "Disabled typeahead",
+                    "options": {
+                        "option1": "Disabled option 1",
+                        "option2": "Disabled option 2",
+                        "option3": "Disabled option 3",
+                        "option4": "Disabled option 4"
+                    },
+                    "placeholder": "Disabled typeahead"
+                },
+                "label": "Searchable fields",
+                "tooltip": "Typeahead variants with basic, required and disabled behaviour"
+            },
+            "section-checkbox": {
                 "checkbox1": {
                     "label": "Accept Terms"
                 },
@@ -517,7 +827,22 @@
                 "label": "Checkbox Fields",
                 "tooltip": "Checkbox variants with basic, required, disabled and switch states"
             },
-            "sectionDate": {
+            "section-chips": {
+                "chips1": {
+                    "label": "Basic Chips",
+                    "placeholder": "Type and press Enter"
+                },
+                "chips2": {
+                    "label": "Required Chips (max. 5)",
+                    "placeholder": "Add up to 5 tags"
+                },
+                "chips3": {
+                    "label": "Disabled Chips"
+                },
+                "label": "Chips Fields",
+                "tooltip": "Chips variants with basic, required with maxItems, and disabled states"
+            },
+            "section-date": {
                 "date1": {
                     "label": "Date With Range"
                 },
@@ -530,7 +855,17 @@
                 "label": "Date Fields",
                 "tooltip": "Date fields with range, required and disabled states"
             },
-            "sectionNumber": {
+            "section-info": {
+                "info1": {
+                    "label": "Version"
+                },
+                "info2": {
+                    "label": "Created On"
+                },
+                "label": "Info Fields",
+                "tooltip": "Read-only icon/label pairs — no input styling, no FormControl"
+            },
+            "section-number": {
                 "label": "Number Fields",
                 "number1": {
                     "label": "Number With Range",
@@ -546,7 +881,7 @@
                 },
                 "tooltip": "Number fields with range, required and disabled states"
             },
-            "sectionPassword": {
+            "section-password": {
                 "label": "Password Fields",
                 "password1": {
                     "label": "Password",
@@ -566,7 +901,7 @@
                 },
                 "tooltip": "Password fields with toggle, required and disabled states"
             },
-            "sectionRadio": {
+            "section-radio": {
                 "label": "Radio Fields",
                 "radio1": {
                     "label": "Basic Radio",
@@ -585,7 +920,7 @@
                 },
                 "tooltip": "Radio variants with basic and required configurations"
             },
-            "sectionSelect": {
+            "section-select": {
                 "label": "Select Fields",
                 "select1": {
                     "label": "Basic Select",
@@ -613,7 +948,7 @@
                 },
                 "tooltip": "Select variants with basic, required and disabled behavior"
             },
-            "sectionText": {
+            "section-text": {
                 "label": "Text Fields",
                 "text1": {
                     "label": "Required Text",
@@ -639,7 +974,7 @@
                 },
                 "tooltip": "Different text field configurations"
             },
-            "sectionTextarea": {
+            "section-textarea": {
                 "label": "Textarea Fields",
                 "textarea1": {
                     "label": "Textarea With Max Height",
@@ -664,6 +999,10 @@
                     "label": "Archive",
                     "tooltip": "Archive goal"
                 },
+                "back": {
+                    "label": "Back",
+                    "tooltip": "Back to goals"
+                },
                 "delete": {
                     "label": "Delete",
                     "tooltip": "Delete goal"
@@ -680,16 +1019,30 @@
                     "label": "Export",
                     "tooltip": "Export goal"
                 },
-                "newGoal": {
+                "individual-goal": {
+                    "label": "Individual goal",
+                    "tooltip": "Create a new individual goal"
+                },
+                "new-goal": {
                     "label": "New goal",
                     "tooltip": "Create a new goal"
+                },
+                "team-goal": {
+                    "label": "Team goal",
+                    "tooltip": "Create a new team goal"
                 }
             },
-            "example": "Header with actions on both sides and a kebab menu (⋮) for secondary actions.",
+            "badge": "Active",
+            "example": "Header with actions on both sides and a kebab menu (...) for secondary actions.",
+            "examples": {
+                "back": "Header with back button and status badge",
+                "default": "Default header, no back button",
+                "sub-page": "Sub-page variant, smaller title"
+            },
             "title": "Goals"
         },
         "headers": "Headers",
-        "leftMenu": {
+        "left-menu": {
             "actions": {
                 "calendar": {
                     "label": "Calendar",
@@ -732,6 +1085,8 @@
                     "tooltip": "Get support"
                 }
             },
+            "documents-clicked": "\"Documents\" action was triggered by clicking its label.",
+            "documents-hint": "\"Documents\" has both its own action and sub-actions: click its label to run the action, click the chevron to toggle the submenu.",
             "example": "Left menu with grouped actions, nested navigation and collapsed behavior.",
             "examples": {
                 "collapsed": "Collapsed example",
@@ -743,7 +1098,7 @@
             },
             "title": "Beyonda Labs"
         },
-        "leftMenus": "Left Menus",
+        "left-menu-section": "Left Menus",
         "list": {
             "empty": "No employees found",
             "empty-example": "Empty state (no items):",
@@ -777,8 +1132,8 @@
         "loadings": "Loading",
         "login": {
             "demo": {
-                "productDescription": "Generate, sign and share PDFs in seconds. Templates, branding and e-signature — all from your browser.",
-                "productName": "PDF Generator"
+                "product-description": "Generate, sign and share PDFs in seconds. Templates, branding and e-signature — all from your browser.",
+                "product-name": "PDF Generator"
             },
             "example": "Full-page authentication component with light/dark theme support, optional OAuth providers (fetched from backend), and optional registration flow.",
             "examples": {
@@ -824,6 +1179,79 @@
             }
         },
         "modals": "Modals",
+        "page": {
+            "actions": {
+                "create": {
+                    "label": "New product",
+                    "tooltip": "Create a new product"
+                },
+                "delete": {
+                    "label": "Delete",
+                    "tooltip": "Delete the selected products"
+                },
+                "edit": {
+                    "label": "Edit",
+                    "tooltip": "Edit the selected product"
+                }
+            },
+            "example": "A self-managing page: header actions, search, table and pagination wired to the demo backend, with create and edit in a modal form.",
+            "form": {
+                "create": {
+                    "title": "New product"
+                },
+                "edit": {
+                    "title": "Edit product"
+                },
+                "product": {
+                    "category": {
+                        "label": "Category",
+                        "placeholder": "Product category"
+                    },
+                    "label": "Product",
+                    "name": {
+                        "label": "Name",
+                        "placeholder": "Product name"
+                    },
+                    "price": {
+                        "label": "Price (€)",
+                        "placeholder": "0.00"
+                    }
+                }
+            },
+            "modal": {
+                "delete": {
+                    "message": "This will delete {{count}} product(s). Do you want to continue?",
+                    "title": "Delete products"
+                }
+            },
+            "search": {
+                "fields": {
+                    "category": "Category",
+                    "name": "Name",
+                    "price": "Price"
+                }
+            },
+            "table": {
+                "columns": {
+                    "category": "Category",
+                    "name": "Name",
+                    "price": "Price"
+                },
+                "empty": "No products yet",
+                "tooltips": {
+                    "category": "Where the product is filed",
+                    "name": "What the product is called",
+                    "price": "Unit price"
+                }
+            },
+            "title": "Products",
+            "toast": {
+                "create-success": "Product created",
+                "delete-success": "Product(s) deleted",
+                "edit-success": "Product updated"
+            }
+        },
+        "page-section": "Page",
         "pagination": {
             "changed": "Pagination changed:",
             "example": "Minimal paginator with editable page, range tooltip and page-size selector.",
@@ -833,6 +1261,30 @@
             }
         },
         "pagination-section": "Pagination",
+        "pdf-viewer": {
+            "example": "PDF preview built on ngx-extended-pdf-viewer with its native toolbar hidden and a fully custom toolbar driven through the viewer's imperative API and events."
+        },
+        "pdf-viewer-section": "PDF Viewer",
+        "properties-menu": {
+            "example": "Property inspector for a selected editor block, with tabs, collapsible groups and variable insertion.",
+            "provide-variables": "Provide variables"
+        },
+        "properties-menu-section": "Properties Menu",
+        "search": {
+            "applied": "Applied filters",
+            "example": "Quick search box plus a panel of typed filter rows. Every change is reported through onFiltersChange; the consumer runs the query.",
+            "fields": {
+                "active": "Active",
+                "age": "Age",
+                "name": "Name",
+                "role": "Role"
+            },
+            "roles": {
+                "admin": "Administrator",
+                "editor": "Editor"
+            }
+        },
+        "search-section": "Search",
         "simple": "Simple",
         "table": {
             "actions": {
@@ -843,6 +1295,7 @@
                 "action": "Action",
                 "name": "Name",
                 "role": "Role",
+                "skills": "Skills",
                 "status": "Status"
             },
             "empty": "No rows available for this example.",
@@ -859,6 +1312,7 @@
             },
             "tooltips": {
                 "name": "Primary identity column",
+                "skills": "Badge cells accept a list, rendering more than one badge per row",
                 "status": "Status cells can be translated and tooltip-enabled"
             }
         },
@@ -878,11 +1332,11 @@
                     }
                 }
             },
-            "changed": "Tab changed:",
             "example": "Model-driven horizontal tab bar with keyboard navigation, optional icons and disabled state. The consumer renders content based on the active tab key.",
             "examples": {
                 "basic": "Basic",
-                "icons": "With icons & disabled"
+                "icons": "With icons & disabled",
+                "overflow": "Overflow (narrow container)"
             },
             "icons": {
                 "tabs": {
@@ -894,6 +1348,31 @@
                     },
                     "documents": {
                         "label": "Documents"
+                    },
+                    "settings": {
+                        "label": "Settings"
+                    }
+                }
+            },
+            "overflow": {
+                "tabs": {
+                    "activity": {
+                        "label": "Activity"
+                    },
+                    "comments": {
+                        "label": "Comments"
+                    },
+                    "details": {
+                        "label": "Details"
+                    },
+                    "history": {
+                        "label": "History"
+                    },
+                    "overview": {
+                        "label": "Overview"
+                    },
+                    "permissions": {
+                        "label": "Permissions"
                     },
                     "settings": {
                         "label": "Settings"
