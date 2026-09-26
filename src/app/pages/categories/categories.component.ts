@@ -1,7 +1,4 @@
-import { Component } from '@angular/core';
-import { faPlus } from '@fortawesome/free-solid-svg-icons';
-import { TranslateModule } from '@ngx-translate/core';
-
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import {
     BeyFormNumberField,
     BeyFormRow,
@@ -29,192 +26,164 @@ import {
     BeyTableColumn,
     BeyTextTableCell
 } from '@beyonda-labs/angular-components';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
+
+import { formatPrice } from '../../shared/format-price';
+import { CategoryFormValue, CategoryItemFormValue, CategoryRecord } from './models/category.model';
 
 const PREFIX = 'angular-components-demo.categories';
 
 @Component({
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    imports: [BeyPageComponent],
     selector: 'app-categories',
-    imports: [BeyPageComponent, TranslateModule],
-    templateUrl: './categories.component.html',
-    standalone: true
+    templateUrl: './categories.component.html'
 })
 export class CategoriesComponent {
-    private readonly categoriesConfig = new BeyPageCategoriesConfig({
-        formConfig: this.buildCategoryFormConfig(),
-        useTrash: true
+    readonly config = new BeyPageConfig({
+        baseUrl: '/product-categories',
+        formConfig: buildItemFormConfig(),
+        headerConfig: new BeyPageHeaderConfig({ actions: buildActions(), title: `${PREFIX}.title` }),
+        onReady: handle => (this.page = handle),
+        prefix: PREFIX,
+        tableConfig: new BeyPageTableConfig({
+            categoriesConfig: new BeyPageCategoriesConfig({ formConfig: buildCategoryFormConfig(), useTrash: true }),
+            columns: [new BeyTableColumn({ key: 'name', width: 8 }), new BeyTableColumn({ key: 'price', width: 4 })],
+            height: 'calc(100vh - 320px)',
+            loadRow: item => this.loadRow(item),
+            search: new BeyPageTableSearchConfig({
+                fields: [
+                    new BeySearchField({ key: 'name', type: BeySearchFieldType.Text }),
+                    new BeySearchField({ key: 'price', type: BeySearchFieldType.Number })
+                ],
+                mainField: 'name'
+            })
+        })
     });
 
     private page?: BeyPageHandle;
 
-    readonly categoriesPageConfig = this.buildCategoriesPageConfig();
+    private loadRow(pageItem: BeyPageItem): BeyTableCell[] {
+        const { name, price, type } = pageItem as unknown as CategoryRecord;
 
-    private buildCategoriesPageConfig(): BeyPageConfig {
-        return new BeyPageConfig({
-            prefix: PREFIX,
-            onReady: handle => (this.page = handle),
-            baseUrl: '/product-categories',
-            headerConfig: new BeyPageHeaderConfig({
-                title: `${PREFIX}.title`,
-                actions: [
-                    new BeyPageAction({
-                        key: 'createGroup',
-                        scope: BeyPageActionScope.Group,
-                        type: BeyHeaderActionType.PrimaryButton,
-                        zone: BeyPageActionZone.Right,
-                        icon: faPlus,
-                        subActions: [
-                            new BeyPageAction({
-                                key: BeyPageStandardAction.Create,
-                                scope: BeyPageActionScope.Global,
-                                type: BeyHeaderActionType.Text,
-                                zone: BeyPageActionZone.Right
-                            }),
-                            new BeyPageAction({
-                                key: BeyPageStandardAction.CreateCategory,
-                                scope: BeyPageActionScope.Global,
-                                type: BeyHeaderActionType.Text,
-                                zone: BeyPageActionZone.Right
-                            })
-                        ]
-                    }),
-                    new BeyPageAction({
-                        key: BeyPageStandardAction.Edit,
-                        scope: BeyPageActionScope.Item,
-                        zone: BeyPageActionZone.Left
-                    }),
-                    new BeyPageAction({
-                        key: BeyPageStandardAction.EditCategory,
-                        scope: BeyPageActionScope.Item,
-                        zone: BeyPageActionZone.Left
-                    }),
-                    new BeyPageAction({
-                        key: BeyPageStandardAction.Move,
-                        scope: BeyPageActionScope.Item,
-                        zone: BeyPageActionZone.Menu
-                    }),
-                    new BeyPageAction({
-                        key: BeyPageStandardAction.Delete,
-                        scope: BeyPageActionScope.Item,
-                        zone: BeyPageActionZone.Menu
-                    }),
-                    new BeyPageAction({
-                        key: BeyPageStandardAction.DeleteCategory,
-                        scope: BeyPageActionScope.Item,
-                        zone: BeyPageActionZone.Menu
-                    }),
-                    new BeyPageAction({
-                        key: BeyPageStandardAction.RestoreTrashItem,
-                        scope: BeyPageActionScope.Item,
-                        zone: BeyPageActionZone.Left
-                    }),
-                    new BeyPageAction({
-                        key: BeyPageStandardAction.DeleteTrashItem,
-                        scope: BeyPageActionScope.Item,
-                        zone: BeyPageActionZone.Menu
-                    })
-                ]
-            }),
-            tableConfig: new BeyPageTableConfig({
-                columns: [
-                    new BeyTableColumn({ key: 'name', width: 8 }),
-                    new BeyTableColumn({ key: 'price', width: 4 })
-                ],
-                loadRow: item => this.loadCategoryPageRow(item),
-                height: 'calc(100vh - 320px)',
-                categoriesConfig: this.categoriesConfig,
-                search: new BeyPageTableSearchConfig({
-                    mainField: 'name',
-                    fields: [
-                        new BeySearchField({ key: 'name', type: BeySearchFieldType.Text }),
-                        new BeySearchField({ key: 'price', type: BeySearchFieldType.Number })
-                    ]
-                })
-            }),
-            formConfig: this.buildItemFormConfig()
-        });
-    }
-
-    private buildItemFormConfig(): BeyPageFormConfig {
-        return new BeyPageFormConfig<unknown>({
-            prefix: `${PREFIX}.form`,
-            buildSections: () => [
-                new BeyFormSection({
-                    key: 'item',
-                    isTitleVisible: false,
-                    rows: [
-                        new BeyFormRow({
-                            fields: [
-                                new BeyFormTextField({ key: 'name', columns: 6, isRequired: true }),
-                                new BeyFormNumberField({ key: 'price', columns: 6, isRequired: true, min: 0 })
-                            ]
-                        })
-                    ]
-                })
-            ],
-            toFormValue: item => {
-                if (!item) {
-                    return undefined;
-                }
-
-                const product = item as unknown as { name: string; price: number };
-
-                return { item: { name: product.name, price: product.price } };
-            },
-            toItem: value => {
-                const { item } = value as { item: { name: string; price: number } };
-
-                return { name: item.name, price: item.price };
-            }
-        });
-    }
-
-    private buildCategoryFormConfig(): BeyPageFormConfig {
-        return new BeyPageFormConfig<unknown>({
-            prefix: `${PREFIX}.categoryForm`,
-            buildSections: () => [
-                new BeyFormSection({
-                    key: 'category',
-                    isTitleVisible: false,
-                    rows: [
-                        new BeyFormRow({
-                            fields: [new BeyFormTextField({ key: 'name', columns: 12, isRequired: true })]
-                        })
-                    ]
-                })
-            ],
-            toFormValue: item => {
-                if (!item) {
-                    return undefined;
-                }
-
-                const category = item as unknown as { name: string };
-
-                return { category: { name: category.name } };
-            },
-            toItem: value => {
-                const { category } = value as { category: { name: string } };
-
-                return { name: category.name };
-            }
-        });
-    }
-
-    private loadCategoryPageRow(pageItem: BeyPageItem): BeyTableCell[] {
-        const record = pageItem as unknown as { name: string; price?: number; type: string };
-
-        if (record.type === BeyPageItemType.Category) {
+        if (type === BeyPageItemType.Category) {
             return [
-                new BeyLinkTableCell({
-                    content: record.name ?? '',
-                    action: () => this.page?.openCategory(pageItem)
-                }),
+                new BeyLinkTableCell({ action: () => this.page?.openCategory(pageItem), content: name ?? '' }),
                 new BeyTextTableCell({ content: '' })
             ];
         }
 
         return [
-            new BeyTextTableCell({ content: record.name ?? '', tooltip: record.name ?? '' }),
-            new BeyTextTableCell({ content: typeof record.price === 'number' ? `${record.price.toFixed(2)} €` : '' })
+            new BeyTextTableCell({ content: name ?? '', tooltip: name ?? '' }),
+            new BeyTextTableCell({ content: formatPrice(price) })
         ];
     }
+}
+
+function buildActions(): BeyPageAction[] {
+    return [
+        new BeyPageAction({
+            icon: faPlus,
+            key: 'create-group',
+            scope: BeyPageActionScope.Group,
+            subActions: [
+                new BeyPageAction({
+                    key: BeyPageStandardAction.Create,
+                    scope: BeyPageActionScope.Global,
+                    type: BeyHeaderActionType.Text,
+                    zone: BeyPageActionZone.Right
+                }),
+                new BeyPageAction({
+                    key: BeyPageStandardAction.CreateCategory,
+                    scope: BeyPageActionScope.Global,
+                    type: BeyHeaderActionType.Text,
+                    zone: BeyPageActionZone.Right
+                })
+            ],
+            type: BeyHeaderActionType.PrimaryButton,
+            zone: BeyPageActionZone.Right
+        }),
+        new BeyPageAction({
+            key: BeyPageStandardAction.Edit,
+            scope: BeyPageActionScope.Item,
+            zone: BeyPageActionZone.Left
+        }),
+        new BeyPageAction({
+            key: BeyPageStandardAction.EditCategory,
+            scope: BeyPageActionScope.Item,
+            zone: BeyPageActionZone.Left
+        }),
+        new BeyPageAction({
+            key: BeyPageStandardAction.Move,
+            scope: BeyPageActionScope.Item,
+            zone: BeyPageActionZone.Menu
+        }),
+        new BeyPageAction({
+            key: BeyPageStandardAction.Delete,
+            scope: BeyPageActionScope.Item,
+            zone: BeyPageActionZone.Menu
+        }),
+        new BeyPageAction({
+            key: BeyPageStandardAction.DeleteCategory,
+            scope: BeyPageActionScope.Item,
+            zone: BeyPageActionZone.Menu
+        }),
+        new BeyPageAction({
+            key: BeyPageStandardAction.RestoreTrashItem,
+            scope: BeyPageActionScope.Item,
+            zone: BeyPageActionZone.Left
+        }),
+        new BeyPageAction({
+            key: BeyPageStandardAction.DeleteTrashItem,
+            scope: BeyPageActionScope.Item,
+            zone: BeyPageActionZone.Menu
+        })
+    ];
+}
+
+function buildCategoryFormConfig(): BeyPageFormConfig {
+    return new BeyPageFormConfig<unknown>({
+        buildSections: () => [
+            new BeyFormSection({
+                isTitleVisible: false,
+                key: 'category',
+                rows: [
+                    new BeyFormRow({ fields: [new BeyFormTextField({ columns: 12, isRequired: true, key: 'name' })] })
+                ]
+            })
+        ],
+        prefix: `${PREFIX}.category-form`,
+        toFormValue: item => (item ? { category: { name: (item as unknown as CategoryRecord).name } } : undefined),
+        toItem: value => ({ name: (value as CategoryFormValue).category.name })
+    });
+}
+
+function buildItemFormConfig(): BeyPageFormConfig {
+    return new BeyPageFormConfig<unknown>({
+        buildSections: () => [
+            new BeyFormSection({
+                isTitleVisible: false,
+                key: 'item',
+                rows: [
+                    new BeyFormRow({
+                        fields: [
+                            new BeyFormTextField({ columns: 6, isRequired: true, key: 'name' }),
+                            new BeyFormNumberField({ columns: 6, isRequired: true, key: 'price', min: 0 })
+                        ]
+                    })
+                ]
+            })
+        ],
+        prefix: `${PREFIX}.form`,
+        toFormValue: item => (item ? toItemFormValue(item as unknown as CategoryRecord) : undefined),
+        toItem: value => {
+            const { name, price } = (value as CategoryItemFormValue).item;
+
+            return { name, price };
+        }
+    });
+}
+
+function toItemFormValue({ name, price }: CategoryRecord): CategoryItemFormValue {
+    return { item: { name, price: price ?? 0 } };
 }

@@ -1,18 +1,23 @@
-import { Component } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
+
+const DEFAULT_LANGUAGE = 'en';
+const SUPPORTED_LANGUAGES = new Set(['en', 'es']);
 
 @Component({
-  selector: 'app-root',
-  imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  standalone: true
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    imports: [RouterOutlet],
+    selector: 'app-root',
+    templateUrl: './app.component.html'
 })
 export class AppComponent {
-    constructor(private translate: TranslateService) {
-        this.translate.setDefaultLang('en');
+    private readonly translate = inject(TranslateService);
 
-        const browserLang = this.translate.getBrowserLang() || 'en';
-        this.translate.use(browserLang.match(/en|es/) ? browserLang : 'en');
+    constructor() {
+        const browserLanguage = this.translate.getBrowserLang() ?? DEFAULT_LANGUAGE;
+
+        this.translate.setDefaultLang(DEFAULT_LANGUAGE);
+        this.translate.use(SUPPORTED_LANGUAGES.has(browserLanguage) ? browserLanguage : DEFAULT_LANGUAGE);
     }
 }

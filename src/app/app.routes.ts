@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { beyAuthGuard, beyLoginGuard, BeyLoginOAuthCallbackComponent } from '@beyonda-labs/angular-components';
+
 import { CategoriesComponent } from './pages/categories/categories.component';
 import { DemoComponent } from './pages/demo/demo.component';
 import { ProductsComponent } from './pages/products/products.component';
