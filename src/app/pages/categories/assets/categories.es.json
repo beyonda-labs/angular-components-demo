@@ -1,12 +1,7 @@
 {
     "angular-components-demo": {
         "categories": {
-            "title": "Categorías de productos",
             "actions": {
-                "createGroup": {
-                    "label": "Añadir",
-                    "tooltip": "Crear un nuevo producto o categoría"
-                },
                 "create": {
                     "label": "Nuevo producto",
                     "tooltip": "Crear un nuevo producto en esta categoría"
@@ -14,6 +9,22 @@
                 "create-category": {
                     "label": "Nueva categoría",
                     "tooltip": "Crear una nueva subcategoría aquí"
+                },
+                "create-group": {
+                    "label": "Añadir",
+                    "tooltip": "Crear un nuevo producto o categoría"
+                },
+                "delete": {
+                    "label": "Eliminar",
+                    "tooltip": "Eliminar los productos seleccionados"
+                },
+                "delete-category": {
+                    "label": "Eliminar categoría",
+                    "tooltip": "Eliminar las categorías seleccionadas"
+                },
+                "delete-trash-item": {
+                    "label": "Eliminar definitivamente",
+                    "tooltip": "Eliminar definitivamente los elementos seleccionados"
                 },
                 "edit": {
                     "label": "Editar",
@@ -27,50 +38,30 @@
                     "label": "Mover",
                     "tooltip": "Mover los elementos seleccionados a otra categoría"
                 },
-                "delete": {
-                    "label": "Eliminar",
-                    "tooltip": "Eliminar los productos seleccionados"
-                },
-                "delete-category": {
-                    "label": "Eliminar categoría",
-                    "tooltip": "Eliminar las categorías seleccionadas"
-                },
                 "restore-trash-item": {
                     "label": "Restaurar",
                     "tooltip": "Restaurar los elementos seleccionados"
-                },
-                "delete-trash-item": {
-                    "label": "Eliminar definitivamente",
-                    "tooltip": "Eliminar definitivamente los elementos seleccionados"
                 }
             },
-            "modal": {
-                "delete": {
-                    "message": "Esta acción moverá {{count}} producto(s) a la papelera. Podrás restaurarlos desde allí más tarde. ¿Deseas continuar?",
-                    "title": "Eliminar productos"
+            "categories": {
+                "root": "Todas las categorías"
+            },
+            "category-form": {
+                "category": {
+                    "label": "Datos de la categoría",
+                    "name": {
+                        "label": "Nombre",
+                        "placeholder": "Nombre de la categoría"
+                    }
                 },
-                "delete-category": {
-                    "message": "Esta acción moverá {{count}} categoría(s) a la papelera. Podrás restaurarlas desde allí más tarde. ¿Deseas continuar?",
-                    "title": "Eliminar categorías"
-                },
-                "delete-trash-item": {
-                    "message": "Esta acción eliminará definitivamente {{count}} elemento(s) y no se puede deshacer. ¿Deseas continuar?",
-                    "title": "Eliminar definitivamente"
+                "form": {
+                    "create": {
+                        "title": "Nueva categoría"
+                    },
+                    "edit": {
+                        "title": "Editar categoría"
+                    }
                 }
-            },
-            "toast": {
-                "create-success": "Producto creado correctamente",
-                "edit-success": "Producto actualizado correctamente",
-                "delete-success": "Producto(s) eliminado(s) correctamente",
-                "create-category-success": "Categoría creada correctamente",
-                "edit-category-success": "Categoría actualizada correctamente",
-                "delete-category-success": "Categoría(s) eliminada(s) correctamente",
-                "delete-trash-item-success": "Elemento(s) eliminado(s) definitivamente",
-                "restore-trash-item-success": "Elemento(s) restaurado(s) correctamente",
-                "move-success": "Elemento(s) movido(s) correctamente"
-            },
-            "move": {
-                "title": "Mover a..."
             },
             "form": {
                 "create": {
@@ -91,38 +82,27 @@
                     }
                 }
             },
-            "categoryForm": {
-                "form": {
-                    "create": {
-                        "title": "Nueva categoría"
-                    },
-                    "edit": {
-                        "title": "Editar categoría"
-                    }
+            "modal": {
+                "delete": {
+                    "message": "Esta acción moverá {{count}} producto(s) a la papelera. Podrás restaurarlos desde allí más tarde. ¿Deseas continuar?",
+                    "title": "Eliminar productos"
                 },
-                "category": {
-                    "label": "Datos de la categoría",
-                    "name": {
-                        "label": "Nombre",
-                        "placeholder": "Nombre de la categoría"
-                    }
+                "delete-category": {
+                    "message": "Esta acción moverá {{count}} categoría(s) a la papelera. Podrás restaurarlas desde allí más tarde. ¿Deseas continuar?",
+                    "title": "Eliminar categorías"
+                },
+                "delete-trash-item": {
+                    "message": "Esta acción eliminará definitivamente {{count}} elemento(s) y no se puede deshacer. ¿Deseas continuar?",
+                    "title": "Eliminar definitivamente"
                 }
             },
-            "categories": {
-                "root": "Todas las categorías"
+            "move": {
+                "title": "Mover a..."
             },
             "search": {
                 "fields": {
                     "name": "Nombre",
                     "price": "Precio"
-                }
-            },
-            "tabs": {
-                "table": {
-                    "label": "Catálogo"
-                },
-                "trash": {
-                    "label": "Papelera"
                 }
             },
             "table": {
@@ -135,6 +115,26 @@
                     "name": "Nombre de la categoría o producto",
                     "price": "Precio por unidad"
                 }
+            },
+            "tabs": {
+                "table": {
+                    "label": "Catálogo"
+                },
+                "trash": {
+                    "label": "Papelera"
+                }
+            },
+            "title": "Categorías de productos",
+            "toast": {
+                "create-category-success": "Categoría creada correctamente",
+                "create-success": "Producto creado correctamente",
+                "delete-category-success": "Categoría(s) eliminada(s) correctamente",
+                "delete-success": "Producto(s) eliminado(s) correctamente",
+                "delete-trash-item-success": "Elemento(s) eliminado(s) definitivamente",
+                "edit-category-success": "Categoría actualizada correctamente",
+                "edit-success": "Producto actualizado correctamente",
+                "move-success": "Elemento(s) movido(s) correctamente",
+                "restore-trash-item-success": "Elemento(s) restaurado(s) correctamente"
             }
         }
     }

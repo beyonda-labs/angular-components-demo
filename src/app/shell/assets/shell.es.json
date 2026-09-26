@@ -1,13 +1,7 @@
 {
     "angular-components-demo": {
         "shell": {
-            "title": "Demo App",
-            "productName": "Demo App",
             "actions": {
-                "products": {
-                    "label": "Productos",
-                    "tooltip": "Ir a productos"
-                },
                 "categories": {
                     "label": "Categorías",
                     "tooltip": "Ir a las categorías de productos"
@@ -15,8 +9,14 @@
                 "logout": {
                     "label": "Cerrar sesión",
                     "tooltip": "Salir de la aplicación"
+                },
+                "products": {
+                    "label": "Productos",
+                    "tooltip": "Ir a productos"
                 }
-            }
+            },
+            "product-name": "Demo App",
+            "title": "Demo App"
         }
     }
 }

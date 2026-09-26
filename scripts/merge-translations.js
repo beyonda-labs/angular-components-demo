@@ -1,6 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 
+const { sortObjectDeep } = require('./sort-translations');
+
 const sourceDirs = [
     path.resolve(__dirname, '../src/app'),
     path.resolve(__dirname, '../node_modules/@beyonda-labs/angular-components/assets/i18n'),
@@ -64,7 +66,12 @@ function mergeTranslations() {
         }, {});
 
         const targetFilePath = path.join(targetDir, `${lang}.json`);
-        fs.writeFileSync(targetFilePath, JSON.stringify(mergedTranslations, null, 4), 'utf-8');
+        fs.writeFileSync(
+            targetFilePath,
+            `${JSON.stringify(sortObjectDeep(mergedTranslations), null, 4)}
+`,
+            'utf-8'
+        );
         console.log(`Merged translations for ${lang} saved to ${targetFilePath}`);
     });
 }

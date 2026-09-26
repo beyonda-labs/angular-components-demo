@@ -1,236 +1,4 @@
 {
-    "angular-components-demo": {
-        "categories": {
-            "title": "Product categories",
-            "actions": {
-                "createGroup": {
-                    "label": "Add",
-                    "tooltip": "Create a new product or category"
-                },
-                "create": {
-                    "label": "New product",
-                    "tooltip": "Create a new product in this category"
-                },
-                "create-category": {
-                    "label": "New category",
-                    "tooltip": "Create a new subcategory here"
-                },
-                "edit": {
-                    "label": "Edit",
-                    "tooltip": "Edit the selected product"
-                },
-                "edit-category": {
-                    "label": "Edit category",
-                    "tooltip": "Edit the selected category"
-                },
-                "move": {
-                    "label": "Move",
-                    "tooltip": "Move the selected items to another category"
-                },
-                "delete": {
-                    "label": "Delete",
-                    "tooltip": "Delete the selected products"
-                },
-                "delete-category": {
-                    "label": "Delete category",
-                    "tooltip": "Delete the selected categories"
-                },
-                "restore-trash-item": {
-                    "label": "Restore",
-                    "tooltip": "Restore the selected items"
-                },
-                "delete-trash-item": {
-                    "label": "Delete forever",
-                    "tooltip": "Permanently delete the selected items"
-                }
-            },
-            "modal": {
-                "delete": {
-                    "message": "This action will move {{count}} product(s) to the trash. You can restore them from there later. Do you want to continue?",
-                    "title": "Delete products"
-                },
-                "delete-category": {
-                    "message": "This action will move {{count}} categor(y/ies) to the trash. You can restore them from there later. Do you want to continue?",
-                    "title": "Delete categories"
-                },
-                "delete-trash-item": {
-                    "message": "This action will permanently delete {{count}} item(s) and cannot be undone. Do you want to continue?",
-                    "title": "Delete forever"
-                }
-            },
-            "toast": {
-                "create-success": "Product created successfully",
-                "edit-success": "Product updated successfully",
-                "delete-success": "Product(s) deleted successfully",
-                "create-category-success": "Category created successfully",
-                "edit-category-success": "Category updated successfully",
-                "delete-category-success": "Categor(y/ies) deleted successfully",
-                "delete-trash-item-success": "Item(s) permanently deleted",
-                "restore-trash-item-success": "Item(s) restored successfully",
-                "move-success": "Item(s) moved successfully"
-            },
-            "move": {
-                "title": "Move to..."
-            },
-            "form": {
-                "create": {
-                    "title": "New product"
-                },
-                "edit": {
-                    "title": "Edit product"
-                },
-                "item": {
-                    "label": "Product details",
-                    "name": {
-                        "label": "Name",
-                        "placeholder": "Product name"
-                    },
-                    "price": {
-                        "label": "Price (€)",
-                        "placeholder": "0.00"
-                    }
-                }
-            },
-            "categoryForm": {
-                "form": {
-                    "create": {
-                        "title": "New category"
-                    },
-                    "edit": {
-                        "title": "Edit category"
-                    }
-                },
-                "category": {
-                    "label": "Category details",
-                    "name": {
-                        "label": "Name",
-                        "placeholder": "Category name"
-                    }
-                }
-            },
-            "categories": {
-                "root": "All categories"
-            },
-            "search": {
-                "fields": {
-                    "name": "Name",
-                    "price": "Price"
-                }
-            },
-            "tabs": {
-                "table": {
-                    "label": "Catalog"
-                },
-                "trash": {
-                    "label": "Trash"
-                }
-            },
-            "table": {
-                "columns": {
-                    "name": "Name",
-                    "price": "Price"
-                },
-                "empty": "No categories or products found",
-                "tooltips": {
-                    "name": "Category or product name",
-                    "price": "Price per unit"
-                }
-            }
-        },
-        "products": {
-            "title": "Products",
-            "actions": {
-                "create": {
-                    "label": "New product",
-                    "tooltip": "Create a new product"
-                },
-                "edit": {
-                    "label": "Edit",
-                    "tooltip": "Edit the selected product"
-                },
-                "delete": {
-                    "label": "Delete",
-                    "tooltip": "Delete the selected products"
-                }
-            },
-            "modal": {
-                "delete": {
-                    "message": "This action will delete {{count}} product(s) and cannot be undone. Do you want to continue?",
-                    "title": "Delete products"
-                }
-            },
-            "toast": {
-                "create-success": "Product created successfully",
-                "edit-success": "Product updated successfully",
-                "delete-success": "Product(s) deleted successfully"
-            },
-            "form": {
-                "create": {
-                    "title": "New product"
-                },
-                "edit": {
-                    "title": "Edit product"
-                },
-                "product": {
-                    "label": "Product details",
-                    "name": {
-                        "label": "Name",
-                        "placeholder": "Product name"
-                    },
-                    "category": {
-                        "label": "Category",
-                        "placeholder": "Product category"
-                    },
-                    "price": {
-                        "label": "Price (€)",
-                        "placeholder": "0.00"
-                    },
-                    "available": {
-                        "label": "Available"
-                    }
-                }
-            },
-            "search": {
-                "fields": {
-                    "available": "Available",
-                    "category": "Category",
-                    "name": "Name",
-                    "price": "Price"
-                }
-            },
-            "table": {
-                "columns": {
-                    "name": "Name",
-                    "category": "Category",
-                    "price": "Price"
-                },
-                "empty": "No products found",
-                "tooltips": {
-                    "name": "Product name",
-                    "category": "Product category",
-                    "price": "Price per unit"
-                }
-            }
-        },
-        "shell": {
-            "title": "Demo App",
-            "productName": "Demo App",
-            "actions": {
-                "products": {
-                    "label": "Products",
-                    "tooltip": "Go to products"
-                },
-                "categories": {
-                    "label": "Categories",
-                    "tooltip": "Go to product categories"
-                },
-                "logout": {
-                    "label": "Log out",
-                    "tooltip": "Sign out"
-                }
-            }
-        }
-    },
     "angular-components": {
         "app-layout": {
             "main-content": "Main content"
@@ -617,6 +385,238 @@
         "tree": {
             "collapse": "Collapse",
             "expand": "Expand"
+        }
+    },
+    "angular-components-demo": {
+        "categories": {
+            "actions": {
+                "create": {
+                    "label": "New product",
+                    "tooltip": "Create a new product in this category"
+                },
+                "create-category": {
+                    "label": "New category",
+                    "tooltip": "Create a new subcategory here"
+                },
+                "create-group": {
+                    "label": "Add",
+                    "tooltip": "Create a new product or category"
+                },
+                "delete": {
+                    "label": "Delete",
+                    "tooltip": "Delete the selected products"
+                },
+                "delete-category": {
+                    "label": "Delete category",
+                    "tooltip": "Delete the selected categories"
+                },
+                "delete-trash-item": {
+                    "label": "Delete forever",
+                    "tooltip": "Permanently delete the selected items"
+                },
+                "edit": {
+                    "label": "Edit",
+                    "tooltip": "Edit the selected product"
+                },
+                "edit-category": {
+                    "label": "Edit category",
+                    "tooltip": "Edit the selected category"
+                },
+                "move": {
+                    "label": "Move",
+                    "tooltip": "Move the selected items to another category"
+                },
+                "restore-trash-item": {
+                    "label": "Restore",
+                    "tooltip": "Restore the selected items"
+                }
+            },
+            "categories": {
+                "root": "All categories"
+            },
+            "category-form": {
+                "category": {
+                    "label": "Category details",
+                    "name": {
+                        "label": "Name",
+                        "placeholder": "Category name"
+                    }
+                },
+                "form": {
+                    "create": {
+                        "title": "New category"
+                    },
+                    "edit": {
+                        "title": "Edit category"
+                    }
+                }
+            },
+            "form": {
+                "create": {
+                    "title": "New product"
+                },
+                "edit": {
+                    "title": "Edit product"
+                },
+                "item": {
+                    "label": "Product details",
+                    "name": {
+                        "label": "Name",
+                        "placeholder": "Product name"
+                    },
+                    "price": {
+                        "label": "Price (€)",
+                        "placeholder": "0.00"
+                    }
+                }
+            },
+            "modal": {
+                "delete": {
+                    "message": "This action will move {{count}} product(s) to the trash. You can restore them from there later. Do you want to continue?",
+                    "title": "Delete products"
+                },
+                "delete-category": {
+                    "message": "This action will move {{count}} categor(y/ies) to the trash. You can restore them from there later. Do you want to continue?",
+                    "title": "Delete categories"
+                },
+                "delete-trash-item": {
+                    "message": "This action will permanently delete {{count}} item(s) and cannot be undone. Do you want to continue?",
+                    "title": "Delete forever"
+                }
+            },
+            "move": {
+                "title": "Move to..."
+            },
+            "search": {
+                "fields": {
+                    "name": "Name",
+                    "price": "Price"
+                }
+            },
+            "table": {
+                "columns": {
+                    "name": "Name",
+                    "price": "Price"
+                },
+                "empty": "No categories or products found",
+                "tooltips": {
+                    "name": "Category or product name",
+                    "price": "Price per unit"
+                }
+            },
+            "tabs": {
+                "table": {
+                    "label": "Catalog"
+                },
+                "trash": {
+                    "label": "Trash"
+                }
+            },
+            "title": "Product categories",
+            "toast": {
+                "create-category-success": "Category created successfully",
+                "create-success": "Product created successfully",
+                "delete-category-success": "Categor(y/ies) deleted successfully",
+                "delete-success": "Product(s) deleted successfully",
+                "delete-trash-item-success": "Item(s) permanently deleted",
+                "edit-category-success": "Category updated successfully",
+                "edit-success": "Product updated successfully",
+                "move-success": "Item(s) moved successfully",
+                "restore-trash-item-success": "Item(s) restored successfully"
+            }
+        },
+        "products": {
+            "actions": {
+                "create": {
+                    "label": "New product",
+                    "tooltip": "Create a new product"
+                },
+                "delete": {
+                    "label": "Delete",
+                    "tooltip": "Delete the selected products"
+                },
+                "edit": {
+                    "label": "Edit",
+                    "tooltip": "Edit the selected product"
+                }
+            },
+            "form": {
+                "create": {
+                    "title": "New product"
+                },
+                "edit": {
+                    "title": "Edit product"
+                },
+                "product": {
+                    "available": {
+                        "label": "Available"
+                    },
+                    "category": {
+                        "label": "Category",
+                        "placeholder": "Product category"
+                    },
+                    "label": "Product details",
+                    "name": {
+                        "label": "Name",
+                        "placeholder": "Product name"
+                    },
+                    "price": {
+                        "label": "Price (€)",
+                        "placeholder": "0.00"
+                    }
+                }
+            },
+            "modal": {
+                "delete": {
+                    "message": "This action will delete {{count}} product(s) and cannot be undone. Do you want to continue?",
+                    "title": "Delete products"
+                }
+            },
+            "search": {
+                "fields": {
+                    "available": "Available",
+                    "category": "Category",
+                    "name": "Name",
+                    "price": "Price"
+                }
+            },
+            "table": {
+                "columns": {
+                    "category": "Category",
+                    "name": "Name",
+                    "price": "Price"
+                },
+                "empty": "No products found",
+                "tooltips": {
+                    "category": "Product category",
+                    "name": "Product name",
+                    "price": "Price per unit"
+                }
+            },
+            "title": "Products",
+            "toast": {
+                "create-success": "Product created successfully",
+                "delete-success": "Product(s) deleted successfully",
+                "edit-success": "Product updated successfully"
+            }
+        },
+        "shell": {
+            "actions": {
+                "categories": {
+                    "label": "Categories",
+                    "tooltip": "Go to product categories"
+                },
+                "logout": {
+                    "label": "Log out",
+                    "tooltip": "Sign out"
+                },
+                "products": {
+                    "label": "Products",
+                    "tooltip": "Go to products"
+                }
+            },
+            "product-name": "Demo App",
+            "title": "Demo App"
         }
     },
     "angular-components-style-guide": {
