@@ -17,9 +17,9 @@ let proc = null;
 let stopping = false;
 let firstStart = true;
 
-function runNpmScript(scriptName) {
-    console.log(`[scripts] Ejecutando npm run ${scriptName}`);
-    execSync(`npm run ${scriptName}`, { stdio: "inherit" });
+function runPackageScript(scriptName) {
+    console.log(`[scripts] Ejecutando pnpm run ${scriptName}`);
+    execSync(`pnpm run ${scriptName}`, { stdio: "inherit" });
 }
 
 // Solo se consideran sockets en LISTENING cuya dirección local usa el puerto:
@@ -150,10 +150,10 @@ async function waitForDist() {
 // solo hace falta reinstalar si el enlace no existe o quedó roto.
 function refreshDemoAssets() {
     if (!existsSync(path.join(LIB_NODE_MODULES_PATH, "package.json"))) {
-        runNpmScript("lib:refresh");
+        runPackageScript("lib:refresh");
     }
 
-    runNpmScript("merge-translations");
+    runPackageScript("merge-translations");
 }
 
 let timer = null;
@@ -197,7 +197,7 @@ function mergeTranslationsOnly() {
     if (rebuilding) return;
 
     try {
-        runNpmScript("merge-translations");
+        runPackageScript("merge-translations");
         console.log("[i18n] Traducciones actualizadas (recarga el navegador para verlas)");
     } catch (e) {
         console.error("[i18n] Error actualizando traducciones:", e);
