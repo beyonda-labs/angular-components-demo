@@ -32,8 +32,5 @@
                 }
             ]
         }
-    },
-    "skip": {
-        "rules": ["eslint.sort-declarations", "eslint.model-files"]
     }
 }

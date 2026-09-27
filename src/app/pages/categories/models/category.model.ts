@@ -1,10 +1,3 @@
-export interface CategoryRecord {
-    name: string;
-    type: string;
-
-    price?: number;
-}
-
 export interface CategoryFormValue {
     category: {
         name: string;
@@ -16,4 +9,11 @@ export interface CategoryItemFormValue {
         name: string;
         price: number;
     };
+}
+
+export interface CategoryRecord {
+    name: string;
+    type: string;
+
+    price?: number;
 }
