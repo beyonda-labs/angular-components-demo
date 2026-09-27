@@ -1,0 +1,39 @@
+{
+    "$schema": "./node_modules/@beyonda-labs/base-config/schema/manifest.schema.json",
+    "project": {
+        "type": "angular-app",
+        "name": "angular-components-demo",
+        "prefix": "app"
+    },
+    "autoUpdate": true,
+    "localDependencies": {
+        "@beyonda-labs/angular-components": "../angular-components/dist"
+    },
+    "params": {
+        "translations": {
+            "bundles": [
+                {
+                    "sources": [
+                        "src/app",
+                        "node_modules/@beyonda-labs/angular-components/assets/i18n",
+                        "node_modules/@beyonda-labs/angular-components/assets/i18n-style-guide"
+                    ],
+                    "target": "src/assets/i18n/{language}.json"
+                }
+            ]
+        },
+        "stylelint": {
+            "overrides": [
+                {
+                    "files": ["src/styles.css"],
+                    "rules": {
+                        "no-empty-source": null
+                    }
+                }
+            ]
+        }
+    },
+    "skip": {
+        "rules": ["eslint.sort-declarations", "eslint.model-files"]
+    }
+}
