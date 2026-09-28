@@ -1,11 +1,16 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
-import { BeyPageItem, BeyPageViewMode } from '@beyonda-labs/angular-components';
+import { BeyPageViewMode } from '@beyonda-labs/angular-components';
 
+import { Product } from './models/product.model';
 import { ProductsComponent } from './products.component';
 
 describe('ProductsComponent', () => {
     let component: ProductsComponent;
+
+    function buildProduct(overrides: Partial<Product> = {}): Product {
+        return { available: true, category: 'Tools', id: 1, name: 'Hammer', price: 12.5, ...overrides };
+    }
 
     beforeEach(() => {
         TestBed.configureTestingModule({ imports: [ProductsComponent] }).overrideComponent(ProductsComponent, {
@@ -15,25 +20,19 @@ describe('ProductsComponent', () => {
     });
 
     it('shows each product with its price in euros', () => {
-        const item = { category: 'Tools', id: 1, name: 'Hammer', price: 12.5 } as unknown as BeyPageItem;
-
-        const cells = component.config.tableConfig!.loadRow(item, BeyPageViewMode.Table);
+        const cells = component.config.tableConfig!.loadRow(buildProduct(), BeyPageViewMode.Table);
 
         expect(cells.map(cell => cell.content)).toEqual(['Hammer', 'Tools', '12.50 €']);
     });
 
     it('leaves the price empty when the product has none', () => {
-        const item = { category: 'Tools', id: 1, name: 'Hammer' } as unknown as BeyPageItem;
-
-        const cells = component.config.tableConfig!.loadRow(item, BeyPageViewMode.Table);
+        const cells = component.config.tableConfig!.loadRow(buildProduct({ price: undefined }), BeyPageViewMode.Table);
 
         expect(cells[2].content).toBe('');
     });
 
     it('opens the edit form with the product values', () => {
-        const item = { available: 1, category: 'Tools', id: 1, name: 'Hammer', price: 12.5 } as unknown as BeyPageItem;
-
-        expect(component.config.formConfig!.toFormValue(item)).toEqual({
+        expect(component.config.formConfig!.toFormValue(buildProduct({ available: 1 }))).toEqual({
             product: { available: true, category: 'Tools', name: 'Hammer', price: 12.5 }
         });
     });
@@ -56,14 +55,14 @@ describe('ProductsComponent', () => {
     });
 
     it('asks for availability only when editing', () => {
-        const fieldKeys = (item?: BeyPageItem): string[] =>
+        const fieldKeys = (product?: Product): string[] =>
             component.config
-                .formConfig!.buildSections(item)
+                .formConfig!.buildSections(product)
                 .flatMap(section => section.rows)
                 .flatMap(row => row.fields)
                 .map(field => field.key);
 
         expect(fieldKeys()).not.toContain('available');
-        expect(fieldKeys({ id: 1 } as BeyPageItem)).toContain('available');
+        expect(fieldKeys(buildProduct())).toContain('available');
     });
 });

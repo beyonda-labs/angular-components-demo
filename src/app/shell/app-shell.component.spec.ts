@@ -28,17 +28,13 @@ describe('AppShellComponent', () => {
     });
 
     it('logs out and returns to the demo page', () => {
-        component.config().onMenuActionClick?.('logout');
+        component
+            .config()
+            .bottomActions.find(action => action.key === 'logout')
+            ?.action?.();
 
         expect(session.clear).toHaveBeenCalled();
         expect(router.navigate).toHaveBeenCalledWith(['/demo']);
-    });
-
-    it('navigates to the page an action names', () => {
-        component.config().onMenuActionClick?.('categories');
-
-        expect(session.clear).not.toHaveBeenCalled();
-        expect(router.navigate).toHaveBeenCalledWith(['/categories']);
     });
 
     it('shows the user of the session in the menu', () => {

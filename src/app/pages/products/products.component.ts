@@ -14,7 +14,6 @@ import {
     BeyPageConfig,
     BeyPageFormConfig,
     BeyPageHeaderConfig,
-    BeyPageItem,
     BeyPageStandardAction,
     BeyPageTableConfig,
     BeyPageTableSearchConfig,
@@ -38,7 +37,7 @@ const PREFIX = 'angular-components-demo.products';
     templateUrl: './products.component.html'
 })
 export class ProductsComponent {
-    readonly config = new BeyPageConfig({
+    readonly config = new BeyPageConfig<ProductFormValue, Product>({
         baseUrl: '/products',
         formConfig: buildFormConfig(),
         headerConfig: new BeyPageHeaderConfig({
@@ -52,7 +51,7 @@ export class ProductsComponent {
                 }),
                 new BeyPageAction({
                     key: BeyPageStandardAction.Edit,
-                    scope: BeyPageActionScope.Item,
+                    scope: BeyPageActionScope.Single,
                     zone: BeyPageActionZone.Left
                 }),
                 new BeyPageAction({
@@ -86,14 +85,14 @@ export class ProductsComponent {
     });
 }
 
-function buildFormConfig(): BeyPageFormConfig {
-    return new BeyPageFormConfig<unknown>({
-        buildSections: item => {
+function buildFormConfig(): BeyPageFormConfig<ProductFormValue, Product> {
+    return new BeyPageFormConfig<ProductFormValue, Product>({
+        buildSections: product => {
             const secondaryFields: BeyFormField[] = [
                 new BeyFormNumberField({ columns: 6, isRequired: true, key: 'price', min: 0 })
             ];
 
-            if (item) {
+            if (product) {
                 secondaryFields.push(new BeyFormCheckboxField({ columns: 6, key: 'available' }));
             }
 
@@ -114,14 +113,12 @@ function buildFormConfig(): BeyPageFormConfig {
             ];
         },
         prefix: `${PREFIX}.form`,
-        toFormValue: item => (item ? toFormValue(item as unknown as Product) : undefined),
-        toItem: value => toItem(value as ProductFormValue)
+        toFormValue: product => (product ? toFormValue(product) : undefined),
+        toItem: value => toItem(value)
     });
 }
 
-function loadRow(pageItem: BeyPageItem): BeyTextTableCell[] {
-    const { category, name, price } = pageItem as unknown as Product;
-
+function loadRow({ category, name, price }: Product): BeyTextTableCell[] {
     return [
         new BeyTextTableCell({ content: name ?? '', tooltip: name ?? '' }),
         new BeyTextTableCell({ content: category ?? '', tooltip: category ?? '' }),
