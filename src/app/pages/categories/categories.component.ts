@@ -35,13 +35,13 @@ const PREFIX = 'angular-components-demo.categories';
     templateUrl: './categories.component.html'
 })
 export class CategoriesComponent {
-    readonly config = new BeyPageConfig<CategoryItemFormValue, CategoryItem, Category>({
+    readonly config = new BeyPageConfig<CategoryItemFormValue, CategoryItem, Category, CategoryFormValue>({
         baseUrl: '/product-categories',
         formConfig: buildItemFormConfig(),
         headerConfig: new BeyPageHeaderConfig({ actions: buildActions(), title: `${PREFIX}.title` }),
         prefix: PREFIX,
         tableConfig: new BeyPageTableConfig({
-            categoriesConfig: new BeyPageCategoriesConfig<Category>({
+            categoriesConfig: new BeyPageCategoriesConfig<Category, CategoryFormValue>({
                 formConfig: buildCategoryFormConfig(),
                 useTrash: true
             }),
@@ -120,8 +120,8 @@ function buildActions(): BeyPageAction<CategoryItem>[] {
     ];
 }
 
-function buildCategoryFormConfig(): BeyPageFormConfig<unknown, Category> {
-    return new BeyPageFormConfig<unknown, Category>({
+function buildCategoryFormConfig(): BeyPageFormConfig<CategoryFormValue, Category> {
+    return new BeyPageFormConfig<CategoryFormValue, Category>({
         buildSections: () => [
             new BeyFormSection({
                 isTitleVisible: false,
@@ -133,7 +133,7 @@ function buildCategoryFormConfig(): BeyPageFormConfig<unknown, Category> {
         ],
         prefix: `${PREFIX}.category-form`,
         toFormValue: category => (category ? { category: { name: category.name } } : undefined),
-        toItem: value => ({ name: (value as CategoryFormValue).category.name })
+        toItem: value => ({ name: value.category.name })
     });
 }
 

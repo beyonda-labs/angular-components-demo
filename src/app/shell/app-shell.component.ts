@@ -4,7 +4,6 @@ import {
     BeyAppLayoutBottomAction,
     BeyAppLayoutComponent,
     BeyAppLayoutConfig,
-    BeyAppLayoutService,
     BeyAppLayoutTopAction,
     BeyLeftMenuTitle,
     BeyLeftMenuUserInfo,
@@ -35,7 +34,7 @@ export class AppShellComponent {
                 })
             ],
             iconSrc: ICON_SRC,
-            onRouteActivated: () => this.appLayoutService.clearBreadcrumb(),
+            isRouteBreadcrumbEnabled: false,
             prefix: PREFIX,
             productName: `${PREFIX}.product-name`,
             title: new BeyLeftMenuTitle({ icon: ICON_SRC, title: `${PREFIX}.title` }),
@@ -49,7 +48,6 @@ export class AppShellComponent {
         });
     });
 
-    private readonly appLayoutService = inject(BeyAppLayoutService);
     private readonly router = inject(Router);
     private readonly sessionService = inject(BeySessionService);
 
