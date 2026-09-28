@@ -1,7 +1,7 @@
 import { CUSTOM_ELEMENTS_SCHEMA, signal } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
 import { Router } from '@angular/router';
-import { BeyAppLayoutService, BeySessionService } from '@beyonda-labs/angular-components';
+import { BeySessionService } from '@beyonda-labs/angular-components';
 
 import { AppShellComponent } from './app-shell.component';
 
@@ -20,8 +20,7 @@ describe('AppShellComponent', () => {
             imports: [AppShellComponent],
             providers: [
                 { provide: BeySessionService, useValue: session },
-                { provide: Router, useValue: router },
-                { provide: BeyAppLayoutService, useValue: { clearBreadcrumb: jest.fn() } }
+                { provide: Router, useValue: router }
             ]
         }).overrideComponent(AppShellComponent, { set: { imports: [], schemas: [CUSTOM_ELEMENTS_SCHEMA] } });
         component = TestBed.createComponent(AppShellComponent).componentInstance;
