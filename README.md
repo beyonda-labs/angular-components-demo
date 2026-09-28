@@ -59,8 +59,11 @@ base-config, or to the manifest when it only concerns this repo.
 ## Translations
 
 Each page keeps its texts next to it, in `<page>/assets/<page>.en.json` and `.es.json`, under
-`angular-components-demo.<page>.*`. `merge-translations` merges them with the library bundles into
+`angular-components-demo.<page>.*`. `merge-translations` merges them with the library bundle into
 `src/assets/i18n/<lang>.json`, which is generated and never edited by hand.
+
+The style guide's texts are not merged: `bey-style-guide` loads them itself from
+`assets/angular-components/i18n-style-guide/`, which `angular.json` copies from the library.
 
 ## CI
 
