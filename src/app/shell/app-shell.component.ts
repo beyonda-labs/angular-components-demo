@@ -22,6 +22,9 @@ const PREFIX = 'angular-components-demo.shell';
     templateUrl: './app-shell.component.html'
 })
 export class AppShellComponent {
+    private readonly router = inject(Router);
+    private readonly sessionService = inject(BeySessionService);
+
     readonly config = computed(() => {
         const user = this.sessionService.user();
 
@@ -47,9 +50,6 @@ export class AppShellComponent {
                 : undefined
         });
     });
-
-    private readonly router = inject(Router);
-    private readonly sessionService = inject(BeySessionService);
 
     private logout(): void {
         this.sessionService.clear();

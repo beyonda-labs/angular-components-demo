@@ -13,12 +13,11 @@ import { CategoryTableService } from './services/category-table.service';
 })
 export class CategoriesComponent {
     private readonly categoryFormService = inject(CategoryFormService);
+    private readonly categoryTableService = inject(CategoryTableService);
 
     readonly categoriesPageConfig = buildCategoriesPageConfig({
         categoryFormConfig: this.categoryFormService.buildCategoryFormConfig(),
         formConfig: this.categoryFormService.buildItemFormConfig(),
         loadRow: item => this.categoryTableService.loadRow(item)
     });
-
-    private readonly categoryTableService = inject(CategoryTableService);
 }

@@ -13,11 +13,10 @@ import { ProductTableService } from './services/product-table.service';
 })
 export class ProductsComponent {
     private readonly productFormService = inject(ProductFormService);
+    private readonly productTableService = inject(ProductTableService);
 
     readonly productsPageConfig = buildProductsPageConfig({
         formConfig: this.productFormService.buildFormConfig(),
         loadRow: product => this.productTableService.loadRow(product)
     });
-
-    private readonly productTableService = inject(ProductTableService);
 }
