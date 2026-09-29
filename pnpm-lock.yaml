@@ -33,8 +33,8 @@ importers:
         specifier: 19.2.17
         version: 19.2.17(@angular/common@19.2.17(@angular/core@19.2.17(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2))(@angular/core@19.2.17(rxjs@7.8.2)(zone.js@0.15.1))(@angular/platform-browser@19.2.17(@angular/animations@19.2.17(@angular/common@19.2.17(@angular/core@19.2.17(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2))(@angular/core@19.2.17(rxjs@7.8.2)(zone.js@0.15.1)))(@angular/common@19.2.17(@angular/core@19.2.17(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2))(@angular/core@19.2.17(rxjs@7.8.2)(zone.js@0.15.1)))(rxjs@7.8.2)
       '@beyonda-labs/angular-components':
-        specifier: 1.2.0-develop.22.c200c93
-        version: 1.2.0-develop.22.c200c93(4ee395ea10595fb732fa0787616df0f1)
+        specifier: 1.2.0-develop.26.8d9fcc5
+        version: 1.2.0-develop.26.8d9fcc5(4ee395ea10595fb732fa0787616df0f1)
       '@fortawesome/angular-fontawesome':
         specifier: 1.0.0
         version: 1.0.0(@angular/core@19.2.17(rxjs@7.8.2)(zone.js@0.15.1))
@@ -996,8 +996,8 @@ packages:
   '@bcoe/v8-coverage@0.2.3':
     resolution: {integrity: sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==}
 
-  '@beyonda-labs/angular-components@1.2.0-develop.22.c200c93':
-    resolution: {integrity: sha512-gH+lS7b12tu210jQUV2hvABMjfPaJ+PwpRCEdldXaDpylXcUS1HE9L29oyPkh05NVQsdDovakKqSa/dSpiCncA==}
+  '@beyonda-labs/angular-components@1.2.0-develop.26.8d9fcc5':
+    resolution: {integrity: sha512-r4R2hFKySfHtY0FXqaec3oQqU4u5FWHcsOE8ipYPZUTnmNuYIxx4kIWas/5LL+zvEXTc0lngLcVJmS/xtLQEWg==}
     peerDependencies:
       '@angular/animations': 19.2.17
       '@angular/common': 19.2.17
@@ -7800,7 +7800,7 @@ snapshots:
 
   '@bcoe/v8-coverage@0.2.3': {}
 
-  '@beyonda-labs/angular-components@1.2.0-develop.22.c200c93(4ee395ea10595fb732fa0787616df0f1)':
+  '@beyonda-labs/angular-components@1.2.0-develop.26.8d9fcc5(4ee395ea10595fb732fa0787616df0f1)':
     dependencies:
       '@angular/animations': 19.2.17(@angular/common@19.2.17(@angular/core@19.2.17(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2))(@angular/core@19.2.17(rxjs@7.8.2)(zone.js@0.15.1))
       '@angular/common': 19.2.17(@angular/core@19.2.17(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2)
