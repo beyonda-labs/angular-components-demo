@@ -2,6 +2,10 @@
     "angular-components-demo": {
         "categories": {
             "actions": {
+                "add-group": {
+                    "label": "Add",
+                    "tooltip": "Create a new product or category"
+                },
                 "create": {
                     "label": "New product",
                     "tooltip": "Create a new product in this category"
@@ -9,10 +13,6 @@
                 "create-category": {
                     "label": "New category",
                     "tooltip": "Create a new subcategory here"
-                },
-                "create-group": {
-                    "label": "Add",
-                    "tooltip": "Create a new product or category"
                 },
                 "delete": {
                     "label": "Delete",

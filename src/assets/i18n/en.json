@@ -311,10 +311,12 @@
             },
             "close": "Close",
             "color-field": {
-                "clear": "Clear"
+                "clear": "Clear",
+                "hex-value": "{{label}} hex value"
             },
             "file-field": {
                 "choose": "Choose file",
+                "choose-for": "Choose file for {{label}}",
                 "clear": "Clear",
                 "file-selected": "File selected",
                 "no-file-selected": "No file selected",
@@ -328,7 +330,9 @@
                 "expand": "Expand"
             },
             "number-array-field": {
-                "add": "Add"
+                "add": "Add",
+                "entry": "{{label}}, entry {{position}}",
+                "remove-entry": "Remove {{label}}, entry {{position}}"
             },
             "remove": "Remove",
             "select-field": {
@@ -407,6 +411,10 @@
     "angular-components-demo": {
         "categories": {
             "actions": {
+                "add-group": {
+                    "label": "Add",
+                    "tooltip": "Create a new product or category"
+                },
                 "create": {
                     "label": "New product",
                     "tooltip": "Create a new product in this category"
@@ -414,10 +422,6 @@
                 "create-category": {
                     "label": "New category",
                     "tooltip": "Create a new subcategory here"
-                },
-                "create-group": {
-                    "label": "Add",
-                    "tooltip": "Create a new product or category"
                 },
                 "delete": {
                     "label": "Delete",

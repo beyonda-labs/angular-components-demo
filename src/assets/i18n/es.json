@@ -311,10 +311,12 @@
             },
             "close": "Cerrar",
             "color-field": {
-                "clear": "Vaciar"
+                "clear": "Vaciar",
+                "hex-value": "Valor hexadecimal de {{label}}"
             },
             "file-field": {
                 "choose": "Elegir archivo",
+                "choose-for": "Elegir archivo para {{label}}",
                 "clear": "Vaciar",
                 "file-selected": "Archivo seleccionado",
                 "no-file-selected": "Ningún archivo seleccionado",
@@ -328,7 +330,9 @@
                 "expand": "Desplegar"
             },
             "number-array-field": {
-                "add": "Añadir"
+                "add": "Añadir",
+                "entry": "{{label}}, entrada {{position}}",
+                "remove-entry": "Eliminar {{label}}, entrada {{position}}"
             },
             "remove": "Eliminar",
             "select-field": {
@@ -407,6 +411,10 @@
     "angular-components-demo": {
         "categories": {
             "actions": {
+                "add-group": {
+                    "label": "Añadir",
+                    "tooltip": "Crear un nuevo producto o categoría"
+                },
                 "create": {
                     "label": "Nuevo producto",
                     "tooltip": "Crear un nuevo producto en esta categoría"
@@ -414,10 +422,6 @@
                 "create-category": {
                     "label": "Nueva categoría",
                     "tooltip": "Crear una nueva subcategoría aquí"
-                },
-                "create-group": {
-                    "label": "Añadir",
-                    "tooltip": "Crear un nuevo producto o categoría"
                 },
                 "delete": {
                     "label": "Eliminar",
