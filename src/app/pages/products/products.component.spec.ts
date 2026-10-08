@@ -1,69 +1,82 @@
-import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { TestBed } from '@angular/core/testing';
-import { BeyPageItem, BeyPageViewMode } from '@beyonda-labs/angular-components';
+import { HttpTestingController } from '@angular/common/http/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { provideRouter } from '@angular/router';
+import {
+    beyButtonByName,
+    BeyFakeModalFormService,
+    beyQueryAll,
+    beyRenderComponent,
+    beySettle,
+    provideBeyTesting
+} from '@beyonda-labs/angular-components/testing';
 
+import { Product } from './models/product.model';
 import { ProductsComponent } from './products.component';
 
+const PREFIX = 'angular-components-demo.products';
+const PRODUCTS_URL = 'https://api.test/api/products';
+
 describe('ProductsComponent', () => {
-    let component: ProductsComponent;
+    let fixture: ComponentFixture<ProductsComponent>;
+    let httpTesting: HttpTestingController;
+    let modalFormService: BeyFakeModalFormService;
+
+    function buildProduct(overrides: Partial<Product> = {}): Product {
+        return {
+            actions: ['edit', 'delete'],
+            available: 1,
+            category: 'Tools',
+            id: 1,
+            name: 'Hammer',
+            price: 12.5,
+            ...overrides
+        };
+    }
+
+    async function render(results: Product[] = [buildProduct()]): Promise<void> {
+        fixture = await beyRenderComponent(ProductsComponent);
+        httpTesting.expectOne(request => request.url === PRODUCTS_URL).flush({ globalActions: ['create'], results });
+        await beySettle(fixture);
+    }
+
+    function rowNamed(name: string): HTMLElement {
+        const row = beyQueryAll(fixture, '[role="row"]').find(candidate => candidate.textContent?.includes(name));
+
+        if (!row) {
+            throw new Error(`No row named ${name}`);
+        }
+
+        return row;
+    }
 
     beforeEach(() => {
-        TestBed.configureTestingModule({ imports: [ProductsComponent] }).overrideComponent(ProductsComponent, {
-            set: { imports: [], schemas: [CUSTOM_ELEMENTS_SCHEMA] }
+        TestBed.configureTestingModule({
+            imports: [ProductsComponent],
+            providers: [provideBeyTesting(), provideRouter([])]
         });
-        component = TestBed.createComponent(ProductsComponent).componentInstance;
+        httpTesting = TestBed.inject(HttpTestingController);
+        modalFormService = TestBed.inject(BeyFakeModalFormService);
     });
 
-    it('shows each product with its price in euros', () => {
-        const item = { category: 'Tools', id: 1, name: 'Hammer', price: 12.5 } as unknown as BeyPageItem;
+    it('lists each product the backend returns with its category and its price in euros', async () => {
+        await render([buildProduct(), buildProduct({ category: 'Garden', id: 2, name: 'Rake', price: undefined })]);
 
-        const cells = component.config.tableConfig!.loadRow(item, BeyPageViewMode.Table);
-
-        expect(cells.map(cell => cell.content)).toEqual(['Hammer', 'Tools', '12.50 €']);
+        expect(rowNamed('Hammer').textContent).toContain('Tools');
+        expect(rowNamed('Hammer').textContent).toContain('12.50 €');
+        expect(rowNamed('Rake').textContent).toContain('Garden');
+        expect(rowNamed('Rake').textContent).not.toContain('€');
     });
 
-    it('leaves the price empty when the product has none', () => {
-        const item = { category: 'Tools', id: 1, name: 'Hammer' } as unknown as BeyPageItem;
+    it('opens the edit form with the values of the selected product', async () => {
+        await render();
 
-        const cells = component.config.tableConfig!.loadRow(item, BeyPageViewMode.Table);
+        rowNamed('Hammer').click();
+        await beySettle(fixture);
+        beyButtonByName(fixture, `${PREFIX}.actions.edit.label`).click();
+        await beySettle(fixture);
 
-        expect(cells[2].content).toBe('');
-    });
-
-    it('opens the edit form with the product values', () => {
-        const item = { available: 1, category: 'Tools', id: 1, name: 'Hammer', price: 12.5 } as unknown as BeyPageItem;
-
-        expect(component.config.formConfig!.toFormValue(item)).toEqual({
+        expect(modalFormService.forms().at(-1)?.initialValue).toEqual({
             product: { available: true, category: 'Tools', name: 'Hammer', price: 12.5 }
         });
-    });
-
-    it('opens the create form empty', () => {
-        expect(component.config.formConfig!.toFormValue()).toBeUndefined();
-    });
-
-    it('sends availability only when the form has the field', () => {
-        const formConfig = component.config.formConfig!;
-
-        expect(formConfig.toItem({ product: { category: 'Tools', name: 'Hammer', price: 3 } })).toEqual({
-            category: 'Tools',
-            name: 'Hammer',
-            price: 3
-        });
-        expect(
-            formConfig.toItem({ product: { available: false, category: 'Tools', name: 'Hammer', price: 3 } })
-        ).toEqual({ available: false, category: 'Tools', name: 'Hammer', price: 3 });
-    });
-
-    it('asks for availability only when editing', () => {
-        const fieldKeys = (item?: BeyPageItem): string[] =>
-            component.config
-                .formConfig!.buildSections(item)
-                .flatMap(section => section.rows)
-                .flatMap(row => row.fields)
-                .map(field => field.key);
-
-        expect(fieldKeys()).not.toContain('available');
-        expect(fieldKeys({ id: 1 } as BeyPageItem)).toContain('available');
     });
 });

@@ -1,14 +1,18 @@
-export interface CategoryRecord {
-    name: string;
-    type: string;
+import { BeyPageItem } from '@beyonda-labs/angular-components';
 
-    price?: number;
+export interface Category extends BeyPageItem {
+    name: string;
 }
 
 export interface CategoryFormValue {
     category: {
         name: string;
     };
+}
+
+export interface CategoryItem extends BeyPageItem {
+    name: string;
+    price: number;
 }
 
 export interface CategoryItemFormValue {

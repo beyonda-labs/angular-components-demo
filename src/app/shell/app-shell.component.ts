@@ -4,7 +4,6 @@ import {
     BeyAppLayoutBottomAction,
     BeyAppLayoutComponent,
     BeyAppLayoutConfig,
-    BeyAppLayoutService,
     BeyAppLayoutTopAction,
     BeyLeftMenuTitle,
     BeyLeftMenuUserInfo,
@@ -23,14 +22,22 @@ const PREFIX = 'angular-components-demo.shell';
     templateUrl: './app-shell.component.html'
 })
 export class AppShellComponent {
+    private readonly router = inject(Router);
+    private readonly sessionService = inject(BeySessionService);
+
     readonly config = computed(() => {
         const user = this.sessionService.user();
 
         return new BeyAppLayoutConfig({
-            bottomActions: [new BeyAppLayoutBottomAction({ icon: faArrowRightFromBracket, key: LOGOUT_KEY })],
+            bottomActions: [
+                new BeyAppLayoutBottomAction({
+                    action: () => this.logout(),
+                    icon: faArrowRightFromBracket,
+                    key: LOGOUT_KEY
+                })
+            ],
             iconSrc: ICON_SRC,
-            onMenuActionClick: key => this.onMenuAction(key),
-            onRouteActivated: () => this.appLayoutService.clearBreadcrumb(),
+            isRouteBreadcrumbEnabled: false,
             prefix: PREFIX,
             productName: `${PREFIX}.product-name`,
             title: new BeyLeftMenuTitle({ icon: ICON_SRC, title: `${PREFIX}.title` }),
@@ -44,18 +51,8 @@ export class AppShellComponent {
         });
     });
 
-    private readonly appLayoutService = inject(BeyAppLayoutService);
-    private readonly router = inject(Router);
-    private readonly sessionService = inject(BeySessionService);
-
-    private onMenuAction(key: string): void {
-        if (key === LOGOUT_KEY) {
-            this.sessionService.clear();
-            this.router.navigate(['/demo']);
-
-            return;
-        }
-
-        this.router.navigate([`/${key}`]);
+    private logout(): void {
+        this.sessionService.clear();
+        this.router.navigate(['/demo']);
     }
 }
