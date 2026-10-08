@@ -48,9 +48,9 @@ export function buildCategoriesPageConfig({
         prefix: PREFIX,
         tableConfig: new BeyPageTableConfig({
             categoriesConfig: new BeyPageCategoriesConfig<Category, CategoryFormValue>({
-                formConfig: categoryFormConfig,
-                useTrash: true
+                formConfig: categoryFormConfig
             }),
+            isTrashEnabled: true,
             columns: [new BeyTableColumn({ key: 'name', width: 8 }), new BeyTableColumn({ key: 'price', width: 4 })],
             height: 'calc(100vh - 320px)',
             loadRow,
