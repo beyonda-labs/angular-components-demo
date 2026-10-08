@@ -40,7 +40,7 @@
         "@angular/platform-browser": "19.2.17",
         "@angular/platform-browser-dynamic": "19.2.17",
         "@angular/router": "19.2.17",
-        "@beyonda-labs/angular-components": "1.2.0-develop.27.5c75f6a",
+        "@beyonda-labs/angular-components": "1.2.0-develop.45.dbdd9b3",
         "@fortawesome/angular-fontawesome": "1.0.0",
         "@fortawesome/fontawesome-svg-core": "6.7.1",
         "@fortawesome/free-brands-svg-icons": "6.7.1",

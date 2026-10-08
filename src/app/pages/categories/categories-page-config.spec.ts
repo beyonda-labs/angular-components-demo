@@ -56,6 +56,6 @@ describe('buildCategoriesPageConfig', () => {
     });
 
     it('keeps deleted products and categories in a trash', () => {
-        expect(buildCategoriesPageConfig(options).tableConfig?.categoriesConfig?.useTrash).toBe(true);
+        expect(buildCategoriesPageConfig(options).tableConfig?.isTrashEnabled).toBe(true);
     });
 });
