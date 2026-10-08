@@ -1,5 +1,16 @@
 # Change Log
 
+## [1.3.0] - 2026-10-09
+
+### Changed
+
+-   Uses angular-components 1.3.0: typed page configs, `provideBeyApp`, the routed shell and the trash enabled on the
+    table config of the categories page.
+-   Pages organised as `rules/angular/page.md` sets, with their logic in function modules and specs on the library's
+    testing entry.
+-   Tooling from base-config: ESLint 9 with the declaration, class-order and signal rules, Prettier and the Jest
+    resolver.
+
 ## [1.1.0] - 2026-09-26
 
 ### Added
