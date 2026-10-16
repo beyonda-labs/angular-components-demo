@@ -2,6 +2,10 @@ import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { provideRouter } from '@angular/router';
 import { provideBeyApp } from '@beyonda-labs/angular-components';
+import {
+    beyAdministrationStyleGuideInterceptor,
+    beyPageStyleGuideInterceptor
+} from '@beyonda-labs/angular-components/style-guide';
 
 import { environment } from '../environments/environment';
 import { routes } from './app.routes';
@@ -19,6 +23,7 @@ export const appConfig: ApplicationConfig = {
                 webApiPath: environment.webApiPath,
                 baseUrl: environment.baseUrl
             },
+            interceptors: [beyAdministrationStyleGuideInterceptor, beyPageStyleGuideInterceptor],
             session: { loginRoute: '/demo' }
         })
     ]

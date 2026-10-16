@@ -1,6 +1,5 @@
 import {
     BeyPageConfig,
-    BeyPageFormConfig,
     BeyPageHeaderConfig,
     BeyPageStandardAction,
     beyPageStandardAction,
@@ -9,18 +8,12 @@ import {
     BeySearchField,
     BeySearchFieldType,
     BeySearchSortDirection,
-    BeyTableCell,
     BeyTableColumn
 } from '@beyonda-labs/angular-components';
 
-import { Product, ProductFormValue } from './models/product.model';
+import { Product, ProductFormValue, ProductsPageConfigOptions } from './models/product.model';
 
 const PREFIX = 'angular-components-demo.products';
-
-export interface ProductsPageConfigOptions {
-    formConfig: BeyPageFormConfig<ProductFormValue, Product>;
-    loadRow: (product: Product) => BeyTableCell[];
-}
 
 export function buildProductsPageConfig({
     formConfig,
@@ -44,7 +37,6 @@ export function buildProductsPageConfig({
                 new BeyTableColumn({ key: 'category', width: 3 }),
                 new BeyTableColumn({ key: 'price', width: 2 })
             ],
-            height: 'calc(100vh - 290px)',
             loadRow,
             order: { direction: BeySearchSortDirection.Asc, field: 'name' },
             search: new BeyPageTableSearchConfig({

@@ -9,6 +9,7 @@ import { CategoryTableService } from './services/category-table.service';
     changeDetection: ChangeDetectionStrategy.OnPush,
     imports: [BeyPageComponent],
     selector: 'app-categories',
+    styleUrls: ['./categories.component.css'],
     templateUrl: './categories.component.html'
 })
 export class CategoriesComponent {

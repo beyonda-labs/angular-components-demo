@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core';
-import { Router, RouterOutlet } from '@angular/router';
+import { RouterOutlet } from '@angular/router';
 import {
     BeyAppLayoutBottomAction,
     BeyAppLayoutComponent,
@@ -22,7 +22,6 @@ const PREFIX = 'angular-components-demo.shell';
     templateUrl: './app-shell.component.html'
 })
 export class AppShellComponent {
-    private readonly router = inject(Router);
     private readonly sessionService = inject(BeySessionService);
 
     readonly config = computed(() => {
@@ -31,7 +30,7 @@ export class AppShellComponent {
         return new BeyAppLayoutConfig({
             bottomActions: [
                 new BeyAppLayoutBottomAction({
-                    action: () => this.logout(),
+                    action: () => this.sessionService.logout(),
                     icon: faArrowRightFromBracket,
                     key: LOGOUT_KEY
                 })
@@ -50,9 +49,4 @@ export class AppShellComponent {
                 : undefined
         });
     });
-
-    private logout(): void {
-        this.sessionService.clear();
-        this.router.navigate(['/demo']);
-    }
 }

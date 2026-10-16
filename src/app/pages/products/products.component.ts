@@ -9,6 +9,7 @@ import { ProductTableService } from './services/product-table.service';
     changeDetection: ChangeDetectionStrategy.OnPush,
     imports: [BeyPageComponent],
     selector: 'app-products',
+    styleUrls: ['./products.component.css'],
     templateUrl: './products.component.html'
 })
 export class ProductsComponent {

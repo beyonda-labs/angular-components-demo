@@ -10,10 +10,10 @@ describe('buildProductsPageConfig', () => {
     });
     const loadRow = jest.fn(() => []);
 
-    it('offers the standard create, edit and delete, with no handler of its own', () => {
+    it('offers the standard create, edit and delete, with no callback of its own', () => {
         const actions = buildProductsPageConfig({ formConfig, loadRow }).headerConfig?.actions ?? [];
 
-        expect(actions.map(action => [action.key, action.handler])).toEqual([
+        expect(actions.map(action => [action.key, action.action])).toEqual([
             [BeyPageStandardAction.Create, undefined],
             [BeyPageStandardAction.Edit, undefined],
             [BeyPageStandardAction.Delete, undefined]

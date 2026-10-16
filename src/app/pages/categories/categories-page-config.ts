@@ -2,7 +2,6 @@ import {
     beyPageAddAction,
     BeyPageCategoriesConfig,
     BeyPageConfig,
-    BeyPageFormConfig,
     BeyPageHeaderConfig,
     BeyPageStandardAction,
     beyPageStandardAction,
@@ -10,19 +9,18 @@ import {
     BeyPageTableSearchConfig,
     BeySearchField,
     BeySearchFieldType,
-    BeyTableCell,
     BeyTableColumn
 } from '@beyonda-labs/angular-components';
 
-import { Category, CategoryFormValue, CategoryItem, CategoryItemFormValue } from './models/category.model';
+import {
+    CategoriesPageConfigOptions,
+    Category,
+    CategoryFormValue,
+    CategoryItem,
+    CategoryItemFormValue
+} from './models/category.model';
 
 const PREFIX = 'angular-components-demo.categories';
-
-export interface CategoriesPageConfigOptions {
-    categoryFormConfig: BeyPageFormConfig<CategoryFormValue, Category>;
-    formConfig: BeyPageFormConfig<CategoryItemFormValue, CategoryItem>;
-    loadRow: (item: CategoryItem) => BeyTableCell[];
-}
 
 export function buildCategoriesPageConfig({
     categoryFormConfig,
@@ -52,7 +50,6 @@ export function buildCategoriesPageConfig({
             }),
             isTrashEnabled: true,
             columns: [new BeyTableColumn({ key: 'name', width: 8 }), new BeyTableColumn({ key: 'price', width: 4 })],
-            height: 'calc(100vh - 320px)',
             loadRow,
             search: new BeyPageTableSearchConfig({
                 fields: [
