@@ -33,8 +33,8 @@ importers:
         specifier: 19.2.17
         version: 19.2.17(@angular/common@19.2.17(@angular/core@19.2.17(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2))(@angular/core@19.2.17(rxjs@7.8.2)(zone.js@0.15.1))(@angular/platform-browser@19.2.17(@angular/animations@19.2.17(@angular/common@19.2.17(@angular/core@19.2.17(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2))(@angular/core@19.2.17(rxjs@7.8.2)(zone.js@0.15.1)))(@angular/common@19.2.17(@angular/core@19.2.17(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2))(@angular/core@19.2.17(rxjs@7.8.2)(zone.js@0.15.1)))(rxjs@7.8.2)
       '@beyonda-labs/angular-components':
-        specifier: 1.3.0
-        version: 1.3.0(4ee395ea10595fb732fa0787616df0f1)
+        specifier: 1.6.0
+        version: 1.6.0(4ee395ea10595fb732fa0787616df0f1)
       '@fortawesome/angular-fontawesome':
         specifier: 1.0.0
         version: 1.0.0(@angular/core@19.2.17(rxjs@7.8.2)(zone.js@0.15.1))
@@ -107,7 +107,7 @@ importers:
         version: 19.2.17(@angular/compiler@19.2.17)(typescript@5.5.4)
       '@beyonda-labs/base-config':
         specifier: develop
-        version: 0.1.0-develop.17.f29028b(eslint@9.39.5(jiti@1.21.7))(prettier@3.3.3)(stylelint@17.15.0(typescript@5.5.4))(typescript@5.5.4)
+        version: 0.1.0-develop.20.d3be037(eslint@9.39.5(jiti@1.21.7))(prettier@3.3.3)(stylelint@17.15.0(typescript@5.5.4))(typescript@5.5.4)
       '@types/jest':
         specifier: 29.5.14
         version: 29.5.14
@@ -996,8 +996,8 @@ packages:
   '@bcoe/v8-coverage@0.2.3':
     resolution: {integrity: sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==}
 
-  '@beyonda-labs/angular-components@1.3.0':
-    resolution: {integrity: sha512-qOAwIJ5cNt6sh/Ch8w8tmpRb4m8UeS2IRg+cYgXrY65AOhdTLEfjZon+e/LOX/YUY1z4HdkGyVOZcfEpjlzX8A==}
+  '@beyonda-labs/angular-components@1.6.0':
+    resolution: {integrity: sha512-eTLzzHNjK9k54CvIOhaMVKroJP7bYGcyXxXEEl/1CRuX96jhBl0exX0gktouVnKpp+je9GOB47IDVIEo/zsRJA==}
     peerDependencies:
       '@angular/animations': 19.2.17
       '@angular/common': 19.2.17
@@ -1016,8 +1016,8 @@ packages:
       rxjs: 7.8.2
       zone.js: 0.15.1
 
-  '@beyonda-labs/base-config@0.1.0-develop.17.f29028b':
-    resolution: {integrity: sha512-FvaeuFZJ3SeuTPmny331fdi5Grzqj+mLnHREgnK65KJp0apJRPNoOg5l9rwBGhrY8SAO/cr86MUNcP+M7fhzGw==}
+  '@beyonda-labs/base-config@0.1.0-develop.20.d3be037':
+    resolution: {integrity: sha512-vKwSR+gJ+h9ykxxexegRdabxNYLnI6Z7jYmrqjEKQbFb4YE0wkYgcknMLQ0C8621cnZgaltIZk8e2qIP5OOqXQ==}
     hasBin: true
     peerDependencies:
       eslint: 9.39.5
@@ -7800,7 +7800,7 @@ snapshots:
 
   '@bcoe/v8-coverage@0.2.3': {}
 
-  '@beyonda-labs/angular-components@1.3.0(4ee395ea10595fb732fa0787616df0f1)':
+  '@beyonda-labs/angular-components@1.6.0(4ee395ea10595fb732fa0787616df0f1)':
     dependencies:
       '@angular/animations': 19.2.17(@angular/common@19.2.17(@angular/core@19.2.17(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2))(@angular/core@19.2.17(rxjs@7.8.2)(zone.js@0.15.1))
       '@angular/common': 19.2.17(@angular/core@19.2.17(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2)
@@ -7829,7 +7829,7 @@ snapshots:
       uuid: 11.1.0
       zone.js: 0.15.1
 
-  '@beyonda-labs/base-config@0.1.0-develop.17.f29028b(eslint@9.39.5(jiti@1.21.7))(prettier@3.3.3)(stylelint@17.15.0(typescript@5.5.4))(typescript@5.5.4)':
+  '@beyonda-labs/base-config@0.1.0-develop.20.d3be037(eslint@9.39.5(jiti@1.21.7))(prettier@3.3.3)(stylelint@17.15.0(typescript@5.5.4))(typescript@5.5.4)':
     dependencies:
       '@eslint/js': 9.39.5
       '@stylistic/eslint-plugin-js': 2.13.0(eslint@9.39.5(jiti@1.21.7))

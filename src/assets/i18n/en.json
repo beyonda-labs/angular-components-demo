@@ -1,13 +1,182 @@
 {
     "angular-components": {
+        "account-data": {
+            "description": "Your name as the rest of the team sees it.",
+            "profile": {
+                "email": {
+                    "hint": "Used to sign in",
+                    "label": "Email"
+                },
+                "name": {
+                    "label": "Name",
+                    "placeholder": "Type your name"
+                },
+                "surname": {
+                    "label": "Surname",
+                    "placeholder": "Type your surname"
+                }
+            },
+            "save": "Save changes",
+            "title": "Profile",
+            "toast": {
+                "success": "Profile saved"
+            }
+        },
         "app-layout": {
             "main-content": "Main content"
+        },
+        "audit": {
+            "actions": {
+                "export": {
+                    "label": "Export",
+                    "tooltip": "Download the events the search and the filters select, as a CSV file"
+                },
+                "view": {
+                    "tooltip": "See every detail of the selected event"
+                }
+            },
+            "entities": {
+                "account": "Account",
+                "auth": "Session",
+                "groups": "Groups",
+                "organizations": "Organizations",
+                "roles": "Roles",
+                "users": "Users"
+            },
+            "search": {
+                "fields": {
+                    "action": "Action",
+                    "entity": "Entity",
+                    "text": "Text",
+                    "user-id": "User"
+                }
+            },
+            "table": {
+                "columns": {
+                    "action": "Action",
+                    "entity-name": "Row",
+                    "ip": "IP",
+                    "occurred-at": "Date and time",
+                    "organization": "Organization",
+                    "user": "User"
+                },
+                "empty": "No event matches the search",
+                "tooltips": {
+                    "action": "What was done, and to what",
+                    "entity-name": "The name of the row, as it was then",
+                    "ip": "Where the request came from",
+                    "occurred-at": "When it happened",
+                    "organization": "The organization the event belongs to",
+                    "user": "Who did it, as they were named then"
+                }
+            },
+            "title": "Audit",
+            "verbs": {
+                "accept-invitation": "Accept invitation",
+                "change-password": "Change password",
+                "change-status": "Change status",
+                "create": "Create",
+                "create-category": "Create folder",
+                "delete": "Delete",
+                "delete-category": "Delete folder",
+                "delete-trash-item": "Delete from the trash",
+                "duplicate": "Duplicate",
+                "edit": "Edit",
+                "edit-category": "Edit folder",
+                "empty-trash": "Empty the trash",
+                "import": "Import",
+                "invite": "Invite",
+                "locked": "Lockout",
+                "move": "Move",
+                "register": "Register",
+                "resend-invitation": "Resend invitation",
+                "reset-password": "Reset password",
+                "restore": "Restore",
+                "scan-refused": "Refused by the antivirus",
+                "share": "Share",
+                "sign-in": "Sign in",
+                "sign-in-failed": "Failed sign-in",
+                "sign-out": "Sign out",
+                "transfer": "Change owner",
+                "transfer-content": "Transfer content",
+                "unshare": "Stop sharing",
+                "verify-email": "Verify email"
+            },
+            "view": {
+                "buttons": {
+                    "close": "Close"
+                },
+                "main": {
+                    "action": {
+                        "label": "Action"
+                    },
+                    "details": {
+                        "label": "Details"
+                    },
+                    "entity": {
+                        "label": "Row"
+                    },
+                    "ip": {
+                        "label": "IP"
+                    },
+                    "occurred-at": {
+                        "label": "Date and time"
+                    },
+                    "organization": {
+                        "label": "Organization"
+                    },
+                    "request-id": {
+                        "label": "Request id"
+                    },
+                    "user": {
+                        "label": "User"
+                    }
+                },
+                "none": "Not recorded",
+                "title": "Audit event"
+            }
         },
         "breadcrumb": {
             "label": "Breadcrumb"
         },
+        "cards": {
+            "empty": "Nothing here yet.",
+            "fold": {
+                "hide": "Hide",
+                "show": "Show"
+            }
+        },
+        "edit-lock-notice": {
+            "actions": {
+                "edit": "Edit",
+                "release": "Release",
+                "save-copy": "Save as a copy",
+                "take-over": "Edit here"
+            },
+            "messages": {
+                "free": "Nobody is editing it now: it is free to edit again.",
+                "held": {
+                    "earlier": "{{name}} has been editing it since {{date}} at {{time}}. You can look at it, but not change it.",
+                    "today": "{{name}} has been editing it since {{time}}. You can look at it, but not change it."
+                },
+                "lost": {
+                    "other-window": "You are editing it in another window now. Your changes stay on screen, but they can no longer be saved here.",
+                    "released": "Your editing was released. Your changes stay on screen, but they can no longer be saved here.",
+                    "taken": "{{name}} took over the editing. Your changes stay on screen, but they can no longer be saved here."
+                },
+                "other-window": "You are editing it in another window.",
+                "unavailable": "It is no longer available for editing."
+            },
+            "release-confirmation": {
+                "confirm": "Release",
+                "message": "{{name}} will no longer be able to save the changes they have not saved yet. Release the editing?",
+                "title": "Release the editing"
+            }
+        },
         "file-preview": {
-            "close": "Close preview"
+            "cancel": "Cancel",
+            "close": "Close preview",
+            "type": "Preview"
         },
         "floating-preferences": {
             "dark": "Dark",
@@ -24,10 +193,18 @@
             "autocomplete-field": {
                 "clear": "Clear",
                 "empty": "No options found",
+                "more": "There are more matches: type more to narrow them down.",
                 "toggle": "Show options"
             },
             "cancel": {
                 "without-changes": "No changes have been made to the form."
+            },
+            "checkbox-sections": {
+                "clear-all": "Clear all",
+                "clear-all-in": "Clear all in {{section}}",
+                "count": "{{checked}} of {{total}} checked",
+                "select-all": "Select all",
+                "select-all-in": "Select all in {{section}}"
             },
             "chips": {
                 "remove": "Remove"
@@ -39,6 +216,9 @@
                 "max-size": "Maximum size: {{maxSize}}",
                 "too-large": "The file exceeds the maximum size of {{maxSize}}",
                 "unsupported-type": "Unsupported file type. Allowed: {{accept}}"
+            },
+            "list-field": {
+                "remove": "Remove {{label}}"
             },
             "modal": {
                 "close-confirmation": {
@@ -53,6 +233,16 @@
             },
             "password-field": {
                 "hide": "Hide password",
+                "policy": {
+                    "digit": "One digit",
+                    "length": "At least {{min}} characters",
+                    "lowercase": "One lowercase letter",
+                    "met": "met",
+                    "symbol": "One punctuation mark or symbol",
+                    "too-long": "At most {{max}} characters",
+                    "unmet": "not met",
+                    "uppercase": "One uppercase letter"
+                },
                 "show": "Show password"
             },
             "required": "This field is required",
@@ -68,31 +258,169 @@
                 "insert-variable": "Insert variable"
             }
         },
+        "groups": {
+            "actions": {
+                "create": {
+                    "label": "New group",
+                    "tooltip": "Create a group"
+                },
+                "delete": {
+                    "label": "Delete",
+                    "tooltip": "Delete the selected groups"
+                },
+                "edit": {
+                    "label": "Edit",
+                    "tooltip": "Edit the name, the members and the additional roles of the selected group"
+                },
+                "view": {
+                    "tooltip": "See the members of the selected group"
+                }
+            },
+            "categories": {
+                "root": "Groups"
+            },
+            "count": {
+                "categories": {
+                    "one": "{{count}} organization",
+                    "other": "{{count}} organizations"
+                },
+                "items": {
+                    "one": "{{count}} group",
+                    "other": "{{count}} groups"
+                }
+            },
+            "form": {
+                "create": {
+                    "title": "New group"
+                },
+                "edit": {
+                    "title": "Edit group"
+                },
+                "main": {
+                    "extra-role-ids": {
+                        "empty": "This group has no additional roles yet.",
+                        "label": "Additional roles",
+                        "placeholder": "Search a role by its name"
+                    },
+                    "name": {
+                        "label": "Name",
+                        "placeholder": "Type the name of the group"
+                    },
+                    "organization-id": {
+                        "label": "Organization",
+                        "placeholder": "Choose an organization"
+                    },
+                    "user-ids": {
+                        "empty": "This group has no members yet.",
+                        "label": "Members",
+                        "placeholder": "Search a person by name or email"
+                    }
+                }
+            },
+            "modal": {
+                "delete": {
+                    "message": "This will delete {{count}} group(s), and their members will lose the folders shared with them. Do you want to continue?",
+                    "title": "Delete groups"
+                }
+            },
+            "search": {
+                "fields": {
+                    "text": "Name"
+                }
+            },
+            "table": {
+                "columns": {
+                    "created-at": "Created",
+                    "extra-role-count": "Roles",
+                    "member-count": "Members",
+                    "name": "Name",
+                    "organization": "Organization",
+                    "role-count": "Roles"
+                },
+                "empty": "No group matches the search",
+                "tooltips": {
+                    "created-at": "When the group was created",
+                    "extra-role-count": "How many additional roles it gives its members",
+                    "member-count": "How many users belong to it",
+                    "name": "The name of the group",
+                    "organization": "The organization the group belongs to",
+                    "role-count": "How many additional roles it gives its members"
+                },
+                "view-group": "See its members"
+            },
+            "title": "Groups",
+            "toast": {
+                "create-success": "Group created",
+                "delete-success": "Groups deleted",
+                "edit-success": "Group saved"
+            },
+            "view": {
+                "buttons": {
+                    "close": "Close"
+                },
+                "main": {
+                    "extra-roles": {
+                        "empty": "This group gives no additional roles.",
+                        "label": "Additional roles"
+                    },
+                    "members": {
+                        "empty": "This group has no members yet.",
+                        "label": "Members"
+                    },
+                    "name": {
+                        "label": "Group"
+                    }
+                },
+                "title": "Group details"
+            }
+        },
         "header": {
             "menu": "More actions"
         },
         "http": {
             "error": {
+                "account": {
+                    "no-password": "Your account has no password yet. Set one through \"Forgot your password?\" on the sign-in page.",
+                    "token-invalid": "This link is invalid, has already been used or has expired.",
+                    "wrong-password": "The current password is not correct.",
+                    "wrong-password-attempts-left": "The current password is not correct. Attempts left before the account is locked for {{minutes}} minutes: {{attemptsLeft}}."
+                },
+                "action-unavailable": "This action is not available for the item. Reload the page and try again.",
+                "attachments": {
+                    "content-already-set": "This attachment already has its file.",
+                    "content-not-set": "This attachment has no file to replace yet.",
+                    "content-too-large": "The file is larger than the maximum size allowed.",
+                    "duplicate-content": "This file is already uploaded as \"{{name}}\".",
+                    "empty-content": "The file is empty.",
+                    "infected": "The file carries a virus ({{signature}}) and was not saved.",
+                    "invalid-type": "This type of file is not allowed. Allowed types: {{allowed}}.",
+                    "replace-type-mismatch": "Replace the file with another {{fileType}}.",
+                    "scan-unavailable": "The file could not be checked by the antivirus. Please try again later."
+                },
                 "bad-gateway": "The server received an invalid response. Please try again later.",
                 "bad-request": "The request could not be processed. Please check the submitted data.",
                 "conflict": "A conflict occurred with the current state of the resource.",
-                "document-generation": {
-                    "cyclical-block-reference": "A cyclical reference between reusable blocks was detected.",
-                    "insufficient-width-image": "Not enough width available to place an image in the document.",
-                    "insufficient-width-list": "Not enough width available to place a list in the document.",
-                    "insufficient-width-list-item": "Not enough width available for a list item.",
-                    "insufficient-width-paragraph": "Not enough width available to place a paragraph in the document.",
-                    "invalid-image": "Could not generate an image in the document. Check that the referenced variable or image file has a valid value.",
-                    "invalid-image-width": "An image in the document has an invalid width.",
-                    "invalid-request": "The request is not in the expected format.",
-                    "pagination-stuck": "The document could not be paginated correctly. Check the content: an item may be too large or misconfigured.",
-                    "pdf-page-range": "The requested page range for an inserted PDF exceeds the number of pages in the source file.",
-                    "unresolved-block": "Could not resolve the content of a referenced reusable block.",
-                    "unresolved-header-footer": "Could not resolve the header or footer content.",
-                    "validation-failed": "The document has pending validation errors. Fix them before generating it."
+                "database": {
+                    "busy": "The database is busy with another operation: try again in a few seconds."
                 },
                 "duplicate-field": "An item with field \"{{fieldName}}\" and value \"{{value}}\" already exists.",
+                "edit-locks": {
+                    "held": "{{holderName}} is editing it: nothing was changed.",
+                    "release-forbidden": "Only whoever is editing it, an admin of its organization or a superadmin can release the editing.",
+                    "released": "Your editing was released, so your changes were not saved here. Save them as a copy, or reload it to edit it again."
+                },
+                "entities": {
+                    "invalid-transfer-target": "The new owner must be an active user of the same organization.",
+                    "owner-required": "This item needs a user to own it: create it inside the folder of a user.",
+                    "transfer-mixed-organizations": "The rows chosen belong to different organizations: change the owner of each organization separately."
+                },
                 "forbidden": "You do not have permission to perform this action.",
+                "groups": {
+                    "existing-name": "There is already a group named {{name}} in this organization.",
+                    "invalid-extra-roles": "Some of the additional roles chosen do not belong to the organization of the group or no longer exist. Reload the page and try again.",
+                    "invalid-members": "Some of the people chosen cannot join this group: they belong to another organization or no longer exist. Reload the page and try again.",
+                    "not-found": "This group does not exist or is out of your reach. Reload the page and try again."
+                },
                 "internal-server-error": "An internal server error occurred. Please try again later.",
                 "invalid-child": "The field \"{{childField}}\" is not valid for parent \"{{parentField}}\".",
                 "invalid-field-length": "The field \"{{fieldName}}\" must be between {{min}} and {{max}} characters long.",
@@ -104,26 +432,75 @@
                 "invalid-field-range-min": "The field \"{{fieldName}}\" must be at least {{min}}.",
                 "invalid-field-type": "The field \"{{fieldName}}\" must be of type \"{{expectedType}}\".",
                 "invalid-field-value": "The field \"{{fieldName}}\" has an invalid value.",
+                "invalid-transition": "The status cannot change from \"{{from}}\" to \"{{to}}\".",
                 "login": {
+                    "account-inactive": "This account has been deactivated. Contact an administrator if you need access again.",
+                    "account-locked": "This account is locked after too many failed attempts. Try again in {{minutes}} minute(s).",
+                    "email-not-verified": "Verify your email address before signing in. Open the link we sent to {{email}}, or ask for a new one.",
                     "existing-user": "An account with this email already exists.",
                     "invalid-credentials": "Invalid email or password.",
+                    "invalid-credentials-attempts-left": "Invalid email or password. Attempts left before the account is locked for {{minutes}} minutes: {{attemptsLeft}}.",
+                    "invalid-origin": "The request came from another site and was refused.",
                     "invalid-refresh-token": "Your session has expired. Please log in again.",
                     "oauth-invalid-callback": "The authentication callback is invalid. Please try again.",
                     "oauth-missing-access-token": "No access token was received from {{provider}}. Please try again.",
                     "oauth-missing-email": "No email address was returned by {{provider}}. Please try again.",
                     "oauth-token-exchange": "Could not connect with {{provider}}. Please try again.",
                     "oauth-user-info-not-found": "Could not retrieve user information from {{provider}}. Please try again.",
+                    "organization-inactive": "Your organization has been deactivated. Contact an administrator if you need access again.",
                     "passwords-not-match": "Passwords do not match.",
-                    "provider-not-found": "The provider {{provider}} is not available."
+                    "provider-not-found": "The provider {{provider}} is not available.",
+                    "verification-not-sent": "Your account was created, but the verification email to {{email}} could not be sent. Sign in to ask for a new one."
                 },
                 "move-target-unchanged": "The item is already located in this category.",
                 "not-found": "The requested resource was not found.",
+                "notifications": {
+                    "not-found": "This notification no longer exists."
+                },
+                "organizations": {
+                    "active": "Only a deactivated organization can be deleted. Deactivate it first.",
+                    "existing-name": "There is already an organization named {{name}}.",
+                    "name-mismatch": "The name typed does not match the name of the organization.",
+                    "not-found": "This organization does not exist or has been deactivated. Reload the page and try again."
+                },
+                "password": {
+                    "digit-required": "The password must include a digit.",
+                    "lowercase-required": "The password must include a lowercase letter.",
+                    "symbol-required": "The password must include a punctuation mark or a symbol.",
+                    "too-long": "The password must be at most {{max}} characters long.",
+                    "too-short": "The password must be at least {{min}} characters long.",
+                    "uppercase-required": "The password must include an uppercase letter."
+                },
                 "required-field": "The field \"{{fieldName}}\" is required.",
+                "roles": {
+                    "base-role": "The base roles of the application cannot be changed nor deleted.",
+                    "existing-name": "There is already a role with this name in this organization, or it is the name of a base role.",
+                    "invalid-permissions": "Some of the permissions chosen cannot go into a role: they are not yours to give, or they manage users, organizations or roles. Reload the page and try again.",
+                    "not-found": "This role does not exist or is out of your reach. Reload the page and try again."
+                },
                 "service-unavailable": "The service is temporarily unavailable. Please try again later.",
+                "sharing": {
+                    "invalid-grantees": "Some of the users or groups chosen cannot get access to this folder: they belong to another organization, own it or no longer exist. Reload the page and try again."
+                },
                 "title": "Error",
                 "too-many-requests": "Too many requests. Please try again later.",
                 "unauthorized": "Your session has expired or you are not authenticated. Please log in again.",
-                "unknown": "An unexpected error occurred. Please try again later."
+                "unknown": "An unexpected error occurred. Please try again later.",
+                "users": {
+                    "existing-user": "There is already an account with the email {{email}}.",
+                    "invalid-extra-roles": "Some of the additional roles chosen do not belong to the organization of the user, or no longer exist. Reload the page and try again.",
+                    "invalid-transfer-target": "The person chosen cannot receive this content: they must be an active user of the same organization. Reload the page and try again.",
+                    "invitation-not-sent": "The user {{email}} was created, but the invitation email could not be sent. Use \"Resend invitation\" to try again.",
+                    "last-superadmin": "This change would leave no active superadmin.",
+                    "not-deletable": "This user cannot be deleted: only inactive users and pending invitations can, never a superadmin nor your own account.",
+                    "not-found": "This user does not exist. Reload the page and try again.",
+                    "not-invited": "This account is no longer waiting for an invitation.",
+                    "own-account": "You cannot change your own account here: neither its status, its roles nor its name. Change your name on your account page.",
+                    "superadmin-only": "Only a superadmin can change a superadmin account.",
+                    "superadmin-role-fixed": "The superadmin role cannot be granted nor removed.",
+                    "transfer-source-not-inactive": "Only the content of an inactive user can be transferred. Deactivate the user first.",
+                    "unknown-role": "The role \"{{role}}\" does not exist."
+                }
             },
             "field": {
                 "login": {
@@ -139,27 +516,49 @@
                 }
             },
             "title": {
+                "account": {
+                    "no-password": "No password",
+                    "token-invalid": "Invalid link",
+                    "wrong-password": "Wrong password",
+                    "wrong-password-attempts-left": "Wrong password"
+                },
+                "action-unavailable": "Action not available",
+                "attachments": {
+                    "content-already-set": "File already uploaded",
+                    "content-not-set": "No file",
+                    "content-too-large": "File too large",
+                    "duplicate-content": "Duplicate file",
+                    "empty-content": "Empty file",
+                    "infected": "Virus found",
+                    "invalid-type": "File type not allowed",
+                    "replace-type-mismatch": "Wrong type of file",
+                    "scan-unavailable": "Antivirus unavailable"
+                },
                 "bad-gateway": "Connection error",
                 "bad-request": "Invalid request",
                 "conflict": "Conflict",
-                "default": "Error",
-                "document-generation": {
-                    "cyclical-block-reference": "Cyclical reference",
-                    "insufficient-width-image": "Insufficient space",
-                    "insufficient-width-list": "Insufficient space",
-                    "insufficient-width-list-item": "Insufficient space",
-                    "insufficient-width-paragraph": "Insufficient space",
-                    "invalid-image": "Image generation failed",
-                    "invalid-image-width": "Image generation failed",
-                    "invalid-request": "Invalid request",
-                    "pagination-stuck": "Pagination error",
-                    "pdf-page-range": "Invalid page range",
-                    "unresolved-block": "Unresolved block",
-                    "unresolved-header-footer": "Unresolved header/footer",
-                    "validation-failed": "Invalid document"
+                "database": {
+                    "busy": "Database busy"
                 },
+                "default": "Error",
                 "duplicate-field": "Duplicate value",
+                "edit-locks": {
+                    "held": "Being edited",
+                    "release-forbidden": "Release not allowed",
+                    "released": "Editing released"
+                },
+                "entities": {
+                    "invalid-transfer-target": "New owner not valid",
+                    "owner-required": "Owner required",
+                    "transfer-mixed-organizations": "Several organizations"
+                },
                 "forbidden": "Access denied",
+                "groups": {
+                    "existing-name": "Name already in use",
+                    "invalid-extra-roles": "Additional roles not valid",
+                    "invalid-members": "Members not valid",
+                    "not-found": "Group not found"
+                },
                 "internal-server-error": "Server error",
                 "invalid-child": "Invalid field",
                 "invalid-field-length": "Invalid length",
@@ -167,30 +566,80 @@
                 "invalid-field-range": "Value out of range",
                 "invalid-field-type": "Invalid field type",
                 "invalid-field-value": "Invalid value",
+                "invalid-transition": "Invalid status change",
                 "login": {
+                    "account-inactive": "Account deactivated",
+                    "account-locked": "Account locked",
+                    "email-not-verified": "Email not verified",
                     "existing-user": "Account already exists",
                     "invalid-credentials": "Authentication failed",
+                    "invalid-credentials-attempts-left": "Authentication failed",
+                    "invalid-origin": "Request refused",
                     "invalid-refresh-token": "Session expired",
                     "oauth-invalid-callback": "Authentication error",
                     "oauth-missing-access-token": "Authentication error",
                     "oauth-missing-email": "Authentication error",
                     "oauth-token-exchange": "Authentication error",
                     "oauth-user-info-not-found": "Authentication error",
+                    "organization-inactive": "Organization deactivated",
                     "passwords-not-match": "Password error",
-                    "provider-not-found": "Provider unavailable"
+                    "provider-not-found": "Provider unavailable",
+                    "verification-not-sent": "Email not sent"
                 },
                 "move-target-unchanged": "No change",
                 "not-found": "Not found",
+                "notifications": {
+                    "not-found": "Notification not found"
+                },
+                "organizations": {
+                    "active": "Organization still active",
+                    "existing-name": "Name already in use",
+                    "name-mismatch": "Name does not match",
+                    "not-found": "Organization not found"
+                },
+                "password": {
+                    "digit-required": "Digit missing",
+                    "lowercase-required": "Lowercase letter missing",
+                    "symbol-required": "Symbol missing",
+                    "too-long": "Password too long",
+                    "too-short": "Password too short",
+                    "uppercase-required": "Uppercase letter missing"
+                },
                 "required-field": "Required field",
+                "roles": {
+                    "base-role": "Base role",
+                    "existing-name": "Name already in use",
+                    "invalid-permissions": "Permissions not valid",
+                    "not-found": "Role not found"
+                },
                 "service-unavailable": "Service unavailable",
+                "sharing": {
+                    "invalid-grantees": "Recipients not valid"
+                },
                 "too-many-requests": "Too many requests",
                 "unauthorized": "Authentication required",
-                "unknown": "Unexpected error"
+                "unknown": "Unexpected error",
+                "users": {
+                    "existing-user": "Account already exists",
+                    "invalid-extra-roles": "Additional roles not valid",
+                    "invalid-transfer-target": "Recipient not valid",
+                    "invitation-not-sent": "Invitation not sent",
+                    "last-superadmin": "Last superadmin",
+                    "not-deletable": "User not deletable",
+                    "not-found": "User not found",
+                    "not-invited": "No pending invitation",
+                    "own-account": "Your own account",
+                    "superadmin-only": "Superadmins only",
+                    "superadmin-role-fixed": "Fixed role",
+                    "transfer-source-not-inactive": "User still active",
+                    "unknown-role": "Unknown role"
+                }
             }
         },
         "left-menu": {
             "collapse": "Collapse menu",
             "expand": "Expand menu",
+            "open-account": "Open my account",
             "sections": {
                 "main": "Main",
                 "others": "Others"
@@ -201,6 +650,48 @@
             "label": "Loading"
         },
         "login": {
+            "accept-invitation": {
+                "button": {
+                    "accept": "Activate account"
+                },
+                "intro": "You have been invited as {{email}}. Fill in your details and choose a password to activate your account.",
+                "invalid-hint": "Ask the person who invited you to send a new invitation.",
+                "loading": "Loading your invitation…",
+                "name": {
+                    "label": "Name",
+                    "placeholder": "Your name"
+                },
+                "password": {
+                    "label": "Password",
+                    "placeholder": "Choose a password"
+                },
+                "password2": {
+                    "label": "Confirm password",
+                    "placeholder": "Repeat your password"
+                },
+                "surname": {
+                    "label": "Surname",
+                    "placeholder": "Your surname"
+                }
+            },
+            "back-to-sign-in": "Back to sign in",
+            "forgot-password": {
+                "button": {
+                    "send": "Send link"
+                },
+                "email": {
+                    "label": "Email",
+                    "placeholder": "you@email.com"
+                },
+                "intro": "Type the email address of your account and we will send you a link to choose a new password.",
+                "sent": "If an account exists for that address, we have sent a link to choose a new password. Check your inbox."
+            },
+            "link-error": {
+                "failed": "We could not open this link right now. Try again in a moment.",
+                "invalid": "This link is invalid, has already been used or has expired.",
+                "request-new-link": "Request a new link",
+                "retry": "Try again"
+            },
             "login": {
                 "button": {
                     "login": "Sign in"
@@ -209,11 +700,17 @@
                     "label": "Email",
                     "placeholder": "Type your email"
                 },
+                "forgot-password": "Forgot your password?",
                 "password": {
                     "label": "Password",
                     "placeholder": "Type your password"
                 },
-                "signin-with": "Continue with"
+                "signin-with": "Continue with",
+                "unverified": {
+                    "message": "{{email}} is not verified yet. We can send you a new verification link.",
+                    "resend": "Resend verification email",
+                    "sent": "If {{email}} still needs verifying, we have sent a new link. Check your inbox."
+                }
             },
             "provider": {
                 "facebook": "Facebook",
@@ -246,9 +743,40 @@
                     "placeholder": "Your surname"
                 }
             },
+            "registered": {
+                "message": "We have sent a link to your email address. Open it to activate your account, then sign in."
+            },
+            "reset-password": {
+                "button": {
+                    "save": "Save password"
+                },
+                "invalid-hint": "Ask for a new link to reset your password.",
+                "password": {
+                    "label": "New password",
+                    "placeholder": "Type your new password"
+                },
+                "password2": {
+                    "label": "Confirm password",
+                    "placeholder": "Repeat your new password"
+                }
+            },
             "title": {
+                "accept-invitation": "Accept your invitation",
+                "forgot-password": "Reset your password",
+                "invalid-link": "This link is no longer valid",
                 "login": "Welcome back",
-                "register": "Create your account"
+                "register": "Create your account",
+                "registered": "Check your inbox",
+                "reset-password": "Choose a new password",
+                "verify-email": "Verify your email"
+            },
+            "validation": {
+                "passwords-not-match": "The passwords do not match."
+            },
+            "verify-email": {
+                "invalid-hint": "Sign in with your email and password to get a new link.",
+                "progress": "Verifying your email address…",
+                "success": "Your email address is verified. Signing you in…"
             }
         },
         "modal": {
@@ -270,16 +798,317 @@
                 "title": "Unsaved changes"
             }
         },
+        "notifications": {
+            "access": {
+                "read": "read only",
+                "write": "read and write"
+            },
+            "actions": {
+                "mark-all-read": "Mark all as read",
+                "refresh": "Refresh",
+                "show-more": "Show more"
+            },
+            "bell": {
+                "label": "Notifications",
+                "unread": "Notifications, {{count}} unread"
+            },
+            "empty": "You have no notifications",
+            "loading": "Loading notifications…",
+            "time": {
+                "days": "{{count}} d ago",
+                "hours": "{{count}} h ago",
+                "minutes": "{{count}} min ago",
+                "now": "Just now"
+            },
+            "title": "Notifications",
+            "types": {
+                "edit-locks": {
+                    "released": "{{byName}} released your editing of “{{rowName}}” ({{entity}})"
+                },
+                "entities": {
+                    "rows-transferred": {
+                        "folder": "{{byName}} gave you the folder “{{name}}” of {{entity}}",
+                        "folders": "{{byName}} gave you {{count}} folders of {{entity}}",
+                        "item": "{{byName}} gave you {{noun}} “{{name}}”",
+                        "items": "{{byName}} gave you {{count}} {{noun}}",
+                        "row": "{{byName}} gave you “{{name}}” of {{entity}}",
+                        "rows": "{{byName}} gave you {{count}} items of {{entity}}",
+                        "unnamed": "{{byName}} gave you an item of {{entity}}"
+                    }
+                },
+                "sharing": {
+                    "folder-shared": "{{byName}} shared the folder “{{folderName}}” of {{entity}} with you, {{access}}"
+                },
+                "users": {
+                    "content-transferred": "{{byName}} transferred the content of {{fromName}} to you. Items transferred: {{count}}"
+                }
+            },
+            "unknown-type": "You have a new notification",
+            "unread": "Unread"
+        },
         "option-picker": {
             "close": "Close",
             "empty": "No options found",
             "label": "Options",
             "search": "Search"
         },
+        "organization-summary": {
+            "administrators": {
+                "empty": "No administrators yet.",
+                "label": "Administrators"
+            },
+            "breakdown": {
+                "active": {
+                    "one": "{{count}} active",
+                    "other": "{{count}} active"
+                },
+                "inactive": {
+                    "one": "{{count}} inactive",
+                    "other": "{{count}} inactive"
+                },
+                "invited": {
+                    "one": "{{count}} pending invitation",
+                    "other": "{{count}} pending invitations"
+                },
+                "unverified": {
+                    "one": "{{count}} unverified",
+                    "other": "{{count}} unverified"
+                }
+            },
+            "created-at": "Created on {{date}}",
+            "extra-roles": {
+                "empty": "This organization has no additional roles yet.",
+                "label": "Additional roles"
+            },
+            "groups": {
+                "empty": "This organization has no groups yet.",
+                "hide-members": "Hide members",
+                "label": "Groups",
+                "members": {
+                    "one": "{{count}} member",
+                    "other": "{{count}} members"
+                },
+                "show-members": "Show members",
+                "ungrouped": "No group"
+            },
+            "stats": {
+                "extra-roles": {
+                    "one": "Additional role",
+                    "other": "Additional roles"
+                },
+                "groups": {
+                    "one": "Group",
+                    "other": "Groups"
+                },
+                "members": {
+                    "one": "Member",
+                    "other": "Members"
+                }
+            },
+            "title": "Organization"
+        },
+        "organizations": {
+            "actions": {
+                "create": {
+                    "label": "New organization",
+                    "tooltip": "Create an organization"
+                },
+                "delete": {
+                    "label": "Delete",
+                    "tooltip": "Delete the selected deactivated organization and everything in it"
+                },
+                "edit": {
+                    "label": "Edit",
+                    "tooltip": "Edit the name and the status of the selected organization"
+                }
+            },
+            "content": {
+                "count": "{{label}}: {{count}}",
+                "empty": "It holds nothing.",
+                "groups": "Groups",
+                "label": "Content",
+                "roles": "Additional roles",
+                "users": "Users"
+            },
+            "delete": {
+                "confirm": "Type «{{name}}» to confirm",
+                "main": {
+                    "name": {
+                        "placeholder": "The name of the organization, exactly"
+                    }
+                },
+                "message": "The organization «{{name}}» and everything in it will be deleted for good: its users of any status with everything they own, its groups, its additional roles and what it shares.",
+                "name-mismatch": "The name does not match.",
+                "submit": "Delete",
+                "title": "Delete organization"
+            },
+            "form": {
+                "administrators": {
+                    "label": "Administrators",
+                    "no-members": "No administrators yet"
+                },
+                "create": {
+                    "title": "New organization"
+                },
+                "edit": {
+                    "title": "Edit organization"
+                },
+                "groups": {
+                    "empty": "This organization has no groups yet.",
+                    "label": "Groups",
+                    "no-members": "No members yet",
+                    "ungrouped": "No group"
+                },
+                "main": {
+                    "name": {
+                        "label": "Name",
+                        "placeholder": "Type the name of the organization"
+                    },
+                    "status": {
+                        "label": "Status",
+                        "placeholder": "Choose a status"
+                    }
+                }
+            },
+            "search": {
+                "fields": {
+                    "status": "Status",
+                    "text": "Name"
+                }
+            },
+            "status": {
+                "active": "Active",
+                "inactive": "Inactive"
+            },
+            "table": {
+                "columns": {
+                    "created-at": "Created",
+                    "name": "Name",
+                    "status": "Status",
+                    "user-count": "Users"
+                },
+                "empty": "No organization matches the search",
+                "tooltips": {
+                    "created-at": "When the organization was created",
+                    "name": "The name of the organization",
+                    "status": "Whether its users can sign in",
+                    "user-count": "How many users belong to it, active or not"
+                }
+            },
+            "title": "Organizations",
+            "toast": {
+                "create-success": "Organization created",
+                "delete-success": "Organization deleted",
+                "edit-success": "Organization saved"
+            }
+        },
         "page": {
+            "actions": {
+                "transfer": {
+                    "label": "Change owner",
+                    "tooltip": "Give the selected items to another user of the organization"
+                },
+                "view": {
+                    "label": "View",
+                    "tooltip": "See the selected item without changing it"
+                }
+            },
+            "count": {
+                "categories": {
+                    "one": "{{count}} folder",
+                    "other": "{{count}} folders"
+                },
+                "items": {
+                    "one": "{{count}} item",
+                    "other": "{{count}} items"
+                },
+                "items-only": "({{items}})",
+                "mixed": "({{categories}} · {{items}})"
+            },
             "form": {
                 "cancel": "Cancel",
                 "submit": "Save"
+            },
+            "search": {
+                "fields": {
+                    "from": "From",
+                    "organization-id": "Organization",
+                    "owner-id": "Owner",
+                    "to": "To"
+                }
+            },
+            "share": {
+                "access": {
+                    "read": "View",
+                    "write": "Edit"
+                },
+                "grantee": {
+                    "group": "{{name}} (group)",
+                    "members": {
+                        "one": "{{name}} ({{count}} member)",
+                        "other": "{{name}} ({{count}} members)"
+                    }
+                },
+                "grantees": {
+                    "no-match": "No user or group matches.",
+                    "read": {
+                        "empty": "Nobody added yet.",
+                        "label": "Can view",
+                        "placeholder": "Add a user or a group"
+                    },
+                    "write": {
+                        "empty": "Nobody added yet.",
+                        "label": "Can edit",
+                        "placeholder": "Add a user or a group"
+                    }
+                },
+                "inherited": {
+                    "group": "{{name}} (group): {{access}}, from {{folder}}",
+                    "label": "Access inherited from the folders above",
+                    "user": "{{name}}: {{access}}, from {{folder}}"
+                },
+                "intro": "Sharing decides where people can work. What they can do there still depends on their permissions.",
+                "title": "Share \"{{name}}\""
+            },
+            "shared": {
+                "folder": "Shared folder",
+                "label": "Shared with me"
+            },
+            "table": {
+                "columns": {
+                    "organization-name": "Organization",
+                    "owner-name": "Owner"
+                },
+                "tooltips": {
+                    "organization-name": "The organization it belongs to",
+                    "owner-name": "The user it belongs to"
+                }
+            },
+            "toast": {
+                "restored-renamed": "Restored with a new name, since another item already has the old one: {{names}}",
+                "transferred": {
+                    "one": "{{count}} item changed owner",
+                    "other": "{{count}} items changed owner"
+                }
+            },
+            "transfer": {
+                "main": {
+                    "owner": {
+                        "label": "Current owner"
+                    },
+                    "target-user-id": {
+                        "label": "New owner",
+                        "placeholder": "Search a person by name or email"
+                    }
+                },
+                "no-targets": "No active user matches",
+                "notice": "The chosen person becomes the owner of the selected items.",
+                "several-owners": "Several owners",
+                "submit": "Change owner",
+                "title": {
+                    "one": "Change the owner of the selected item",
+                    "other": "Change the owner of {{count}} selected items"
+                }
             }
         },
         "pagination": {
@@ -292,9 +1121,43 @@
             "previous-page": "Go to previous page",
             "results-range": "Showing {{ start }}-{{ end }} of {{ total }} results"
         },
+        "password-change": {
+            "description": "Update your password to keep your account safe.",
+            "no-password": "Your account has no password, since you sign in with another provider. To set one, sign out and use \"Forgot your password?\" on the sign-in page.",
+            "password": {
+                "current-password": {
+                    "label": "Current password",
+                    "placeholder": "Type your current password"
+                },
+                "password": {
+                    "label": "New password",
+                    "placeholder": "Type the new password"
+                },
+                "password2": {
+                    "label": "Confirm password",
+                    "mismatch": "The passwords do not match.",
+                    "placeholder": "Type the new password again"
+                }
+            },
+            "save": "Change password",
+            "title": "Change password",
+            "toast": {
+                "success": "Password changed"
+            }
+        },
         "pdf-viewer": {
+            "search": {
+                "close": "Close search",
+                "field": "Search in the document",
+                "next-match": "Next match",
+                "no-matches": "No matches",
+                "previous-match": "Previous match"
+            },
             "toolbar": {
+                "download": "Download",
                 "page": "Page",
+                "search": "Search in the document",
+                "search-tooltip": "Search in the document (Ctrl+F)",
                 "zoom-in": "Zoom in",
                 "zoom-out": "Zoom out"
             }
@@ -305,6 +1168,7 @@
                 "empty": "No attachments found",
                 "search": "Search attachments",
                 "too-large": "This file exceeds the {{maxSizeMB}} MB limit.",
+                "unknown": "Unknown",
                 "upload": "Upload a new file",
                 "use-variable": "Use a variable",
                 "wrong-type": "This file type is not accepted ({{accept}})."
@@ -351,12 +1215,221 @@
             },
             "text-field": {
                 "insert-variable": "Insert variable"
+            },
+            "tree": {
+                "collapse": "Collapse",
+                "expand": "Expand"
+            }
+        },
+        "roles": {
+            "actions": {
+                "create": {
+                    "label": "New role",
+                    "tooltip": "Create an additional role for the users of the organization"
+                },
+                "delete": {
+                    "label": "Delete",
+                    "tooltip": "Delete the selected roles"
+                },
+                "duplicate": {
+                    "label": "Duplicate",
+                    "tooltip": "Create a role from the selected one, with its description and permissions"
+                },
+                "edit": {
+                    "label": "Edit",
+                    "tooltip": "Edit the selected role"
+                },
+                "view": {
+                    "tooltip": "See the permissions of the selected role"
+                }
+            },
+            "categories": {
+                "root": "Roles"
+            },
+            "count": {
+                "categories": {
+                    "one": "{{count}} organization",
+                    "other": "{{count}} organizations"
+                },
+                "items": {
+                    "one": "{{count}} role",
+                    "other": "{{count}} roles"
+                }
+            },
+            "duplicate": {
+                "buttons": {
+                    "submit": "Duplicate"
+                },
+                "copy-suffix": "(copy)",
+                "title": "Duplicate role"
+            },
+            "form": {
+                "create": {
+                    "title": "New role"
+                },
+                "edit": {
+                    "title": "Edit role"
+                },
+                "main": {
+                    "description": {
+                        "label": "Description",
+                        "placeholder": "Say what the role is for"
+                    },
+                    "name": {
+                        "label": "Name",
+                        "placeholder": "Type the name of the role"
+                    },
+                    "organization-id": {
+                        "label": "Organization",
+                        "placeholder": "Choose an organization"
+                    }
+                },
+                "permissions": {
+                    "empty": "There are no permissions you can give.",
+                    "label": "Permissions:"
+                }
+            },
+            "modal": {
+                "delete": {
+                    "message": "This will delete {{count}} role(s), and the users who hold them will lose the permissions they give. Do you want to continue?",
+                    "title": "Delete roles"
+                }
+            },
+            "permissions": {
+                "audit": {
+                    "label": "Audit",
+                    "read": {
+                        "description": "Can see who did what, when and from where in their organization, and export it.",
+                        "label": "See the audit"
+                    }
+                },
+                "organization": {
+                    "label": "Organization",
+                    "manage": {
+                        "description": "Can manage the groups of the organization and reach everything its members create.",
+                        "label": "Manage the organization"
+                    },
+                    "read": {
+                        "description": "Can see the name, the status, the administrators and the counts of their organization, and every group with its members and every additional role.",
+                        "label": "See the organization summary"
+                    },
+                    "read-group-roles": {
+                        "description": "Can see the additional roles their groups give, with their permissions. It shows nothing without \"See their groups and members\".",
+                        "label": "See the roles and permissions of their groups"
+                    },
+                    "read-groups": {
+                        "description": "Can see the groups they belong to and who else is in them.",
+                        "label": "See their groups and members"
+                    },
+                    "read-roles": {
+                        "description": "Can see the roles they hold, directly or through their groups, with their permissions.",
+                        "label": "See their roles and permissions"
+                    }
+                },
+                "roles": {
+                    "label": "Roles",
+                    "manage": {
+                        "description": "Can create, edit and delete the additional roles of the organization.",
+                        "label": "Manage roles and permissions"
+                    }
+                },
+                "users": {
+                    "change-status": {
+                        "description": "Can activate and deactivate the accounts of the users.",
+                        "label": "Activate and deactivate users"
+                    },
+                    "edit": {
+                        "description": "Can change the names and the roles of the users.",
+                        "label": "Edit users"
+                    },
+                    "invite": {
+                        "description": "Can invite people to join the organization.",
+                        "label": "Invite users"
+                    },
+                    "label": "Users",
+                    "read": {
+                        "description": "Can see the users of the organization.",
+                        "label": "See users"
+                    },
+                    "transfer-content": {
+                        "description": "Can move everything of an inactive user to an active user of their organization.",
+                        "label": "Transfer content"
+                    }
+                }
+            },
+            "search": {
+                "fields": {
+                    "text": "Name"
+                }
+            },
+            "sources": {
+                "direct": "Direct",
+                "group": "Group {{names}}"
+            },
+            "table": {
+                "columns": {
+                    "description": "Description",
+                    "group-count": "Groups",
+                    "member-count": "Users",
+                    "name": "Name",
+                    "organization": "Organization",
+                    "permission-count": "Permissions",
+                    "sources": "Origin",
+                    "type": "Type"
+                },
+                "empty": "No role matches the search",
+                "every-organization": "All",
+                "tooltips": {
+                    "description": "What the role is for",
+                    "group-count": "How many groups hold it",
+                    "member-count": "How many users hold it directly",
+                    "name": "The name of the role",
+                    "organization": "The organization the role belongs to",
+                    "permission-count": "How many permissions it gives",
+                    "sources": "Whether the role is held directly or through a group",
+                    "type": "Whether it is a base role of the application or an additional role of the organization"
+                },
+                "view-permissions": "See permissions"
+            },
+            "title": "Roles and permissions",
+            "toast": {
+                "create-success": "Role created",
+                "delete-success": "Roles deleted",
+                "duplicate-success": "Role duplicated",
+                "edit-success": "Role saved"
+            },
+            "type": {
+                "base": "Base",
+                "extra": "Additional"
+            },
+            "view": {
+                "buttons": {
+                    "close": "Close"
+                },
+                "main": {
+                    "description": {
+                        "label": "Description"
+                    },
+                    "name": {
+                        "label": "Role"
+                    }
+                },
+                "permissions": {
+                    "empty": "This role gives no permissions.",
+                    "label": "Permissions:"
+                },
+                "title": "Permissions of the role"
             }
         },
         "search": {
             "add": "Add filter",
             "apply": "Apply filter",
             "clear": "Clear all",
+            "date-operators": {
+                "between": "Between",
+                "greater-than-or-equals": "On or after",
+                "less-than-or-equals": "On or before"
+            },
             "empty": {
                 "description": "Add filters to narrow down results.",
                 "title": "No filters applied"
@@ -364,6 +1437,8 @@
             "field-placeholder": "Select filter",
             "filters": "Filters",
             "from-placeholder": "From",
+            "more-matches": "There are more matches: type more to narrow them down.",
+            "no-matches": "No matches found",
             "operators": {
                 "between": "Between",
                 "contains": "Contains",
@@ -377,6 +1452,7 @@
                 "not-equals": "Not equals",
                 "starts-with": "Starts with"
             },
+            "option-placeholder": "Type to search",
             "placeholder": "Search",
             "remove": "Remove filter",
             "row": "Filter",
@@ -388,6 +1464,10 @@
             }
         },
         "table": {
+            "columns": {
+                "label": "Columns",
+                "reset": "Restore the default columns"
+            },
             "select-all": "Select all rows",
             "select-row": "Select row"
         },
@@ -406,6 +1486,176 @@
         "tree": {
             "collapse": "Collapse",
             "expand": "Expand"
+        },
+        "user-name": {
+            "unknown": "Unknown"
+        },
+        "users": {
+            "actions": {
+                "create": {
+                    "label": "Invite user",
+                    "tooltip": "Invite someone to create their account"
+                },
+                "delete": {
+                    "label": "Delete",
+                    "tooltip": "Delete the selected users and everything they still own"
+                },
+                "edit": {
+                    "label": "Edit",
+                    "tooltip": "Edit the selected user"
+                },
+                "resend-invitation": {
+                    "label": "Resend invitation",
+                    "tooltip": "Send the invitation email again"
+                },
+                "transfer": {
+                    "label": "Transfer content",
+                    "tooltip": "Move everything the selected inactive user owns to another user"
+                }
+            },
+            "categories": {
+                "root": "Users"
+            },
+            "content": {
+                "count": "{{label}}: {{count}}",
+                "empty": "Owns nothing.",
+                "label": "Content",
+                "used-by": "{{entity}} «{{name}}»: {{users}}"
+            },
+            "count": {
+                "categories": {
+                    "one": "{{count}} organization",
+                    "other": "{{count}} organizations"
+                },
+                "items": {
+                    "one": "{{count}} user",
+                    "other": "{{count}} users"
+                }
+            },
+            "delete": {
+                "invitation": {
+                    "one": "The invitation will stop working.",
+                    "other": "The pending invitations will stop working."
+                },
+                "main": {
+                    "used-by-others": {
+                        "label": "Used by others"
+                    }
+                },
+                "message": {
+                    "one": "{{name}} will be deleted, together with everything they still own.",
+                    "other": "{{count}} users will be deleted, together with everything they still own."
+                },
+                "submit": "Delete",
+                "title": {
+                    "one": "Delete user",
+                    "other": "Delete users"
+                },
+                "used-by-others": "Some of it is used by what others own. Those references will show as «{{unknown}}» and will need fixing."
+            },
+            "form": {
+                "create": {
+                    "title": "Invite user"
+                },
+                "edit": {
+                    "title": "Edit user"
+                },
+                "main": {
+                    "email": {
+                        "label": "Email",
+                        "placeholder": "Type the email of the person"
+                    },
+                    "extra-role-ids": {
+                        "empty": "No additional roles.",
+                        "label": "Additional roles",
+                        "placeholder": "Search a role by its name"
+                    },
+                    "language": {
+                        "label": "Language of the invitation",
+                        "placeholder": "Default language"
+                    },
+                    "name": {
+                        "label": "Name",
+                        "placeholder": "Type the name"
+                    },
+                    "organization-id": {
+                        "label": "Organization",
+                        "placeholder": "Choose an organization"
+                    },
+                    "roles": {
+                        "empty": "Choose one role at least.",
+                        "label": "Roles",
+                        "placeholder": "Search a role by its name"
+                    },
+                    "status": {
+                        "label": "Status",
+                        "placeholder": "Choose a status"
+                    },
+                    "surname": {
+                        "label": "Surname",
+                        "placeholder": "Type the surname"
+                    }
+                }
+            },
+            "roles": {
+                "superadmin": "Superadmin"
+            },
+            "search": {
+                "fields": {
+                    "role": "Role",
+                    "status": "Status",
+                    "text": "Name or email"
+                }
+            },
+            "status": {
+                "active": "Active",
+                "inactive": "Inactive",
+                "invited": "Invited",
+                "unverified": "Unverified"
+            },
+            "table": {
+                "columns": {
+                    "created-at": "Created",
+                    "email": "Email",
+                    "last-login-at": "Last sign-in",
+                    "name": "Name",
+                    "organization": "Organization",
+                    "roles": "Roles",
+                    "status": "Status"
+                },
+                "empty": "No user matches the search",
+                "no-name": "No name",
+                "system": "System",
+                "tooltips": {
+                    "created-at": "When the account was created",
+                    "email": "The email the user signs in with",
+                    "last-login-at": "When the user last signed in",
+                    "name": "Name and surname of the user",
+                    "organization": "The organization the user belongs to",
+                    "roles": "What the user may do",
+                    "status": "Whether the user can sign in"
+                }
+            },
+            "title": "Users",
+            "toast": {
+                "create-success": "Invitation sent",
+                "delete-success": "Users deleted",
+                "edit-success": "User saved",
+                "resend-invitation-success": "Invitation sent again",
+                "transfer-success": "Content transferred"
+            },
+            "transfer": {
+                "main": {
+                    "target-user-id": {
+                        "label": "Transfer to",
+                        "placeholder": "Search a person by name or email"
+                    }
+                },
+                "no-targets": "No active user matches",
+                "note": "Everything moves into a folder «{{name}}» at the root of the person you choose.",
+                "submit": "Transfer",
+                "title": "Transfer {{name}}'s content"
+            }
         }
     },
     "angular-components-demo": {

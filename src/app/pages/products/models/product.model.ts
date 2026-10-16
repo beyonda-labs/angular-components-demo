@@ -1,4 +1,4 @@
-import { BeyPageItem } from '@beyonda-labs/angular-components';
+import { BeyPageFormConfig, BeyPageItem, BeyTableCell } from '@beyonda-labs/angular-components';
 
 export interface Product extends BeyPageItem {
     available: boolean | number;
@@ -15,4 +15,9 @@ export interface ProductFormValue {
 
         available?: boolean | null;
     };
+}
+
+export interface ProductsPageConfigOptions {
+    formConfig: BeyPageFormConfig<ProductFormValue, Product>;
+    loadRow: (product: Product) => BeyTableCell[];
 }

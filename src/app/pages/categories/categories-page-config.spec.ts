@@ -1,7 +1,13 @@
 import { BeyPageFormConfig, BeyPageStandardAction, BeyPageViewMode } from '@beyonda-labs/angular-components';
 
-import { buildCategoriesPageConfig, CategoriesPageConfigOptions } from './categories-page-config';
-import { Category, CategoryFormValue, CategoryItem, CategoryItemFormValue } from './models/category.model';
+import { buildCategoriesPageConfig } from './categories-page-config';
+import {
+    CategoriesPageConfigOptions,
+    Category,
+    CategoryFormValue,
+    CategoryItem,
+    CategoryItemFormValue
+} from './models/category.model';
 
 describe('buildCategoriesPageConfig', () => {
     let options: CategoriesPageConfigOptions;
@@ -20,10 +26,10 @@ describe('buildCategoriesPageConfig', () => {
         };
     });
 
-    it('offers the standard product, category and trash actions, with no handler of their own', () => {
+    it('offers the standard product, category and trash actions, with no callback of their own', () => {
         const actions = buildCategoriesPageConfig(options).headerConfig?.actions ?? [];
 
-        expect(actions.map(action => [action.key, action.handler])).toEqual([
+        expect(actions.map(action => [action.key, action.action])).toEqual([
             ['add-group', undefined],
             [BeyPageStandardAction.Edit, undefined],
             [BeyPageStandardAction.EditCategory, undefined],
