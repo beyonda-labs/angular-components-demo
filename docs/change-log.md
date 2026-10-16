@@ -1,5 +1,19 @@
 # Change Log
 
+## [Unreleased]
+
+### Changed
+
+-   Uses angular-components 1.6.0. The session is restored through the refresh cookie and the shell signs out with
+    `logout()`, `POST /auth/logout`, so the demo needs express-components-demo on express-components 1.4.0.
+-   The language is set by `provideBeyApp`; `AppComponent` no longer sets it.
+-   The products and categories pages fill the content area of the layout, their table scrolling inside, instead of
+    a fixed `calc(100vh - …)` height.
+-   Style guide: the administration and sharing demos show data, answered by `beyAdministrationStyleGuideInterceptor`
+    and `beyPageStyleGuideInterceptor`.
+-   Tooling: base-config 0.1.0-develop.20, and the production build no longer inlines the critical CSS.
+-   Tooling: base-config 0.1.0-develop.17, whose stylelint refuses literal margins, paddings and letter spacing.
+
 ## [1.3.0] - 2026-10-09
 
 ### Changed

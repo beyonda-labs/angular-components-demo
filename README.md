@@ -3,6 +3,16 @@
 Demo application for `@beyonda-labs/angular-components`. It serves the library's style guide at `/demo` and two
 pages built on the page module, products and categories, behind the library's session guard.
 
+The pages talk to `express-components-demo` at `http://localhost:3000` (`src/environments/environment.ts`). The
+session lives in memory and is restored through the refresh cookie that server sets, and the logout of the menu signs
+out at `POST /auth/logout` before going back to `/demo`. The guard lets a user into `/products` and `/categories` only
+when the `allowedPaths` the server answers hold them. Each page fills the content area of the layout, its table
+scrolling inside. `provideBeyApp` starts the app in the remembered, the browser or the default language, English;
+what a signed-in user picks is also saved to their account with `PUT /account`, which the express demo mounts.
+
+The administration and sharing demos of the style guide need no server: `beyAdministrationStyleGuideInterceptor` and
+`beyPageStyleGuideInterceptor`, registered in `app.config.ts`, answer their `/style-guide/` requests with fixed data.
+
 ## Requirements
 
 -   Node.js 22 and pnpm 10, through `corepack enable`.
